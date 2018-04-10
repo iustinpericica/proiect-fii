@@ -1,0 +1,234 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina principala</title>
+	<link href="../css/prestyle.css" type="text/css" rel="stylesheet">
+	<link href="../css/animated.css" type="text/css" rel="stylesheet">
+	<link href="../css/style.css" type="text/css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+    <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<header> 
+	<div class="container-fluid row" id="banner">
+	  <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
+		  <button id="shop" class="btn btn-elegant">Shop</span>
+		</div>
+	  <div class="col-md-6 col-xs-0 col-sm-6">
+		
+		</div>
+	
+		<div class="col-md col-xs col-sm">
+		  <i class="fa fa-facebook-f" id="fb" style="font-size:20px;margin-right:10px;"></i>
+		  <i class="fa fa-instagram"  id="insta" style="font-size:20px;"></i>
+		</div>
+	</div>
+     <div class="row container-fluid">
+	     <div class="col-md-2 col-sm-4 col-xs-6" style="font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';font-size:25px;cursor:pointer;" id="home_page">
+		   El Maro
+		 </div>
+		 
+		 <div class="col-md-7 col-xs-0 col-sm-4">
+		   
+		 </div>
+		 
+		 <div class="col-md-3 col-xs-6 col-sm-4">
+		    <button class="btn btn-elegant animated shake" id="to_be_replaced">Log In</button>
+		 </div>
+	   </div>
+
+
+ <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
+	 
+	  <div class="col-md-1 col-sm-1" ><a href="contact.php">Contact</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="shop.php">Magazin</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
+	  <div class="col-md-4 col-sm-4"></div>
+	  <div class="col-md-4 col-sm-4">
+		<input type="text" name="search" placeholder="cautati" id="Search">
+	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+		
+	   </div>
+	</div>
+	  <div style="visibility: hidden">ceva</div>
+</header>
+	
+	<div class="container-fluid row">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Sign In</h2>
+			</div>
+		<form action="../includes/signup.inc.php" method="POST">
+			<label for="username">Username</label>
+			<br/>
+			<input type="text" id="username" name="username">
+			<br>
+			<label for="firstname">Preume</label>
+			<br/>
+			<input type="text" id="firstname" name="firstname">
+			<br>
+			<label for="lastname">Nume</label>
+			<br/>
+			<input type="text" id="lastname" name="lastname">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password" name="password">
+			<br/>
+			<label for="confirm_password">Confirm Password</label>
+			<br/>
+			<input type="password" id="confirm_password" name="confirm_password">
+			<br/>
+			<label for="email">E-mail</label>
+			<br/>
+			<input type="text" name="email">
+			<br/>
+			<label for="nrtelefon" >Numar de telefon</label>
+			<br/>
+			<input type="text" name="nrtelefon"  id="nrtelefon">
+			<br/>
+			<input type="submit" name="submit" value="SignIn">
+			<br/>
+		</form>
+			<a href="LogIn.php"><p class="small">Ai un cont?</p></a>
+		</div>
+	</div>
+<?php if(isset($_GET['username']))if($_GET['username']=='empty'){echo "<script>alert('Username necompletat');</script>";}
+      if(isset($_GET['firstname']))if($_GET['firstname']=='empty'){echo "<script>alert('firstname necompletat');</script>";}
+      if(isset($_GET['lastname']))if($_GET['lastname']=='empty'){echo "<script>alert('lastname necompletat');</script>";}
+      if(isset($_GET['email']))if($_GET['emailname']=='empty'){echo "<script>alert('email necompletat');</script>";}
+      if(isset($_GET['password']))if($_GET['password']=='empty'){echo "<script>alert('password');</script>";}
+      if(isset($_GET['nrtelefon']))if($_GET['nrtelefon']=='empty'){echo "<script>alert('nrtelefon');</script>";}
+      if(isset($_GET['password']))if($_GET['password']=='different'){echo "<script>alert('password different than confirm password');</script>";}
+?>
+
+<footer class="container-fluid">
+  <div class="row">
+	 <div class="col-md-5" >
+	 #poza
+	 </div>
+	  <div class="col-md-7">
+	    <div class="row">
+			<div class="col-md-4">
+			  <ul class="lista-footer">
+			     El Maro
+			   <li>Despre</li>
+			   <li>Contact</li>
+			   <li>Fii unul de al nostru!</li>
+			   </ul>
+			</div>
+			
+			<div class="col-md-4 col-sm-6 col-xs-12">
+			  <ul  class="lista-footer">Shop
+			    <li>Cum comand?</li>
+				<li>Livrare </li>
+				<li>Termeni&Conditii</li>
+			  </ul>
+			</div>
+			  
+			<div class="col-md-4">
+			  Aboneaza-te la Newsletter
+			  <form method="post" action="../includes/news.inc.php">
+			  E-mail:<input name="email" placeholder="exemplu@yahoo.com">
+			  <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
+			  <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
+			  </form>
+			</div>
+		  </div>
+	  </div>
+	</div>
+</footer>
+</body>
+	
+<script>
+var ok_search=true;
+$('#Search').css('visibility' , 'hidden');
+$('#btn_search').click(function(){
+	if(ok_search==true){
+	$('#Search').css('visibility' , 'visible');
+	ok_search=false;
+	}
+	else{
+		$('#Search').css('visibility' , 'hidden');
+		ok_search=true;
+	}
+});
+
+
+$('#home_page').click(function(){
+	window.location.replace("index.php");
+});
+
+$('#fb').click(function(){
+	window.location.replace("https://www.google.com");
+});
+
+	
+$('#insta').click(function(){
+	window.location.replace("https://www.google.com");
+});
+
+$('#to_be_replaced').click(function(){
+	
+	window.location.replace("LogIn.php");
+});
+
+$('#shop').click(function(){
+	window.location.replace("shop.php");
+});
+
+$('#btn_cart').click(function(){
+    window.location.replace("cart.php");
+});
+
+
+
+</script>
+   
+
+
+
+<?php
+ 
+
+ if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+
+ 	echo "<script>
+           $('#to_be_replaced').html('Contul meu');
+           $('#to_be_replaced').click(function(){
+	
+	       window.location.replace('cont.php');
+         });
+         $('#to_be_replaced').addClass('shake');
+           </script>
+ 	";
+ }
+else {
+	echo "<script>
+           $('#cont_replaced').html('Log In);
+           $('#cont_replaced').click(function(){
+	
+	       window.location.replace('LogIn.php');
+         });
+         
+           </script>
+ 	";
+}
+ ?>
+
+
+
+
+</html>

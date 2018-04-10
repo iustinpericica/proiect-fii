@@ -1,0 +1,86 @@
+#text-centru{
+	font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-size:30px;
+}
+
+#banner{
+	background-color:#968d8F;
+}
+
+#banner{
+	transition: background-color 1.2s;
+	cursor:auto;
+}
+
+#banner:hover{
+	
+	background-color:#D5D5D5;
+	z-index:0;
+	
+}
+
+#cont{
+	list-style: none;
+	
+}
+
+#creeaza{
+	color: #ff0072;
+	margin-top:5px;
+	cursor:pointer;
+}
+
+footer{
+	background-color:#DFDCE3;
+}
+
+.lista-footer{
+	list-style:none;
+	margin-top:5px;
+	margin-bottom:5px;
+	cursor:pointer;
+}
+
+.lista-footer li:hover{
+	color:antiquewhite;
+}
+
+@media screen and (max-width : 290.400px ){
+	#text-centru{
+		font-size:15px;
+	}
+	
+	.bttn{
+		font-size:10px;
+	}
+	
+	#meniu_filtrare input{
+		width:30px;
+	}
+}
+
+
+#banner2{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#banner3{
+	background-color:antiquewhite;
+	opacity: 0.7;
+}
+
+#fb{
+	cursor:pointer;
+}
+
+#insta{
+	cursor:pointer;
+	
+}
+
+
+ul{
+	margin:0;list-style: none;padding: 0;
+}
+
+

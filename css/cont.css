@@ -1,0 +1,14 @@
+#contul_meu_1{
+	font-size:25px;
+
+}
+
+.comenzi_cont{
+	margin-top:2%;
+	cursor:pointer;
+}
+
+.comenzi_cont:hover{
+     opacity: 0.75;
+    
+}

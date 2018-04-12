@@ -59,7 +59,18 @@
 	</div>
 	  <div style="visibility: hidden">ceva</div>
 </header>
-	  
+
+<script>
+	// ----    ADAUG PRETUL TOTALULUI DIN COS --
+   var total_req = new  XMLHttpRequest();
+   total_req.onload = function(){
+   	 $('#pret_cos').html(this.responseText + '  de lei');
+   };
+   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.send();x
+</script>
+
+  
  <div class="container-fluid">
    <div class="row">
 	  <div class="col-3">

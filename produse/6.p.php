@@ -60,7 +60,16 @@
 	  <div style="visibility: hidden">ceva</div>
 </header>
 	
-	
+<script>
+	// ----    ADAUG PRETUL TOTALULUI DIN COS --
+   var total_req = new  XMLHttpRequest();
+   total_req.onload = function(){
+   	 $('#pret_cos').html(this.responseText + '  de lei');
+   };
+   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.send();x
+</script>
+
 <div class="row">
  <div class="col-md-5 col-xs-12 col-col-sm-5 col-xl-5">
  	<div class="view overlay">
@@ -102,7 +111,6 @@
 	$('#btn_cumpara').click(function(){
        if($('#cantitate_dorita').val()<1)alert('alege o cantitate pozitiva..');
        else {
-       	  alert('da');
        	  cant = $('#cantitate_dorita').val();
        	  string = "../includes/cos.inc.php?id=6&cantitate=";
        	  string += cant;

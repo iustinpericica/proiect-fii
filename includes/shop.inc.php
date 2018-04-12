@@ -40,7 +40,7 @@ if(isset($_GET['man'])){
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
-    <div class="text-center">' . $row[3] . '</div>
+    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
 </div>
 </div>';
 	}
@@ -57,7 +57,7 @@ if(isset($_GET['woman'])){
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
-    <div class="text-center">' . $row[3] . '</div>
+    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
 </div>
 </div>';
 	}
@@ -90,7 +90,7 @@ if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children'])){
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
-    <div class="text-center">' . $row[3] . '</div>
+    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
 </div>
 </div>';
 	}

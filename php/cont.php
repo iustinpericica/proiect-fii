@@ -13,8 +13,9 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<link href="../css/animate.css" type="text/css" rel="stylesheet">
     <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 <header> 
@@ -141,6 +142,7 @@ session_start();
 
    $('#parola').click(function(){
      $('#schimba_parola').css('visibility' , 'visible');
+     $('#schimba_div').addClass('fadeInUp');
    });
 
    $('#logout').click(function(){
@@ -162,12 +164,23 @@ session_start();
 
 
 <div id="schimba_parola">
-  <form action="../includes/cont.inc.php?password=change" method="POST">
-    Parola vecehe: <input type="password" name="lastpass"><br>
-    Parola noua: <input type="password" name="nowpass"><br>
-    Confirmati parola noua: <input type="password" name="repass">
-    <input type="submit" name="submit">
-  </form>
+  
+  <div class="login-box animated" id="schimba_div">
+			<div class="box-header">
+				<h2>Schimba parola: </h2>
+			</div>
+		 <form action="../includes/cont.inc.php?password=change" method="POST">
+			<label for="username">Parola veche</label>
+			<br/>
+			<input type="password" name="lastpass"><br>
+			<label for="password">Parola noua: </label><br>
+			<input type="password" name="nowpass"><br>
+			<label for="password">Confirmati parola noua: </label>
+			<input type="password" name="repass"><br>
+			<input type="submit" name="submit">
+			<br/>
+		</form>
+	</div>
 </div>
 
 

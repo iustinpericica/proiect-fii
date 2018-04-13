@@ -2,7 +2,8 @@
 
 require_once "dbconnection.inc.php";
 session_start();
-$idc = $_SESSION['idc'];
+if(isset($_SESSION['idc']))$idc = $_SESSION['idc'];
+else die();
 $sql = "SELECT * FROM produsec WHERE idc = '$idc' ;";
 $result = $conn->query($sql);
 

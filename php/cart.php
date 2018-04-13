@@ -76,13 +76,17 @@ echo $string;
     </div>
  	<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
  		<p class="text-center">Sumar comanda</p>
- 		<p>Total produse: <span id="total"></span></p>
+ 		<p>Total cost produse: <span id="total"></span></p>
  		<p>Cost livrare: <span id="livrare"></span></p>
+ 		<button type="button" class="btn btn-success" id="pu">Pasul urmator:</button>
     </div>
  </div>
 
 <script>
-	function pec(){return p;};
+
+	$('#pu').click(function(){
+        window.location.replace('cart2.php');
+	});
 	var req = new XMLHttpRequest();
 	var data;
 	var date;
@@ -177,31 +181,40 @@ $(document).on("click", "#u1", function(){
 });
 
 $(document).on("click", "#u2", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=2");
+   var cant = $('#c2').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=2&cantitate=" + cant);
 });
 $(document).on("click", "#u3", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=3");
+  var cant = $('#c3').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=3&cantitate=" + cant);
 });
 $(document).on("click", "#u4", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=4");
+   var cant = $('#c4').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=4&cantitate=" + cant);
 });
 $(document).on("click", "#u5", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=5");
+   var cant = $('#c5').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=5&cantitate=" + cant);
 });
 $(document).on("click", "#u6", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=6");
+   var cant = $('#c6').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=6&cantitate=" + cant);
 });
 $(document).on("click", "#u7", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=7");
+   var cant = $('#c7').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=7&cantitate=" + cant);
 });
 $(document).on("click", "#u8", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=8");
+   var cant = $('#c8').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=8&cantitate=" + cant);
 });
 $(document).on("click", "#u9", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=9");
+   var cant = $('#c9').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=9&cantitate=" + cant);
 });
 $(document).on("click", "#u10", function(){
-   window.location.replace("../includes/cosupdate.inc.php?id=10");
+   var cant = $('#c10').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=10&cantitate=" + cant);
 });
 </script>
 

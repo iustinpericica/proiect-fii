@@ -4,6 +4,7 @@
 <head>
   <title>Pagina principala</title>
   <link href="../css/prestyle.css" type="text/css" rel="stylesheet">
+  <link href="../css/shop.css" type="text/css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -164,9 +165,9 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     }
 
     $_GET[decode(arguments[1])] = decode(arguments[2]);
-    if($_GET['man']==='true'){$('#man').prop('checked', true);}
-    if($_GET['woman']==='true'){$('#woman').prop('checked', true);}
-    if($_GET['children']==='true'){$('#children').prop('checked', true);}
+    if($_GET['man'] ==='true'){$('#man').prop('checked', true);}
+    if($_GET['woman'] ==='true'){$('#woman').prop('checked', true);}
+    if($_GET['children'] ==='true'){$('#children').prop('checked', true);}
 });
 </script>
 
@@ -222,7 +223,6 @@ $('#btn_search').click(function(){
   }
 });
 
-
 $('#home_page').click(function(){
   window.location.replace("index.php");
 });
@@ -248,7 +248,6 @@ $('#shop').click(function(){
 $('#btn_cart').click(function(){
     window.location.replace("cart.php");
 });
-
 
 
 </script>
@@ -283,11 +282,6 @@ else {
   ";
 }
  ?>
-
-
-
-
-
 
 
 <script>

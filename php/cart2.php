@@ -3,16 +3,17 @@
 <html>
 <head>
 	<title>Pagina principala</title>
-	<link href="../css/style.css" type="text/css" rel="stylesheet">
-	<link href="../css/Login.css" type="text/css" rel="stylesheet">
 	<link href="../css/animate.css" type="text/css" rel="stylesheet">
+	<link href="../css/style.css" type="text/css" rel="stylesheet">
+	<link href="../css/prestyle.css" type="text/css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="../mdb/css/mdb.min.css" rel="stylesheet">
-
+	
+    <link href="../mdb/css/mdb.min.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 <header> 
@@ -42,6 +43,28 @@
 		    <button class="btn btn-elegant animated shake" id="to_be_replaced">Log In</button>
 		 </div>
 	   </div>
+<?php 
+
+if(isset($_GET['news'])&&$_GET['news']==='succes'){
+$string = "<div class='alert alert-success' role='alert' id='alertnews'>
+  Felicitari! Te-ai abonat la newslatter-ul nostru !
+</div>";
+echo $string;
+}
+?>
+
+<script>
+	// ----    ADAUG PRETUL TOTALULUI DIN COS --
+   var total_req = new  XMLHttpRequest();
+   total_req.onload = function(){
+   	 $('#pret_cos').html(this.responseText + '  de lei');
+   };
+   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.send();x
+</script>
+
+
+
 
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
@@ -61,71 +84,36 @@
 	  <div style="visibility: hidden">ceva</div>
 </header>
 	
+<h2>Completeaza datele de livrare: </h2>
+<h3>Sau completeaza <b>automat</b> dupa datele salvate</h3><button class="btn btn-elegant">Completeaza automat</button>
+<h4>Daca nu ai date salvate, la finalul formularului apasa butonul de salvare a datelor</h4>
 
-<script>
-	// ----    ADAUG PRETUL TOTALULUI DIN COS --
-   var total_req = new  XMLHttpRequest();
-   total_req.onload = function(){
-   	 $('#pret_cos').html(this.responseText + '  de lei');
-   };
-   total_req.open('GET' , '../includes/total.inc.php' , true);
-   total_req.send();x
-</script>
-
-
-
-	 
-	  
-<div class="container-fluid row">
-		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
-		</div>
-		<div class="login-box animated fadeInUp">
+<div class="login-box animated fadeInUp">
 			<div class="box-header">
-				<h2>Log In</h2>
+				<h2>Date de contact</h2>
 			</div>
 		<form method="POST" action="../includes/login.inc.php">
-			<label for="username">Username</label>
+			<label for="oras">Oras: </label>
+			<br>
+			<input type="text" id="oras" name="oras"><br>
+			<label for="judet">Judet: </label>
+			<br>
+			<input type="text" id="judet" name="judet"><br>
+			<label for="strada">Strada: </label>
+			<br>
+			<input type="text" id="strada" name="strada"><br>
+			<label for="numar">Numar locuinta:</label>
+			<br>
+			<input type="text" id="numar" name="numar"><br>
+			<label for="numar_telefon">Numar de telefon: </label>
 			<br/>
-			<input type="text" id="username" name="username">
-			<br/>
-			<label for="password">Password</label>
-			<br/>
-			<input type="password" id="password" name="password">
-			<br/>
-			<input type="submit" name="submit">
-			<br/>
+			<input type="text" id="numar_telefon" name="numar_telefon"><br>
+			 <button type="button" name="btn_date_automate" id="btn_date_automate" class="btn btn-elegant xs">Salveaza aceste date si pentru urmatoarele comenzi</button>
+			 <button class="btn btn-success">Pasul urmator</button>
 		</form>
-			<a href="creare_cont.php"><p class="small">Nu ai un cont?</p></a>
+			
 		</div>
-	</div>
 
-
-<?php if(isset($_GET['username']))if($_GET['username']=='empty'){echo "<script>alert('Username necompletat');</script>";}
-      if(isset($_GET['password']))if($_GET['password']=='empty'){echo "<script>alert('password');</script>";}
-?>
-
-<script>
-	$(document).ready(function () {
-    	$('#logo').addClass('animated fadeInDown');
-    	$("input:text:visible:first").focus();
-	});
-	$('#username').focus(function() {
-		$('label[for="username"]').addClass('selected');
-	});
-	$('#username').blur(function() {
-		$('label[for="username"]').removeClass('selected');
-	});
-	$('#password').focus(function() {
-		$('label[for="password"]').addClass('selected');
-	});
-	$('#password').blur(function() {
-		$('label[for="password"]').removeClass('selected');
-	});
-</script>
-	  
- 
-	
 <footer class="container-fluid">
   <div class="row">
 	 <div class="col-md-5" >
@@ -205,13 +193,8 @@ $('#btn_cart').click(function(){
     window.location.replace("cart.php");
 });
 
-
-
 </script>
    
-
-
-
 <?php
  
 

@@ -17,6 +17,7 @@ $data->idp = $res['id'];
 $data->stoc = $res['stoc'];
 $data->pret = $res['pret'];
 $data->cantitate = $res1['cant'];
+$data->textm = $res['textm'];
 $json = json_encode($data);
 
 echo $json;

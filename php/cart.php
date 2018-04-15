@@ -10,9 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-    <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+	<link href="../mdb/css/mdb.min.css" rel="stylesheet">
 </head>
+
 <body class="container-fluid">
 <header> 
 	<div class="container-fluid row" id="banner">
@@ -150,12 +150,15 @@ $(document).on("click", "#1", function(){
 $(document).on("click", "#2", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=2");
 });
+
 $(document).on("click", "#3", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=3");
 });
+
 $(document).on("click", "#4", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=4");
 });
+
 $(document).on("click", "#5", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=5");
 });

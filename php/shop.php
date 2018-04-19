@@ -11,14 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-    <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+  <link href="../mdb/css/mdb.min.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 <header> 
   <div class="container-fluid row" id="banner">
-    <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
-      <button id="shop" class="btn btn-elegant">Shop</span>
+    <div class="col-md-4 col-xs-6 col-sm-2 text-center">
+      <button id="shop" class="btn btn-elegant">Shop</span></button>
     </div>
     <div class="col-md-6 col-xs-0 col-sm-6">
     
@@ -53,13 +52,18 @@
     <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
     <div class="col-md-4 col-sm-4"></div>
     <div class="col-md-4 col-sm-4">
-    <input type="text" name="search" placeholder="cautati" id="Search">
-      <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
-    <button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+
     
-     </div>
+
+    <input type="text" name="search" id="input_search" placeholder="cautati" >
+    <button id="btn_search" class="btn"> <i class="fa fa-search" style="font-size:17px;margin-right:20%;"> </i> </button>
+    
+    <button id="btn_cart" class="btn"> <i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+    
+     
   </div>
-    <div style="visibility: hidden">ceva</div>
+</div>
+
 </header>
  
 
@@ -208,20 +212,16 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     </div>
   </div>
 </footer>
+
 </body>
   
+
+
 <script>
-var ok_search=true;
-$('#Search').css('visibility' , 'hidden');
+
 $('#btn_search').click(function(){
-  if(ok_search==true){
-  $('#Search').css('visibility' , 'visible');
-  ok_search=false;
-  }
-  else{
-    $('#Search').css('visibility' , 'hidden');
-    ok_search=true;
-  }
+  $text = $('#input_search').val();
+  window.location.replace('shop.php?search=' + $text);
 });
 
 $('#home_page').click(function(){

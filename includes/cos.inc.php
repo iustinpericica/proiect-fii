@@ -22,6 +22,6 @@ if(isset($_GET['id']) && isset($_GET['cantitate'])){
    if(!$res) $conn->query($sql);
    $string = 'Location: ../produse/';
    $string .= $idp;
-   $string.='.p.php';
+   $string.='.p.php?cos=true';
    header($string);  
 };

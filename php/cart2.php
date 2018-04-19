@@ -75,8 +75,7 @@ echo $string;
 	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
-		<input type="text" name="search" placeholder="cautati" id="Search">
-	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+		
 		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
 		
 	   </div>
@@ -180,7 +179,10 @@ var $_GET = {};
 	$('#completeaza_automat').click(function(){
        var req = new XMLHttpRequest();
        req.onload = function(){
-       	 var data = JSON.parse(this.responseText);
+       	 var data = this.responseText;
+       	 if(data === 'nu') $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Salveaza cateva date initital!</div>');
+       	 else {
+       	 data =JSON.parse(this.responseText);
        	 $('input[name=oras]').val(data['oras']);
        	 $('input[name=judet]').val(data['judet']);
        	 $('input[name=strada]').val(data['strada']);
@@ -188,6 +190,7 @@ var $_GET = {};
        	 $('input[name=numar_telefon]').val(data['numar_telefon']);
        	 $('input[name=nume]').val(data['nume']);
        	 $('input[name=prenume]').val(data['prenume']);
+       	}
 
        } 
        req.open('GET' , '../includes/datecart.inc.php' , true);

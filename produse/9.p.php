@@ -61,6 +61,10 @@
 </header>
 
 <script>
+	$(document).on("click", "#mergi", function(){
+        window.location.replace('../php/cart.php');
+   });
+
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
@@ -68,7 +72,7 @@
    	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
-   total_req.send();x
+   total_req.send();
 </script>
 	
 <div class="row">
@@ -83,6 +87,31 @@
  <div class="col-md-7 col-xs-12 col-sm-7 col-xl-7">
    <p class="text-center" style="font-size:20px;" id="descriere">Descriere:</p>
    <p id="textm"></p>
+   <br><br>
+   <div id="mergi_cos">  	 
+</div>
+<script>
+	var $_GET = {};
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    	if($_GET['cos'] == 'true'){
+
+           $('#mergi_cos').append('<div class="row" style="font-size:17px;">Produsul tau a fost adaugat in cos, acum poti sa:</div>\
+   	 <div class="row"> \
+   	 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6" style="font-size: 20px;">Continui sa navighezi pe aceasta pagina sau</div>\
+   	 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-default" id="mergi">Mergi la cos</button></div>\
+   </div>\
+   <br><br>');
+    }
+
+
+});
+
+</script>
    <div class="row">
    	<div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
    	 <div class="col-md-3 col-xs-3 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate"></div>

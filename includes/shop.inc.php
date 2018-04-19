@@ -80,7 +80,29 @@ if(isset($_GET['children'])){
 	}
 };
 
-if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children'])){
+$ok=false;
+if(isset($_GET['search'])){
+	$ok=true;
+   $text = $_GET['search'];
+   $sql = "SELECT * FROM produse WHERE text LIKE '%$text%';";
+   $result = $conn -> query($sql);
+   while ($row=mysqli_fetch_row($result)){
+		$var = $row[0];
+		$image = "../images/sock$var.jpg";
+		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
+<div class="view overlay">
+    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <div class="mask flex-center rgba-black-strong">
+        <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
+    </div>
+    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+</div>
+</div>';
+	}
+
+}
+
+if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children']) && $ok===false){
 	while ($row=mysqli_fetch_row($all)){
 		$var = $row[0];
 		$image = "../images/sock$var.jpg";
@@ -95,3 +117,4 @@ if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children'])){
 </div>';
 	}
 };
+

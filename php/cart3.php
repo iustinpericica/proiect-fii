@@ -76,8 +76,7 @@ echo $string;
 	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
-		<input type="text" name="search" placeholder="cautati" id="Search">
-	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+		
 		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
 		
 	   </div>
@@ -94,7 +93,7 @@ echo $string;
    	 <div class="col-md-4 col-xs-0 col-sm-4 col-xl-4"></div>
    	 <div class="col-md-4 col-xs-12 col-sm-4 col-xl-4"><h3 style="display: inline; border-bottom: 1px solid  black;"> Detalii livrare</h3></div>
    	 
-   	 <div class="col-md-4 col-xs-12 col-sm-4 col-xl-4"><button class="btn btn-default">Schimba</button></div></div>
+   	 <div class="col-md-4 col-xs-12 col-sm-4 col-xl-4"><button class="btn btn-default" id="schimba_livrare">Schimba</button></div></div>
      <p>Strada: <span class="strada"></span></p>
      <p>Oras: <span id="oras"></span></p>
      <p>Judet: <span id="judet"></span></p>
@@ -263,18 +262,6 @@ echo $string;
 </body>
 	
 <script>
-var ok_search=true;
-$('#Search').css('visibility' , 'hidden');
-$('#btn_search').click(function(){
-	if(ok_search==true){
-	$('#Search').css('visibility' , 'visible');
-	ok_search=false;
-	}
-	else{
-		$('#Search').css('visibility' , 'hidden');
-		ok_search=true;
-	}
-});
 
 
 $('#home_page').click(function(){
@@ -303,6 +290,9 @@ $('#btn_cart').click(function(){
     window.location.replace("cart.php");
 });
 
+$('#schimba_livrare').click(function(){
+    window.location.replace('cart2.php');
+});
 
 </script>
    

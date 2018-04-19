@@ -35,8 +35,11 @@ else {
 			$nume = $_POST['nume'];
 			$prenume = $_POST['prenume'];
 			$numar_telefon = $_POST['numar_telefon'];
+			if($nume ===''){header('Location: ../php/cart22.php?numef=empty');die();}
+			if($prenume ===''){header('Location: ../php/cart22.php?prenumef=empty');die();}
+			if($numar_telefon ===''){header('Location: ../php/cart22.php?numar_telefonf=empty');die();}	
 			$sql1 = "UPDATE date_facturare SET nume = '$nume' , prenume = '$prenume' , numar_telefon = '$numar_telefon' WHERE idc='$idc';";
-			$sql = "INSERT INTO date_facturare(idc , nume , prenume , numar_telefon) VALUES ('$idc' , '$nume' , '$prenume' , '$numar_telefon';";
+			$sql = "INSERT INTO date_facturare(idc , nume , prenume , numar_telefon) VALUES ('$idc' , '$nume' , '$prenume' , '$numar_telefon');";
 			$result = $conn->query($sql);
             if(!$result)$conn->query($sql1);
 		}
@@ -50,6 +53,14 @@ else {
 			$judet = $_POST['judet'];
 			$localitate = $_POST['localitate'];
 			$adresa = $_POST['adresa'];
+			if($nume_companie ===''){header('Location: ../php/cart22.php?nume_companie=empty');die();}
+		    if($cui ===''){header('Location: ../php/cart22.php?cui=empty');die();}
+			if($numar_comert ===''){header('Location: ../php/cart22.php?numar_comert=empty');die();}
+			if($banca ===''){header('Location: ../php/cart22.php?banca=empty');die();}
+			if($cont ===''){header('Location: ../php/cart22.php?cont=empty');die();}
+		    if($judet ===''){header('Location: ../php/cart22.php?judet=empty');die();}
+		    if($localitate ===''){header('Location: ../php/cart22.php?localitate=empty');die();}
+		    if($adresa ===''){header('Location: ../php/cart22.php?adresa=empty');die();}
 			$sql = "INSERT INTO date_facturare_juridica(nume_companie , cui , cdirc , banca , cont , localitate , adresa , idc) VALUES('$nume_companie' , '$cui' , '$numar_comert' , '$banca' , '$cont' , '$judet' , '$localitate' , '$adresa' , '$idc');";
 			$result1 = $conn->query($sql);
 			if(!$result1){

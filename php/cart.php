@@ -60,13 +60,12 @@ echo $string;
 	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
-		<input type="text" name="search" placeholder="cautati" id="Search">
-	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+		
 		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
 		
 	   </div>
 	</div>
-	  <div style="visibility: hidden">ceva</div>
+	
 </header>
 <div class="row" id="mesaje">
 </div>
@@ -283,18 +282,6 @@ $(document).on("click", "#u10", function(){
 </body>
 	
 <script>
-var ok_search=true;
-$('#Search').css('visibility' , 'hidden');
-$('#btn_search').click(function(){
-	if(ok_search==true){
-	$('#Search').css('visibility' , 'visible');
-	ok_search=false;
-	}
-	else{
-		$('#Search').css('visibility' , 'hidden');
-		ok_search=true;
-	}
-});
 
 
 $('#home_page').click(function(){

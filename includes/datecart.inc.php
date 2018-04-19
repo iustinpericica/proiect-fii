@@ -9,4 +9,5 @@ session_start();
 $idc = $_SESSION['idc'];
 $result = $conn->query("SELECT * FROM date WHERE idc = '$idc'");
 $row = mysqli_fetch_assoc($result);
-echo json_encode($row);
+if($row)echo json_encode($row);
+else echo 'nu';

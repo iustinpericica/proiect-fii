@@ -76,8 +76,7 @@ echo $string;
 	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
-		<input type="text" name="search" placeholder="cautati" id="Search">
-	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+		
 		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
 		
 	   </div>
@@ -89,6 +88,9 @@ echo $string;
 <div class="row">
 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-elegant btn-block" id="persoana_fizica_btn" style="font-size:20px;">Sunt persoana <b>fizica</b></button></div>
 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-elegant btn-block" id="persoana_juridica_btn" style="font-size:20px;">Sunt persoana <b>juridica</b></button></div>
+</div>
+
+<div class="container-fluid text-center" id="erori">
 </div>
 
 <div id="form">
@@ -256,18 +258,6 @@ $('#persoana_juridica_btn').click(function(){
 </body>
 	
 <script>
-var ok_search=true;
-$('#Search').css('visibility' , 'hidden');
-$('#btn_search').click(function(){
-	if(ok_search==true){
-	$('#Search').css('visibility' , 'visible');
-	ok_search=false;
-	}
-	else{
-		$('#Search').css('visibility' , 'hidden');
-		ok_search=true;
-	}
-});
 
 
 $('#home_page').click(function(){
@@ -331,6 +321,33 @@ else {
 }
  ?>
 
+
+<script type="text/javascript">
+	
+	var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    if($_GET['numef'] ==='empty'){$('#persoana_fizica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele!</div>');}
+    if($_GET['prenumef'] ==='empty'){$('#persoana_fizica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi prenumele!</div>');}
+    if($_GET['numar_telefonf'] ==='empty'){$('#persoana_fizica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numarul de telefon!</div>');}
+    if($_GET['nume_companie'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele companiei!</div>');}
+    if($_GET['cui'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi codul unic de inregistrare(CUI)!</div>');}
+    if($_GET['numar_comert'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numarul de inregistrare in registrul comertului!</div>');}
+    if($_GET['banca'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele bancii!</div>');}
+    if($_GET['cont'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele contului!</div>');}
+    if($_GET['judet'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele judetului!</div>');}
+    if($_GET['localitate'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele localitatii!</div>');}
+    if($_GET['adresa'] ==='empty'){$('#persoana_juridica_btn').trigger('click');$('#erori').append('<div class="row red-text">Se pare ca ai uitat sa completezi numele adresei!</div>');}
+
+
+
+});
+</script>
 
 
 

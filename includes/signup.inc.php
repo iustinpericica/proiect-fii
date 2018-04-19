@@ -46,6 +46,8 @@ if(isset($_POST['submit'])){
 		die();
     }
 
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)){header('Location: ../php/creare_cont.php?email=wrong');die();}
+
     if(empty($nrtelefon)){
     	header('Location: ../php/creare_cont.php?nrtelefon=empty');
 		die();
@@ -60,3 +62,6 @@ if(isset($_POST['submit'])){
     $conn->query("INSERT INTO users(user_first,user_last,user_email,user_name,user_nrtelefon,user_password) VALUES('$firstname' , '$lastname' , '$email' , '$username' , '$nrtelefon' , '$password')");
 
 }
+
+
+header('Location: ../php/index.php');

@@ -68,9 +68,9 @@
    	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
-   total_req.send();x
+   total_req.send();
 </script>	
-	
+
 <div class="row">
  <div class="col-md-5 col-xs-12 col-col-sm-5 col-xl-5">
  	<div class="view overlay">
@@ -81,8 +81,8 @@
 </div>
  </div>
  <div class="col-md-7 col-xs-12 col-sm-7 col-xl-7">
-   <p class="text-center" style="font-size:20px;" id="descriere">Descriere:</p>
-   <p id="textm"></p>
+   <p style="font-size:20px;" id="descriere">Descriere:</p>
+   
    <div class="row">
    	<div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
    	 <div class="col-md-3 col-xs-3 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate"></div>
@@ -102,6 +102,7 @@
     $('#cantitate').replaceWith(res['stoc']);
     $('#pret').replaceWith(res['pret']);
     $('#textm').replaceWith(res['textm']);
+    $('#textm').css('font-size' , '20px;');
  };
  req.open('GET' , '../includes/produse.inc.php?id=1' , true);
  req.send();
@@ -202,9 +203,14 @@ $('#btn_cart').click(function(){
 });
 
 
+$(document).on("click", "#mergi", function(){
+        window.location.replace('../php/cart.php');
+   });
 
 </script>
    
+
+
 
 
 

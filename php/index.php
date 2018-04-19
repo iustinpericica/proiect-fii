@@ -55,9 +55,10 @@ echo $string;
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 $('#pret_cos').html(this.responseText + '  de lei');
+   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
+   	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
-   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();x
 </script>
 

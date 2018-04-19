@@ -25,4 +25,4 @@ if ($result)
   mysqli_free_result($result);
 }
 
-echo $total;
+if(isset($_GET['show']))echo $total;

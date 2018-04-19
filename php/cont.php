@@ -5,17 +5,16 @@ session_start();
 <html>
 <head>
 	<title>Pagina principala</title>
+	<link href="../css/style.css" type="text/css" rel="stylesheet">
 	<link href="../css/prestyle.css" type="text/css" rel="stylesheet">
 	<link href="../css/cont.css" type="text/css" rel="stylesheet">
+	<link href="../css/animate.css" type="text/css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="../css/animate.css" type="text/css" rel="stylesheet">
     <link href="../mdb/css/mdb.min.css" rel="stylesheet">
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 <header> 
@@ -69,13 +68,14 @@ session_start();
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 $('#pret_cos').html(this.responseText + '  de lei');
+   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
+   	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
-   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();
 </script>
 
-<div class="container-fluid">
+<div class="container-fluid" style="font-size:20px;">
 
 <div class="text-center" id="contul_meu" style="font-size:30px;">Contul meu </div>
 
@@ -90,28 +90,28 @@ session_start();
   <div class="col-md-1 col-xs-2 col-sm-1 col-xl-1 border"></div>
   <div class="col-md-8 col-xs-0 col-sm-6 col-xl-8"></div>
 </div>
-
+<br>
 <div class="row comenzi_cont" id="comenzi">
   
   <div class="col-md-4 col-xs-10 col-sm-6 col-xl-4 " id="btn_comenzi"> Comenzile mele</div>
   <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2"><i class="fa fa-arrow-right" style="font-size:24px"></i></div>
   <div class="col-md-6 col-xs-0 col-sm-4 col-xl-6"></div>
 </div>
-
+<br>
 <div class="row comenzi_cont" id="date" >
   
   <div class="col-md-4 col-xs-10 col-sm-6 col-xl-4 " id="btn_date"> Datele mele</div>
   <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2"><i class="fa fa-arrow-right" style="font-size:24px"></i></div>
   <div class="col-md-6 col-xs-0 col-sm-4 col-xl-6"></div>
 </div>
-
+<br>
 <div class="row comenzi_cont" id="parola">
   
   <div class="col-md-4 col-xs-10 col-sm-6 col-xl-4 " id="btn_schimba"> Schimba parola mea</div>
   <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2"><i class="fa fa-arrow-right" style="font-size:24px"></i></div>
   <div class="col-md-6 col-xs-0 col-sm-4 col-xl-6"></div>
 </div>
-
+<br>
 <div class="row comenzi_cont" id="logout">
   
   <div class="col-md-4 col-xs-10 col-sm-6 col-xl-4" id="btn_logout">Log out</div>
@@ -154,7 +154,7 @@ session_start();
 
 
 <br>
-<div id="content_date">
+<div id="content_date" style="font-size:20px;margin-left: 15px;">
 	<p>Nume: <span id="nume"></span></p>
 	<p>Prenume: <span id="prenume"></span></p>
 	<p>E-Mail: <span id="email"></span></p>
@@ -162,6 +162,10 @@ session_start();
 </div>
 <br><br>
 
+
+<div id="comenzi_date" style="font-size:20px;margin-left: 15px;">
+	
+</div>	
 
 <div id="schimba_parola">
   
@@ -175,7 +179,7 @@ session_start();
 			<input type="password" name="lastpass"><br>
 			<label for="password">Parola noua: </label><br>
 			<input type="password" name="nowpass"><br>
-			<label for="password">Confirmati parola noua: </label>
+			<label for="password">Confirmati parola noua: </label><br>
 			<input type="password" name="repass"><br>
 			<input type="submit" name="submit">
 			<br/>

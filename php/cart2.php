@@ -12,8 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-    <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+	<link href="../mdb/css/mdb.min.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
 <header> 
@@ -57,10 +56,11 @@ echo $string;
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 $('#pret_cos').html(this.responseText + '  de lei');
+   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
+   	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
-   total_req.open('GET' , '../includes/total.inc.php' , true);
-   total_req.send();x
+   total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
+   total_req.send();
 </script>
 
 
@@ -85,14 +85,23 @@ echo $string;
 </header>
 	
 <h2>Completeaza datele de livrare: </h2>
-<h3>Sau completeaza <b>automat</b> dupa datele salvate</h3><button class="btn btn-elegant">Completeaza automat</button>
+<h3>Sau completeaza <b>automat</b> dupa datele salvate</h3><button class="btn btn-elegant" id="completeaza_automat">Completeaza automat</button>
 <h4>Daca nu ai date salvate, la finalul formularului apasa butonul de salvare a datelor</h4>
+
+<div class="row" id="erori">
+</div>
 
 <div class="login-box animated fadeInUp">
 			<div class="box-header">
 				<h2>Date de contact</h2>
 			</div>
-		<form method="POST" action="../includes/login.inc.php">
+		<form method="POST" action="../includes/cart2.inc.php">
+			<label for="nume">Nume: </label>
+			<br>
+			<input type="text" id="nume" name="nume"><br>
+			<label for="prenume">Prenume: </label>
+			<br>
+			<input type="text" id="prenume" name="prenume"><br>
 			<label for="oras">Oras: </label>
 			<br>
 			<input type="text" id="oras" name="oras"><br>
@@ -108,11 +117,83 @@ echo $string;
 			<label for="numar_telefon">Numar de telefon: </label>
 			<br/>
 			<input type="text" id="numar_telefon" name="numar_telefon"><br>
-			 <button type="button" name="btn_date_automate" id="btn_date_automate" class="btn btn-elegant xs">Salveaza aceste date si pentru urmatoarele comenzi</button>
-			 <button class="btn btn-success">Pasul urmator</button>
+			 <button type="button" name="btn_date_automate" id="btn_date_automate" class="btn btn-elegant xs" >Salveaza aceste date si pentru urmatoarele comenzi</button>
+			 <button type="button" class="btn btn-success" id="pas_urmator">Pasul urmator</button>
 		</form>
-			
-		</div>
+</div>
+
+<script>
+
+$('#pas_urmator').click(function(){
+var nume = $('#nume').val();
+var prenume = $('#prenume').val();
+var oras = $('#oras').val();
+var judet = $('#judet').val();
+var strada = $('#strada').val();
+var numar = $('#numar').val();
+var numar_telefon = $('#numar_telefon').val();
+
+if(!nume)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numele!</div>');
+else if(!prenume)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi prenumele!</div>');
+else if(!oras)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi orasul!</div>');
+else if(!judet) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi judetul!</div>');
+      else if(!strada) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi strada!</div>');
+            else if(!numar) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numarul adresei!</div>');
+                 else if(!numar_telefon) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numarul de telefon!</div>');
+                     else window.location.replace('../includes/date.inc.php?oras=' + oras + '&judet=' + judet + '&strada=' + strada + '&numar=' + numar + '&numar_telefon=' + numar_telefon + '&cart3=true' + '&nume=' + nume + '&prenume=' + prenume);
+	});
+
+	$('#btn_date_automate').click(function(){
+var oras = $('#oras').val();
+var judet = $('#judet').val();
+var strada = $('#strada').val();
+var numar = $('#numar').val();
+var nume = $('#nume').val();
+var prenume = $('#prenume').val();
+var numar_telefon = $('#numar_telefon').val();
+if(!nume)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numele!</div>');
+else if(!prenume)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi prenumele!</div>');
+else if(!oras)$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi orasul!</div>');
+else if(!judet) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi judetul!</div>');
+      else if(!strada) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi strada!</div>');
+            else if(!numar) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numarul adresei!</div>');
+                 else if(!numar_telefon) $('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft red-text" style="font-size:15px;">Ai uitat sa completezi numarul de telefon!</div>');
+                     else window.location.replace('../includes/date.inc.php?oras=' + oras + '&judet=' + judet + '&strada=' + strada + '&numar=' + numar + '&numar_telefon=' + numar_telefon + '&nume=' + nume + '&prenume=' + prenume);
+	});
+</script>
+
+<script>
+	
+var $_GET = {};
+ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    if($_GET['succes']==='false'){$('#erori').append('<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 animated bounceInLeft blue-text" style="font-size:15px;">Se pare ca deja ai avut datele introduse o data, asa ca le-am actualizat!</div>');}
+
+});
+</script>
+
+<script>
+	$('#completeaza_automat').click(function(){
+       var req = new XMLHttpRequest();
+       req.onload = function(){
+       	 var data = JSON.parse(this.responseText);
+       	 $('input[name=oras]').val(data['oras']);
+       	 $('input[name=judet]').val(data['judet']);
+       	 $('input[name=strada]').val(data['strada']);
+       	 $('input[name=numar]').val(data['numar']);
+       	 $('input[name=numar_telefon]').val(data['numar_telefon']);
+       	 $('input[name=nume]').val(data['nume']);
+       	 $('input[name=prenume]').val(data['prenume']);
+
+       } 
+       req.open('GET' , '../includes/datecart.inc.php' , true);
+       req.send();
+	});
+</script>
 
 <footer class="container-fluid">
   <div class="row">

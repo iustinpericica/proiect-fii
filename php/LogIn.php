@@ -66,9 +66,10 @@
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 $('#pret_cos').html(this.responseText + '  de lei');
+   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
+   	else  $('#pret_cos').html(this.responseText + ' de lei');
    };
-   total_req.open('GET' , '../includes/total.inc.php' , true);
+   total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();x
 </script>
 
@@ -96,7 +97,7 @@
 			<input type="submit" name="submit">
 			<br/>
 		</form>
-			<a href="creare_cont.php"><p class="small">Nu ai un cont?</p></a>
+			<a href="creare_cont.php"><p >Nu ai un cont?</p></a>
 		</div>
 	</div>
 

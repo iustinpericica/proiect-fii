@@ -7,7 +7,7 @@
    $mail ->IsSmtp();
    $mail ->SMTPDebug = 0;
    $mail ->SMTPAuth = true;
-   $mail ->SMTPSecure = 'ssl';
+   $mail ->SMTPSecure = 'ssl';e
    $mail ->Host = "smtp.gmail.com";
    $mail ->Port = 465; // or 587
    $mail ->IsHTML(true);

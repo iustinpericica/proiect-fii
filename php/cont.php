@@ -56,19 +56,51 @@ session_start();
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
 	  <div style="visibility: hidden">ceva</div>
 </header>
 
+<?php if(!isset($_SESSION['idc'])){echo '<h3 class="red-text text-center">Fa-ti un cont mai intai</h3><script>
+
+
+$("#home_page").click(function(){
+	window.location.replace("index.php");
+});
+
+$("#fb").click(function(){
+	window.location.replace("https://www.google.com");
+});
+
+	
+$("#insta").click(function(){
+	window.location.replace("https://www.google.com");
+});
+
+$("#to_be_replaced").click(function(){
+	
+	window.location.replace("LogIn.php");
+});
+
+$("#shop").click(function(){
+	window.location.replace("shop.php");
+});
+
+$("#btn_cart").click(function(){
+    window.location.replace("cart.php");
+});
+
+</script>';die();};?>
+
 <script>
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
-   	else  $('#pret_cos').html(this.responseText + ' de lei');
+   	 if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
+   	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+   	 
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();

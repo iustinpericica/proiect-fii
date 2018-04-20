@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,13 +62,17 @@ echo $string;
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
 	
 </header>
-<div class="row" id="mesaje">
+
+
+<?php if(isset($_SESSION['idc'])){
+     
+	echo '<div class="row" id="mesaje">
 </div>
  <div class="row">
  	<div class="col-md-8 col-xs-12 col-sm-6 col-xl-8" id="produse_cos">
@@ -79,7 +84,8 @@ echo $string;
  		<p>Cost livrare: <span id="livrare"></span></p>
  		<button type="button" class="btn btn-success" id="pu">Pasul urmator:</button>
     </div>
- </div>
+ </div>';}
+?>	
 
 <script>
 
@@ -237,12 +243,16 @@ $(document).on("click", "#u10", function(){
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
-   	else  $('#pret_cos').html(this.responseText + ' de lei');
+   	 if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
+   	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();
 </script>
+
+<?php if(!isset($_SESSION['idc'])){echo '<h3 class="red-text text-center">Mai intai fa-ti un cont!</h3>';}
+?>	
 
 <footer class="container-fluid">
   <div class="row">
@@ -280,7 +290,9 @@ $(document).on("click", "#u10", function(){
 	</div>
 </footer>
 </body>
-	
+
+
+
 <script>
 
 
@@ -342,8 +354,6 @@ else {
  	";
 }
  ?>
-
-
 
 
 </html>

@@ -52,7 +52,7 @@
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
+		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
@@ -63,8 +63,8 @@
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
-   	 if(this.responseText<=19) $('#pret_cos').html(this.responseText + ' lei');
-   	else  $('#pret_cos').html(this.responseText + ' de lei');
+   	  if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
+   	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();x

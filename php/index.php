@@ -68,25 +68,40 @@ echo $string;
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
 	 
-	  <div class="col-md-1 col-sm-1" ><a href="contact.php">Contact</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="shop.php">Magazin</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
-	  <div class="col-md-4 col-sm-4"></div>
-	  <div class="col-md-4 col-sm-4">
+	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="contact.php">Contact</a></div>
+	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="shop.php">Magazin</a></div>
+	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="harta.php">Harta</a></div> 
+	  <div class="col-md-4 col-sm-4 col-xs-12" style="font-size:20px;"></div>
+	  <div class="col-md-4 col-sm-4 col-xs-12">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
 	  <div style="visibility: hidden">ceva</div>
 </header>
 	
-	
+<?php
+if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
+	echo '<div class="row container-fluid text-center">Se pare ca te-ai mai conectat la noi, vrei sa mergi la pagina de LogIn?<button id="mergi" class="btn btn-default">Mergi</button> saaaau <button class="btn btn-danger" id="uita">Uita de mine :(</button></div>
+	<script>
+    $("#mergi").click(function(){
+       window.location.replace("LogIn.php");
+    });
+    $("#uita").click(function(){
+       window.location.replace("../includes/uita.inc.php");
+    });
+    </script>
+	'
+       
+	  ;
+}
+?>
 <footer class="container-fluid">
   <div class="row">
-	 <div class="col-md-5" >
-	 #poza
+	 <div class="col-md-5 center-block text-center">
+	 <img src="../images/logo.png" class="img-fluid " id="logo">
 	 </div>
 	  <div class="col-md-7">
 	    <div class="row">
@@ -121,6 +136,19 @@ echo $string;
 </footer>
 </body>
 	
+<style>
+  #logo{
+  	height:100px;
+  }
+
+  @media only screen and (max-width: 600px) {
+   #logo{
+  	height:50px;
+  }
+}
+
+</style>
+
 <script>
 
 

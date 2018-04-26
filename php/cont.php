@@ -4,10 +4,9 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pagina principala</title>
+	<title>Cont</title>
 	<link href="../css/style.css" type="text/css" rel="stylesheet">
 	<link href="../css/prestyle.css" type="text/css" rel="stylesheet">
-	<link href="../css/cont.css" type="text/css" rel="stylesheet">
 	<link href="../css/animate.css" type="text/css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,9 +14,10 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../mdb/css/mdb.min.css" rel="stylesheet">
+    <link href="../css/cont.css" type="text/css" rel="stylesheet">
 </head>
-<body class="container-fluid">
-<header> 
+
+<header class="container-fluid"> 
 	<div class="container-fluid row" id="banner">
 	  <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
 		  <button id="shop" class="btn btn-elegant">Shop</span>
@@ -56,7 +56,7 @@ session_start();
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+		<button id="btn_cart" class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
@@ -181,6 +181,9 @@ $("#btn_cart").click(function(){
       window.location.replace('../includes/logout.inc.php');
 
    });
+
+
+
 </script>
 
 
@@ -194,9 +197,147 @@ $("#btn_cart").click(function(){
 <br><br>
 
 
-<div id="comenzi_date" style="font-size:20px;margin-left: 15px;">
+
+<div class="row container-fluid" id="comenzi_date" style="font-size:20px;margin-left: 15px;">
 	
 </div>	
+
+<script>
+   jQuery.ajaxSetup({async:false});
+   var v_comenzi = [];
+   var req = new XMLHttpRequest();
+   req.onload = function(){
+   	  v_comenzi = JSON.parse(this.responseText);
+   }
+   req.open('GET' , '../includes/comenzi_id.inc.php');
+   req.send();
+
+</script>
+
+<script>
+	$('#comenzi').click(function(){
+   $('#comenzi_date').html(' ');
+   for(i in v_comenzi){
+   var id_comanda = v_comenzi[i];
+   var data;
+   var url = '../includes/comenzi.inc.php?id=';
+   url+=id_comanda;
+   $.get(url , function(data , status){
+       data = JSON.parse(data);
+       console.log(data);
+       var datac = data['produse']['date'];
+       var pret = data['livrare']['pret'];
+       datac = datac.toString();
+       var produse = data['produse'];
+       var string='';
+       for(i in produse){
+       	  if(i!= 'date' && i!=null && i!='idc' && i!='id' && i[0] == 'p'){
+       	  	  if(produse[i]!=null){
+              var url = '../includes/produse_text.inc.php?idp=';
+              url+=produse[i].toString();
+       	  	  $.get(url , function(dataa , status){
+                  dataa = JSON.parse(dataa);
+                  var photo = '../images/sock';
+                  photo+=produse[i];
+                  var cant = 'c';
+                  cant+=produse[i];
+                  string += '<div class="row container-fluid"><img class="img-responsive img-thumbnail imgdf" src="' + photo + '.jpg"><br>Produs:' + dataa['text']  + ',pret: <b>' + data['livrare']['pret'] + '</b> de lei, cantitate cumparata:<b>' + produse[cant] + '</b></div><br><br>'
+       	  	  });
+       	  }
+       	  }
+
+       }
+       var date_facturare = data['facturare'];
+       var date_livrare = data['livrare'];
+       var facturare='';
+       if(date_facturare['nume_companie']){
+       	 facturare+='Nume companie: ';
+       	 facturare+=date_facturare['nume_companie'];
+       	 facturare+='<br>';
+
+       	 facturare+='CUI: ';
+       	 facturare+=date_facturare['cui'];
+       	 facturare+='<br>';
+
+       	 facturare+='Numar de inregistrare in registrul comertului: ';
+       	 facturare+=date_facturare['numar_inregistrare'];
+       	 facturare+='<br>';
+
+       	 facturare+='Banca: ';
+       	 facturare+=date_facturare['banca'];
+       	 facturare+='<br>';
+
+       	 facturare+='Cont: ';
+       	 facturare+=date_facturare['cont'];
+       	 facturare+='<br>';
+
+         facturare+='Adresa: ';
+       	 facturare+=date_facturare['adresa'];
+       	 facturare+='<br>';
+
+       	 facturare+='Judet: ';
+       	 facturare+=date_facturare['judet'];
+       	 facturare+='<br>';
+
+       	 facturare+='Localitate: ';
+       	 facturare+=date_facturare['localitate'];
+       	 facturare+='<br>';
+       }
+       else {
+         facturare+='Nume: ';
+         facturare+=date_facturare['nume'];
+         facturare+='<br>';
+
+         facturare+='Prenume: ';
+         facturare+=date_facturare['prenume'];
+         facturare+='<br>';
+
+         facturare+='Numar de telefon: ';
+         facturare+=date_facturare['numar_telefon'];
+         facturare+='<br>';
+
+
+       }
+
+      livrare='';
+      livrare+='<b>Pret</b>: ';
+      livrare+=date_livrare['pret'];
+      livrare+='<br>';
+      
+      livrare+='Judet: ';
+      livrare+=date_livrare['judet'];
+      livrare+='<br>';
+
+      livrare+='Oras: ';
+      livrare+=date_livrare['oras'];
+      livrare+='<br>';
+      
+      livrare+='Strada: ';
+      livrare+=date_livrare['strada'];
+      livrare+='<br>';
+
+      livrare+='Numar locuinta: ';
+      livrare+=date_livrare['numar'];
+      livrare+='<br>';
+
+      livrare+='Numar de telefon: ';
+      livrare+=date_livrare['numar_telefon'];
+      livrare+='<br>';
+
+       $('#comenzi_date').append('<div class="row container-fluid"><b style="font-size:25px;">Plasata pe:' + datac + ' Pret total: ' + pret + 'de lei</b></div><br><div class="text-center">Id comanda: ' + id_comanda + '</div><br><br>' + string + '\
+    <div class="row container-fluid"></div><br>\
+    <div class="row container-fluid">Facturare:<br>' + facturare + '</div><br><br>\
+    <div class="row container-fluid">Livrare:<br>' + livrare +  '</div><br><br>\
+    <div class="row container-fluid">Metoda de plata-ramburs: </div>');
+
+   });
+   
+   
+}
+
+});
+
+</script>
 
 <div id="schimba_parola">
   
@@ -258,7 +399,9 @@ $('#schimba_parola').css('visibility' , 'hidden');
 		  </div>
 	  </div>
 	</div>
+
 </footer>
+
 </body>
 	
 <script>
@@ -326,7 +469,18 @@ else {
 }
  ?>
 
-
+<style>
+ .imgdf{
+ 	height:200px;
+ 	widht:auto;
+ }
+ @media only screen and (max-width:600px)  {
+.imgdf{
+ 	height:120px;
+ 	widht:auto;
+ }
+}
+</style>
 
 
 </html>

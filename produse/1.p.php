@@ -51,14 +51,15 @@
 	  <div class="col-md-1 col-sm-1"><a href="../php/harta.php">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
-		<input type="text" name="search" placeholder="cautati" id="Search">
-	    <button id="btn_search"  class="btn"><i class="fa fa-search" style="font-size:17px;margin-right:20%;"></i></button>
+
 		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos">0 lei</span>
 		
 	   </div>
 	</div>
 	  <div style="visibility: hidden">ceva</div>
 </header>
+
+
 
 <script>
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
@@ -71,6 +72,7 @@
    total_req.send();
 </script>	
 
+
 <div class="row">
  <div class="col-md-5 col-xs-12 col-col-sm-5 col-xl-5">
  	<div class="view overlay">
@@ -80,17 +82,28 @@
     </div>
 </div>
  </div>
+
+
  <div class="col-md-7 col-xs-12 col-sm-7 col-xl-7">
+   <p class="text-center" style="font-size:20px;" id="descriere">Descriere:</p>
+   <p id="textm"></p>
+   <br><br>
+   <div id="mergi_cos">  	 
+</div>
+</div>
+
+ <div class="col-md-7 col-xs-12 col-sm-7 col-xl-7 container-fluid">
    <p style="font-size:20px;" id="descriere">Descriere:</p>
    
    <div class="row">
-   	<div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
-   	 <div class="col-md-3 col-xs-3 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate"></div>
-   	 <div class="col-md-3 col-xs-3 col-sm-3 col-xl-3"><button class="btn btn-elegant" id="btn_cumpara" style="font-size:10px;">Adauga in cos!</button></div>
-   	 <div class="col-md-4 col-xs-4 col-sm-4 col-xl-4">cantitate ramasa <span id="cantitate"></span></div>
+   	<div class="col-md-2 col-xs-6 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
+   	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate"></div>
+   	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><button class="btn btn-elegant" id="btn_cumpara" style="font-size:10px;">Adauga in cos!</button></div>
+   	 <div class="col-md-4 col-xs-6 col-sm-4 col-xl-4">cantitate ramasa <span id="cantitate"></span></div>
  </div>
 
 </div>
+
 
 </div>
 
@@ -121,6 +134,29 @@
        	  window.location.replace(string);
        }
 	});
+</script>
+
+<script>
+	var $_GET = {};
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    	if($_GET['cos'] == 'true'){
+
+           $('#mergi_cos').append('<div class="row" style="font-size:17px;">Produsul tau a fost adaugat in cos, acum poti sa:</div>\
+   	 <div class="row"> \
+   	 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6" style="font-size: 20px;">Continui sa navighezi pe aceasta pagina sau</div>\
+   	 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-default" id="mergi">Mergi la cos</button></div>\
+   </div>\
+   <br><br>');
+    }
+
+
+});
+
 </script>
 
 <footer class="container-fluid">
@@ -162,18 +198,6 @@
 </body>
 	
 <script>
-var ok_search=true;
-$('#Search').css('visibility' , 'hidden');
-$('#btn_search').click(function(){
-	if(ok_search==true){
-	$('#Search').css('visibility' , 'visible');
-	ok_search=false;
-	}
-	else{
-		$('#Search').css('visibility' , 'hidden');
-		ok_search=true;
-	}
-});
 
 
 $('#home_page').click(function(){

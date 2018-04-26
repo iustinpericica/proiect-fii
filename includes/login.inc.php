@@ -1,7 +1,9 @@
 <?php
 
 require_once 'dbconnection.inc.php';
-require_once 'session.inc.php';
+
+
+
 function make_safe($variable) 
 {
    $variable = strip_tags(mysqli_real_escape_string($GLOBALS['conn'] ,trim($variable)));
@@ -9,9 +11,10 @@ function make_safe($variable)
 }
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['username'])){
    $username  = make_safe($_POST['username']);
    $password  = make_safe($_POST['password']);
+  
    if(empty($username)){
 		header('Location: ../php/LogIn.php?username=empty');session_destroy();
 		die();
@@ -30,10 +33,14 @@ if(isset($_POST['submit'])){
       $_SESSION['user'] = $username;
       $_SESSION['password'] = $password;
       $_SESSION['idc'] = $vector['user_id'];
+      setcookie('user', $username, time() + (86400 * 30), "/");
+      setcookie('password', $password, time() + (86400 * 30), "/");
+    
       header('Location: ../php/index.php?login=succes');
    }
    else {
          session_destroy();
          header('Location: ../php/LogIn.php?login=failed');}
 }
+
 

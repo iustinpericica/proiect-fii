@@ -56,9 +56,9 @@
     
 
     <input type="text" name="search" id="input_search" placeholder="cautati" >
-    <button id="btn_search" class="btn"> <i class="fa fa-search" style="font-size:17px;margin-right:20%;"> </i> </button>
+    <button id="btn_search" class="btn btn-default"> <i class="fa fa-search" style="font-size:17px;margin-right:20%;"> </i> </button>
     
-    <button id="btn_cart" class="btn"> <i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+    <button id="btn_cart" class="btn btn-default"> <i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
     
      
   </div>
@@ -107,6 +107,7 @@
 	  
 		  <div class="row"  style="margin-bottom:20px;">
 		  <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">Sortare dupa:</div>
+      <div class="col-md-0 col-xs-4 col-sm-2 col-xl-0"></div>
 		  <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">
 			  
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Selectati:
@@ -123,8 +124,9 @@
 <div class="row" id="products">
 		<?php require_once "../includes/shop.inc.php";?>
  </div>
-
 </div>
+</div>
+
 <script>
       
        $('#arata').click(function(){
@@ -287,43 +289,47 @@ else {
 
 <script>
 $('#1').click(function(){
-  window.location.replace("../produse/1.p.php");
+  window.location.replace("produs.php?produs=1");
 });
 
 $('#2').click(function(){
-  window.location.replace("../produse/2.p.php");
+  window.location.replace("produs.php?produs=2");
 });
 
 $('#3').click(function(){
-  window.location.replace("../produse/3.p.php");
+  window.location.replace("produs.php?produs=3");
 });
 
 $('#4').click(function(){
-  window.location.replace("../produse/4.p.php");
+  window.location.replace("produs.php?produs=4");
 });
 
 $('#5').click(function(){
-  window.location.replace("../produse/5.p.php");
+  window.location.replace("produs.php?produs=5");
 });
 
 $('#6').click(function(){
-  window.location.replace("../produse/6.p.php");
+  window.location.replace("produs.php?produs=6");
 });
 
 $('#7').click(function(){
-  window.location.replace("../produse/7.p.php");
+  window.location.replace("produs.php?produs=7");
 });
 
 $('#8').click(function(){
-  window.location.replace("../produse/8.p.php");
+  window.location.replace("produs.php?produs=8");
 });
 
 $('#9').click(function(){
-  window.location.replace("../produse/9.p.php");
+  window.location.replace("produs.php?produs=9");
 });
 
 $('#10').click(function(){
-  window.location.replace("../produse/10.p.php");
+  window.location.replace("produs.php?produs=10");
+});
+
+$('#11').click(function(){
+  window.location.replace("produs.php?produs=11");
 });
 </script>
 	  

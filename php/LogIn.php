@@ -1,5 +1,8 @@
 
-<?php session_start();?>
+<?php session_start();
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +57,7 @@
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
@@ -63,6 +66,7 @@
 	
 
 <script>
+
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
@@ -94,7 +98,7 @@
 			<br/>
 			<input type="password" id="password" name="password">
 			<br/>
-			<input type="submit" name="submit">
+			<input type="submit" value="Intra in cont" name="submit">
 			<br/>
 		</form>
 			<a href="creare_cont.php"><p >Nu ai un cont?</p></a>
@@ -107,6 +111,7 @@
 ?>
 
 <script>
+
 	$(document).ready(function () {
     	$('#logo').addClass('animated fadeInDown');
     	$("input:text:visible:first").focus();
@@ -228,8 +233,11 @@ else {
  	";
 }
  ?>
-
-
-
-
 </html>
+
+
+
+<?php
+if(isset($_COOKIE['user'])){echo '<script>$("#username").val("' . $_COOKIE['user'] . '");</script>';};
+if(isset($_COOKIE['password'])){echo '<script>$("#password").val("' . $_COOKIE['password'] . '");</script>';};
+?>

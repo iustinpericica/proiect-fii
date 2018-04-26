@@ -6,6 +6,7 @@ body {
 	font-weight: 300;
 	margin: 0;
 	color: #666;
+	text-rendering: optimizeLegibility;
 }
 
 /* Typography */
@@ -146,4 +147,8 @@ p.small {
 .login-box {
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1s;
+}
+
+#test{
+	color:red;
 }

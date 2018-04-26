@@ -61,12 +61,12 @@ else {
 		    if($judet ===''){header('Location: ../php/cart22.php?judet=empty');die();}
 		    if($localitate ===''){header('Location: ../php/cart22.php?localitate=empty');die();}
 		    if($adresa ===''){header('Location: ../php/cart22.php?adresa=empty');die();}
-			$sql = "INSERT INTO date_facturare_juridica(nume_companie , cui , cdirc , banca , cont , localitate , adresa , idc) VALUES('$nume_companie' , '$cui' , '$numar_comert' , '$banca' , '$cont' , '$judet' , '$localitate' , '$adresa' , '$idc');";
+			$sql = "INSERT INTO date_facturare_juridica(nume_companie , cui , cdirc , banca , cont , judet , localitate , adresa ,idc) VALUES('$nume_companie' , '$cui' , '$numar_comert' , '$banca' , '$cont' , '$judet' , '$localitate' , '$adresa' , '$idc');";
 			$result1 = $conn->query($sql);
 			if(!$result1){
-				$sql1 = "UPDATE date_facturare_juridica SET nume_companie = '$nume_companie' , cui = '$cui' , cdirc = '$numar_comert' , banca = '$banca' , cont = '$cont' , judet = '$judet' , localitate = '$localitate' , adresa = '$adresa' , idc = '$idc';";
+				$sql1 = "UPDATE date_facturare_juridica SET nume_companie = '$nume_companie' , cui = '$cui' , cdirc = '$numar_comert' , banca = '$banca' , cont = '$cont' , judet = '$judet' , localitate = '$localitate' , adresa = '$adresa' WHERE idc = '$idc';";
 				$result2 = $conn->query($sql1);
-				var_dump($result2);
+				
 			}
 		}
 		header('Location: ../php/cart3.php');

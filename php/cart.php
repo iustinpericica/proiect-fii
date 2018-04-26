@@ -62,7 +62,7 @@ echo $string;
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
-		<button id="btn_cart"  class="btn"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
 		
 	   </div>
 	</div>
@@ -180,7 +180,7 @@ $(document).on("click", "#9", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=9");
 });
 $(document).on("click", "#10", function(){
-   window.location.replace("../includes/cos.inc.php?idp=10");
+   window.location.replace("../includes/sterge_cos.inc.php?idp=10");
 });
 
 $(document).on("click", "#u1", function(){

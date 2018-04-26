@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2018 at 01:58 PM
+-- Generation Time: Apr 26, 2018 at 10:26 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -59,34 +59,16 @@ CREATE TABLE `comenzi` (
 --
 
 INSERT INTO `comenzi` (`id`, `idc`, `p1`, `c1`, `p2`, `c2`, `p3`, `c3`, `p4`, `c4`, `p5`, `c5`, `p6`, `c6`, `p7`, `c7`, `p8`, `c8`, `p9`, `c9`, `p10`, `c10`, `date`) VALUES
-(16, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(17, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(18, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(19, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(20, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(21, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(22, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(23, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(24, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(25, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(26, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:23:46'),
-(27, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:24:27'),
-(28, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:24:29'),
-(29, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:41:53'),
-(30, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:41:53'),
-(31, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:42:37'),
-(32, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:42:51'),
-(33, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:45:55'),
-(34, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:47:40'),
-(35, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:47:49'),
-(36, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:48:03'),
-(37, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:48:38'),
-(38, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:48:46'),
-(39, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:52:45'),
-(40, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:52:59'),
-(41, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:53:06'),
-(42, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:53:16'),
-(43, 4, 1, 2, 2, 6, NULL, NULL, NULL, NULL, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-19 10:56:54');
+(5, 10, 1, 2, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:06:35'),
+(6, 10, 1, 2, 2, 5, NULL, NULL, NULL, NULL, NULL, NULL, 6, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:40:53'),
+(7, 12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, 10, NULL, NULL, '2018-04-25 15:35:52'),
+(8, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 20, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:00:47'),
+(9, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:17:50'),
+(10, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07'),
+(11, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07'),
+(12, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:20'),
+(13, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:41'),
+(14, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:19:35');
 
 -- --------------------------------------------------------
 
@@ -108,16 +90,10 @@ CREATE TABLE `comenzi_facturare_fizica` (
 --
 
 INSERT INTO `comenzi_facturare_fizica` (`id`, `idc`, `nume`, `prenume`, `numar_telefon`, `id_comanda`) VALUES
-(6, 4, 'pericica', ' iustin', '07noidoi', 23),
-(7, 4, 'pericica', ' iustin', '07noidoi', 24),
-(8, 4, 'pericica', ' iustin', '07noidoi', 27),
-(9, 4, 'pericica', ' iustin', '07noidoi', 28),
-(10, 4, 'pericica', ' iustin', '07noidoi', 34),
-(11, 4, 'pericica', ' iustin', '07noidoi', 35),
-(12, 4, 'pericica', ' iustin', '07noidoi', 36),
-(13, 4, 'pericica', ' iustin', '07noidoi', 37),
-(14, 4, 'pericica', ' iustin', '07noidoi', 39),
-(15, 4, 'pericica', ' iustin', '07noidoi', 43);
+(19, 10, 'pericica', 'iustin', '0741198606', 5),
+(20, 12, 'Pericica', 'Maria', '0740253777', 7),
+(21, 13, 'Lacramioara', 'Lacra', '0745585506', 8),
+(22, 10, 'pericica', 'iustin', '0741198606', 14);
 
 -- --------------------------------------------------------
 
@@ -144,9 +120,8 @@ CREATE TABLE `comenzi_facturare_juridica` (
 --
 
 INSERT INTO `comenzi_facturare_juridica` (`id`, `idc`, `nume_companie`, `cui`, `numar_inregistrare`, `banca`, `cont`, `judet`, `localitate`, `adresa`, `id_comanda`) VALUES
-(1, 0, 'iustin', 'RO123', 'just_teen', 'BCR', 'N AM CONT', 'NEAMT', 'ROMAN', 'AVIATOR', 22),
-(2, 0, 'iustin', 'RO123', 'just_teen', 'BCR', 'N AM CONT', 'NEAMT', 'ROMAN', 'AVIATOR', 25),
-(3, 4, 'iustin', 'RO123', 'just_teen', 'BCR', 'N AM CONT', 'NEAMT', 'ROMAN', 'AVIATOR', 26);
+(1, 10, 'elmaro', '12312', 'eusuntinregistrat', 'bcr', 'ROsiceva', 'NEAMT', 'ROMAN', 'AVIATOR', 6),
+(2, 10, 'elmaro', '12312', 'eusuntinregistrat', 'bcr', 'ROsiceva', 'NEAMT', 'ROMAN', 'AVIATOR', 9);
 
 -- --------------------------------------------------------
 
@@ -171,7 +146,16 @@ CREATE TABLE `comenzi_livrare` (
 --
 
 INSERT INTO `comenzi_livrare` (`id`, `idc`, `id_comanda`, `pret`, `oras`, `judet`, `strada`, `numar`, `numar_telefon`) VALUES
-(1, 4, 42, 143, 'roman', 'neamt', 'aviator', '14', '07noidoi');
+(5, 10, 5, 59, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(6, 10, 6, 121, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(7, 12, 7, 200, 'Roman', 'Neamt', 'Avitorilor', '14A', '0740253777'),
+(8, 13, 8, 180, 'Roman', 'Neamt', 'Aviatorilor ', '14 A', '0745585506'),
+(9, 10, 9, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(10, 10, 10, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(11, 10, 11, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(12, 10, 12, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(13, 10, 13, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(14, 10, 14, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606');
 
 -- --------------------------------------------------------
 
@@ -196,7 +180,9 @@ CREATE TABLE `date` (
 --
 
 INSERT INTO `date` (`id`, `idc`, `oras`, `judet`, `strada`, `numar`, `numar_telefon`, `nume`, `prenume`) VALUES
-(8, 4, 'roman', 'neamt', 'aviator', '14', '07noidoi', 'pericica', ' iustin');
+(12, 10, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606', 'pericica', 'iustin'),
+(13, 12, 'Roman', 'Neamt', 'Avitorilor', '14A', '0740253777', 'Pericica', 'Maria'),
+(14, 13, 'Roman', 'Neamt', 'Aviatorilor ', '14 A', '0745585506', 'Lacramioara', 'Lacra');
 
 -- --------------------------------------------------------
 
@@ -217,7 +203,9 @@ CREATE TABLE `date_facturare` (
 --
 
 INSERT INTO `date_facturare` (`id`, `idc`, `nume`, `prenume`, `numar_telefon`) VALUES
-(1, 4, 'pericica', ' iustin', '07noidoi');
+(5, 10, 'pericica', 'iustin', '0741198606'),
+(6, 12, 'Pericica', 'Maria', '0740253777'),
+(7, 13, 'Lacramioara', 'Lacra', '0745585506');
 
 -- --------------------------------------------------------
 
@@ -243,7 +231,7 @@ CREATE TABLE `date_facturare_juridica` (
 --
 
 INSERT INTO `date_facturare_juridica` (`id`, `nume_companie`, `cui`, `cdirc`, `banca`, `cont`, `judet`, `localitate`, `adresa`, `idc`) VALUES
-(1, 'iustin', 'RO123', 'just_teen', 'BCR', 'N AM CONT', 'NEAMT', 'ROMAN', 'AVIATOR', 4);
+(12, 'elmaro', '12312', 'eusuntinregistrat', 'bcr', 'ROsiceva', 'NEAMT', 'ROMAN', 'AVIATOR', 10);
 
 -- --------------------------------------------------------
 
@@ -258,15 +246,6 @@ CREATE TABLE `news` (
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `name`, `email`, `reg_date`) VALUES
-(1, 'you', 'kiss@gmail.com', '2018-04-12 19:06:47'),
-(2, 'pericica emil', 'emilelmaroo@yahoo.co.uk', '2018-04-12 20:18:06'),
-(3, 'mami', 'mata@gmail.com', '2018-04-18 15:09:59');
-
 -- --------------------------------------------------------
 
 --
@@ -279,24 +258,37 @@ CREATE TABLE `produse` (
   `pret` int(6) NOT NULL,
   `text` varchar(100) NOT NULL,
   `stoc` int(10) NOT NULL,
-  `textm` varchar(500) NOT NULL
+  `textm` varchar(500) NOT NULL,
+  `pentru` varchar(30) NOT NULL,
+  `material` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produse`
 --
 
-INSERT INTO `produse` (`id`, `tip`, `pret`, `text`, `stoc`, `textm`) VALUES
-(1, 'man', 7, 'Soseta de barbati, de bumbac', 135, 'Soseta bumbac de barbati, cu inscriptionare de tip laser, rezistenta la peset 40 de spalari, marca El Maro'),
-(2, 'children', 15, '3 Sosete, marca Nike-divizia Jordan', 60, 'Sosete marca Nike, se remarca prin faptul ca sunt rezistente, fiind sub brandul lui Michal Jordan.'),
-(3, 'children', 12, 'Sosete de copii rosii', 300, 'Sosete de copii rosii cu stickere si forme diferte inscriptionate pe ele.'),
-(4, 'man', 12, 'Soseta de barbati classy', 400, 'Soseta super faina, cu multe multe multe forme si e super pentru costum.'),
-(5, 'woman', 13, 'Soseta marca Adidas, de bumbac', 90, 'Soseta marca Adidas foarte rezistenta in timp, recomandata pentru sport si mai multe chestii.'),
-(6, 'woman', 16, 'Soseta adidas cu diferite forme', 130, 'Soseta adidas cu diferite forme, culoare:negru'),
-(7, 'woman', 9, 'Sosete in forma de albina', 90, 'Sosete in forma de albine cu forme in forma de albine, culori deschise si placute\r\n'),
-(8, 'man', 18, 'Soseta adidas negru cu 3 dungi albe-clasic', 65, 'Soseta adidas cu clasicele 3 dungi, la prima vedere cuceresc orice ochi.'),
-(9, 'children', 20, 'Soseta Calvin Klein pentru copii', 60, 'Soseta CK care, material bumbac, nu poate sa rateze vreo privire.'),
-(10, 'children', 6, 'Soseta de copii, foarte atractiva', 500, 'material:50% polister , 50% bumbac, nu poate rata vreo privire.');
+INSERT INTO `produse` (`id`, `tip`, `pret`, `text`, `stoc`, `textm`, `pentru`, `material`) VALUES
+(1, 'man', 3, 'Soseta sport, de barbati lunga; recomandata pentru tenis de camp', 5000, 'Soseta sport, recomandata persoanelor care iubesc miscarea. \r\n Soseta este lunga, textura este adecvata pentru aerarea piciorului.', 'sport', 'bumbac-80% , poliamida-15% , elasthan-5%.'),
+(2, 'woman', 4, 'Soseta de bumbac pentru femei; recomandata pentru toate anotimpurile.', 15000, 'Soseta de bumbac pentru femei cu variatii de modele-bob de orez, glat, rip.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%.e'),
+(3, 'man', 5, 'Soseta scurta, pentru barbati de sport', 10000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.'),
+(4, 'man', 6, 'Soseta de barbati lunga pentru pantalon lung la ocazii speciale.', 10000, 'Soseta este recomandata persoanelor care sunt invitate la diverse ocazii speciale.', 'elegant', 'bumbac tip bambus-60%, lycra-35%, elasthan-5%.'),
+(5, 'man', 6, 'Soseta flausat interior pentru iarna', 12000, 'Soseta flausat interior pentru barbati, recomandata anotimpurilor friguroase.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
+(6, 'woman', 5, 'Soseta flausat exterior pentru femei pentru anotimpuri friguroase', 10000, 'Soseta flausat exterior pentru femei, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
+(7, 'woman', 10, 'Ciorapi port jartier, recomandati femeilor la a doua varsta', 8000, 'Ciorapi pentru femei de varsta a doua in timpuri friguroase din bumbac 100%.', 'casual', 'bumbac-100%;'),
+(8, 'man', 7, 'Soseta scurta de sport, pentru barbati', 12000, 'Soseta scurta sport pentru barbatii iubitori de miscare, cu textura foarte fina.', 'sport', 'bumbac-65%, lycra-30%, elasthan-5%.'),
+(9, 'woman', 7, 'Soseta scurta de sport, pentru femei', 10000, 'Soseta scurta sport pentru femei iubitoare de miscare, cu textura foarte fina.', 'sport', '65%-bumbac, 30%-lycra, 5%-elasthan.'),
+(10, 'children', 5, 'Soseta flausat exterior pentru copii', 8000, 'Soseta flausat exterior pentru copii, recomandata anotimpului rece.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
+(11, 'woman', 5, 'Soseta scurta, pentru femei, de sport', 8000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.'),
+(12, 'man', 5, 'Soseta flausat exterior de barbati pentru anotimpuri friguroase', 12000, 'Soseta flausat exterior pentru barbati, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
+(13, 'woman', 6, 'Dres femei poliamida 20 DEN', 20000, 'Dres femei poliamida 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-95%, 5%-elasthan.'),
+(14, 'woman', 8, 'Soseta bumbac cu lycra pentru femei', 5000, 'Soseta bumbac cu lycra pentru femei, cu eticheta fina, fara cusatura.', 'casual', '65%-bumbac, 30%-lycra, 5%-elasthan.'),
+(15, 'woman', 8, 'Dres femei lycra 20 DEN ', 20000, 'Dres femei lycra 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-80%, 15%-lycra, 5%-elasthan.'),
+(16, 'woman', 10, 'Dres femei din microfibra 70 DEN', 15000, 'Dres femei din microfibra 70 DEN, marimi de la 2 -> 6, culori: bej, gri, negru.', 'casual', 'microfibra-80%, lycra-15%, elasthan-5%. '),
+(17, 'woman', 4, 'Sosete femei 3/4 lycra (gambalete)', 10000, 'Sosete femei 3/4 lycra, gambalete, marime universala, culori:bej, negru.\r\n 2 perechi/plic.', 'casual', 'poliamida-80%, lycra-15%, elasthan-5%.'),
+(18, 'woman', 15, 'Colanti elasticizati 70 DEN ', 8000, 'Colanti elasticizati 70 DEN, marimi si culori diferite, se recomanda pentru anotimpuri reci.', 'casual', 'microfibra-80%, lycra-15%, 5%-elasthan.'),
+(19, 'woman', 3, 'Sosete 3/4 poliamida (gambalete)', 15000, 'Sosete 3/4 poliamida (gambalete), marimi universale, culori:bej, negru.', 'casual', 'poliamida-95%, elasthan-5%.'),
+(20, 'children', 4, 'Dres fetite microfibra 40 DEN', 10000, 'Dres de fetite microfibra 40 DEN, marimi de la 2 ani -> 12 ani, culori diferite:alb, roz, crem, rosu, violet, negru. Recomandate anotimpurilor primavara si toamna.', 'casual', 'microfibra-80%, 15%-lycra, 5%-elasthan.'),
+(21, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.');
 
 -- --------------------------------------------------------
 
@@ -315,11 +307,17 @@ CREATE TABLE `produsec` (
 --
 
 INSERT INTO `produsec` (`idp`, `idc`, `cant`) VALUES
-(2, 4, 1),
-(9, 5, 2),
-(1, 5, 3),
-(9, 0, 2),
-(8, 6, 12);
+(2, 10, 4),
+(33, 0, 1),
+(23, 0, 2),
+(5, 0, 4),
+(4, 0, 16),
+(3, 0, 8),
+(0, 0, 2),
+(9, 12, 10),
+(7, 13, 20),
+(11, 10, 2),
+(1, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -342,12 +340,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_first`, `user_last`, `user_email`, `user_name`, `user_nrtelefon`, `user_password`) VALUES
-(1, 'pericica', 'iustin', 'iustinpericica@yahoo.com', 'iustitn', '074119806', 'mamatata'),
-(2, 'pericica', 'lacramioara', 'iustinpericica@yahoo.com', 'lacramioara16', '+0745585506', 'aremultemere'),
-(3, 'lacramioara', 'pericica', 'cev', 'lacramioara_pericica', '0745585506', 'iustin'),
-(4, 'iustin', 'pericica', 'iustinpericica3@yahoo.com', 'iustin16', '+40741198606', 'mamatata'),
-(5, 'maria', 'pericica', 'pericicamaria@rocketmail.com', 'maria_medeea', '+0742053777', 'iustin'),
-(6, 'emil', 'pericica', 'emilelmaroo@yahoo.co.uk', 'emil', '+0744543638', 'iustin');
+(10, 'iustin', 'pericica', 'iustinpericica@yahoo.com', 'iustin16', '0741198606', 'iustinel'),
+(11, 'Pericica', 'Pericica', 'Iustinpericica@yahoo.com', 'iustin', '0741198606', '1234'),
+(12, 'Maria', 'PericicÄƒ', 'pericicamaria@rocketmail.com', 'Maria24', '0742053777', 'acasa.ro'),
+(13, 'LacramioaraL', 'Pricope', 'pericicamaria@rocketmail.com', 'Lacramioara', '0745585506', '1234');
 
 --
 -- Indexes for dumped tables
@@ -427,55 +423,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comenzi`
 --
 ALTER TABLE `comenzi`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `comenzi_facturare_fizica`
 --
 ALTER TABLE `comenzi_facturare_fizica`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `comenzi_facturare_juridica`
 --
 ALTER TABLE `comenzi_facturare_juridica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `comenzi_livrare`
 --
 ALTER TABLE `comenzi_livrare`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `date`
 --
 ALTER TABLE `date`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `date_facturare`
 --
 ALTER TABLE `date_facturare`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `date_facturare_juridica`
 --
 ALTER TABLE `date_facturare_juridica`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

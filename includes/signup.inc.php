@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
 		die();
     }
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)){header('Location: ../php/creare_cont.php?email=wrong');die();}
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){header('Location: ../php/creare_cont.php?email=wrong');die();}
 
     if(empty($nrtelefon)){
     	header('Location: ../php/creare_cont.php?nrtelefon=empty');
@@ -63,5 +63,9 @@ if(isset($_POST['submit'])){
 
 }
 
-
-header('Location: ../php/index.php');
+session_start();
+$_SESSION['idc'] = $username;
+$_SESSION['password'] = $password;
+setcookie('user', $username, time() + (86400 * 30), "/");
+setcookie('password', $password, time() + (86400 * 30), "/");
+header('Location: ../php/LogIn.php');

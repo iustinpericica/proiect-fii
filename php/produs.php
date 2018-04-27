@@ -150,6 +150,19 @@
 
 });
 </script>
+<div class="row container-fluid">
+  Material: <span id="material"></span>
+</div>
+
+
+<div class="row container-fluid"><br>
+  Recomandare: <span id="pentru"></span>
+</div><br>
+
+<div class="row container-fluid"><br>
+  ID produs: <span id="idp"></span>
+</div><br>
+
    <div class="row container-fluid">
    	<div class="col-md-2 col-xs-6 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
    	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate" style="width:100%;"></div>
@@ -166,9 +179,13 @@
  var req = new XMLHttpRequest();
  req.onload= function(){
     var res = JSON.parse(this.responseText);
+    console.log(res);
     $('#cantitate').replaceWith(res['stoc']);
     $('#pret').replaceWith(res['pret']);
     $('#textm').replaceWith(res['textm']);
+    $('#material').replaceWith(res['material']);
+    $('#pentru').replaceWith(res['pentru']);
+    $('#idp').replaceWith(res['idp']);
  };
  var string = '../includes/produse.inc.php?id=';
  var idp = $_GET['produs'];

@@ -196,7 +196,25 @@ $("#btn_cart").click(function(){
 </div>
 <br><br>
 
-
+<div id="schimba_parola">
+  
+  <div class="login-box animated" id="schimba_div">
+      <div class="box-header">
+        <h2>Schimba parola: </h2>
+      </div>
+     <form action="../includes/cont.inc.php?password=change" method="POST">
+      <label for="username">Parola veche</label>
+      <br/>
+      <input type="password" name="lastpass"><br>
+      <label for="password">Parola noua: </label><br>
+      <input type="password" name="nowpass"><br>
+      <label for="password">Confirmati parola noua: </label><br>
+      <input type="password" name="repass"><br>
+      <input type="submit" name="submit">
+      <br/>
+    </form>
+  </div>
+</div>
 
 <div class="row container-fluid" id="comenzi_date" style="font-size:20px;margin-left: 15px;">
 	
@@ -328,7 +346,7 @@ $("#btn_cart").click(function(){
     <div class="row container-fluid"></div><br>\
     <div class="row container-fluid">Facturare:<br>' + facturare + '</div><br><br>\
     <div class="row container-fluid">Livrare:<br>' + livrare +  '</div><br><br>\
-    <div class="row container-fluid">Metoda de plata-ramburs: </div>');
+    <div class="row container-fluid">Metoda de plata-ramburs </div>');
 
    });
    
@@ -339,25 +357,7 @@ $("#btn_cart").click(function(){
 
 </script>
 
-<div id="schimba_parola">
-  
-  <div class="login-box animated" id="schimba_div">
-			<div class="box-header">
-				<h2>Schimba parola: </h2>
-			</div>
-		 <form action="../includes/cont.inc.php?password=change" method="POST">
-			<label for="username">Parola veche</label>
-			<br/>
-			<input type="password" name="lastpass"><br>
-			<label for="password">Parola noua: </label><br>
-			<input type="password" name="nowpass"><br>
-			<label for="password">Confirmati parola noua: </label><br>
-			<input type="password" name="repass"><br>
-			<input type="submit" name="submit">
-			<br/>
-		</form>
-	</div>
-</div>
+
 
 
 <script>

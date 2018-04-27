@@ -57,6 +57,7 @@ echo $string;
    total_req.onload = function(){
    	  if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
      else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+     if(this.responseText<1)<?php die();?>
    	 if(this.responseText<=19) $('#total1').html(this.responseText + ' lei');
     else  $('#total1').html(this.responseText + ' de lei');
    };

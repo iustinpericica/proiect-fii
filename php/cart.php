@@ -69,6 +69,7 @@ echo $string;
 	
 </header>
 
+<div class="container-fluid" id="alertaa"></div>
 
 <?php if(isset($_SESSION['idc'])){
      
@@ -78,7 +79,7 @@ echo $string;
  	<div class="col-md-8 col-xs-12 col-sm-6 col-xl-8" id="produse_cos">
  		
     </div>
- 	<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
+ 	<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4" id="detalii_cos">
  		<p class="text-center">Sumar comanda</p>
  		<p>Total cost produse: <span id="total"></span></p>
  		<p>Cost livrare: <span id="livrare"></span></p>
@@ -182,7 +183,44 @@ $(document).on("click", "#9", function(){
 $(document).on("click", "#10", function(){
    window.location.replace("../includes/sterge_cos.inc.php?idp=10");
 });
+$(document).on("click", "#11", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=11");
+});
+$(document).on("click", "#12", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=12");
+});
+$(document).on("click", "#13", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=13");
+});
+$(document).on("click", "#14", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=14");
+});
+$(document).on("click", "#15", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=15");
+});
+$(document).on("click", "#16", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=16");
+});
+$(document).on("click", "#17", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=17");
+});
+$(document).on("click", "#18", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=18");
+});
+$(document).on("click", "#19", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=19");
+});
+$(document).on("click", "#20", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=20");
+});
 
+$(document).on("click", "#21", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=21");
+});
+
+$(document).on("click", "#22", function(){
+   window.location.replace("../includes/sterge_cos.inc.php?idp=22");
+});
 $(document).on("click", "#u1", function(){
    var cant = $('#c1').val();
    window.location.replace("../includes/cosupdate.inc.php?id=1&cantitate=" + cant);
@@ -224,6 +262,71 @@ $(document).on("click", "#u10", function(){
    var cant = $('#c10').val();
    window.location.replace("../includes/cosupdate.inc.php?id=10&cantitate=" + cant);
 });
+
+$(document).on("click", "#u11", function(){
+   var cant = $('#c11').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=11&cantitate=" + cant);
+});
+
+$(document).on("click", "#u11", function(){
+   var cant = $('#c11').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=11&cantitate=" + cant);
+});
+
+$(document).on("click", "#u12", function(){
+   var cant = $('#c12').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=12&cantitate=" + cant);
+});
+
+$(document).on("click", "#u13", function(){
+   var cant = $('#c13').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=13&cantitate=" + cant);
+});
+
+$(document).on("click", "#u14", function(){
+   var cant = $('#c14').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=14&cantitate=" + cant);
+});
+
+$(document).on("click", "#u15", function(){
+   var cant = $('#c15').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=15&cantitate=" + cant);
+});
+
+$(document).on("click", "#u16", function(){
+   var cant = $('#c16').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=16&cantitate=" + cant);
+});
+
+$(document).on("click", "#u17", function(){
+   var cant = $('#c17').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=17&cantitate=" + cant);
+});
+
+$(document).on("click", "#u18", function(){
+   var cant = $('#c18').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=18&cantitate=" + cant);
+});
+
+$(document).on("click", "#u19", function(){
+   var cant = $('#c19').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=19&cantitate=" + cant);
+});
+
+$(document).on("click", "#u20", function(){
+   var cant = $('#c20').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=20&cantitate=" + cant);
+});
+
+$(document).on("click", "#u21", function(){
+   var cant = $('#c21').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=21&cantitate=" + cant);
+});
+
+$(document).on("click", "#u22", function(){
+   var cant = $('#c22').val();
+   window.location.replace("../includes/cosupdate.inc.php?id=22&cantitate=" + cant);
+});
 </script>
 
 
@@ -245,6 +348,10 @@ $(document).on("click", "#u10", function(){
    total_req.onload = function(){
    	 if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
    	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+   	 if(this.responseText<1){$('#alertaa').append('<h2>Adauga cateva produse in cos initial..</h2>');
+   	 	                     $('#pu').remove();
+                             $('#detalii_cos').remove();
+   	 	                 }
 
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);

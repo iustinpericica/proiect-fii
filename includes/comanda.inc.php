@@ -127,4 +127,6 @@ $mailMsg = "Salut! Comanda ta a fost inregistrata cu numarul $id_comanda si in s
        echo "Mail Sent";
    }
 
+$conn -> query("DELETE FROM produsec WHERE idc = '$idc';");
+
 header('Location: ../php/cart4.php');

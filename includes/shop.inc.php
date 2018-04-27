@@ -3,91 +3,10 @@
 require 'dbconnection.inc.php';
 
 if(isset($_GET['pret'])){
-	if($_GET['pret']==='crescator'){
-		$sql = "SELECT * FROM produse ORDER BY pret ASC;";
-$sql1 = "SELECT * FROM produse WHERE tip='man' ORDER BY pret ASC;";
-$sql2 = "SELECT * FROM produse WHERE tip='woman' ORDER BY pret ASC;";
-$sql3 = "SELECT * FROM produse WHERE tip='children' ORDER BY pret ASC;";
-	}
-	if($_GET['pret']==='descrescator'){
-$sql = "SELECT * FROM produse ORDER BY pret DESC;";
-$sql1 = "SELECT * FROM produse WHERE tip='man' ORDER BY pret DESC;";
-$sql2 = "SELECT * FROM produse WHERE tip='woman' ORDER BY pret DESC;";
-$sql3 = "SELECT * FROM produse WHERE tip='children' ORDER BY pret DESC;";
-	}
-}
-else{
-$sql = "SELECT * FROM produse;";
-$sql1 = "SELECT * FROM produse WHERE tip='man';";
-$sql2 = "SELECT * FROM produse WHERE tip='woman';";
-$sql3 = "SELECT * FROM produse WHERE tip='children';";
+	$pret = $_GET['pret'];
 }
 
-$all = $conn->query($sql);
-$man = $conn->query($sql1);
-$woman = $conn->query($sql2);
-$children = $conn->query($sql3);
 
-
-
-if(isset($_GET['man'])){
-	while ($row=mysqli_fetch_row($man)){
-		$var = $row[0];
-		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
-<div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
-    <div class="img-produs">
-    <div class="mask flex-center rgba-black-strong">
-        <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
-    </div>
-    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
-</div>
-</div>
-</div>';
-	}
-
-};
-
-if(isset($_GET['woman'])){
-
-	while ($row=mysqli_fetch_row($woman)){
-		$var = $row[0];
-		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
-<div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
-    <div class="img-produs">
-    <div class="mask flex-center rgba-black-strong">
-        <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
-    </div>
-    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
-</div>
-</div>
-</div>';
-	}
-};
-
-if(isset($_GET['children'])){
-
-	while ($row=mysqli_fetch_row($children)){
-		$var = $row[0];
-		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
-<div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive " alt="">
-    <div class="img-produs">
-    <div class="mask flex-center rgba-black-strong">
-        <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
-    </div>
-   <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
-</div>
-</div>
-</div>';
-	}
-};
-
-$ok=false;
 if(isset($_GET['search'])){
 	$ok=true;
    $text = $_GET['search'];
@@ -111,13 +30,66 @@ if(isset($_GET['search'])){
 
 }
 
-if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children']) && $ok===false){
-	while ($row=mysqli_fetch_row($all)){
-		$var = $row[0];
-		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
+else{
+ 
+   $sex  = array();
+   $material  =array();
+   $recomandate = array();
+   if(isset($_GET['man'])) array_push($sex, 'man');
+   if(isset($_GET['woman'])) array_push($sex, 'woman');
+   if(isset($_GET['children'])) array_push($sex, 'children');
+   if(isset($_GET['bumbac'])) array_push($material, 'bumbac');
+   if(isset($_GET['lycra'])) array_push($material, 'lycra');
+   if(isset($_GET['poliamida'])) array_push($material, 'poliamida');
+   if(isset($_GET['microfibra'])) array_push($material, 'microfibra');
+   if(isset($_GET['sport'])) array_push($recomandate, 'sport');
+   if(isset($_GET['casual'])) array_push($recomandate, 'casual');
+   if(isset($_GET['elegant'])) array_push($recomandate, 'elegant');
+   $sql = 'SELECT * FROM produse';
+   $and = false;
+   $where = false;
+   $ok=false;
+   $num = count($sex);
+   if($num>0){$where = true; $sql.=' WHERE';}
+   $i=0;
+   foreach ($sex as $key => $value) {
+       ++$i;
+       if($ok == false){$ok=true;$and=true;$sql.=' (';};
+       if($i != $num)$sql.= "tip = '$value' OR ";
+       else $sql.= "tip = '$value' )";
+   }
+
+   $ok=false;
+   $num = count($material);
+   if($num)  if($and==true)$sql.=' AND ';
+   if($num>0 && $where == false){$where = true; $sql.=' WHERE';}
+   $i=0;
+   foreach ($material as $key => $value) {
+       ++$i;
+       if($ok == false){$ok=true;$and=true;$sql.=' (';};
+       if($i != $num)$sql.= "material LIKE '%$value%' OR ";
+       else $sql.= "material LIKE '%$value%' )";
+   };
+   
+   $ok=false;
+   $num = count($recomandate);
+   if($num)  if($and==true)$sql.=' AND ';
+   if($num>0 && $where == false){$where = true; $sql.=' WHERE';}
+   $i=0;
+   foreach ($recomandate as $key => $value) {
+       ++$i;
+       if($ok == false){$ok=true;$and=true;$sql.=' (';};
+       if($i != $num)$sql.= "pentru = '$value' OR ";
+       else $sql.= "pentru = '$value' )";
+   }
+   $sql.=';';
+   $result = $conn -> query($sql);
+   while ($row=mysqli_fetch_row($result)){
+        $var = $row[0];
+        $image = "../images/sock$var.jpg";
+        echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
 <div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive "  alt="">
+    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
     <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
@@ -126,6 +98,7 @@ if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children']) &
 </div>
 </div>
 </div>';
-	}
-};
+    }
+}
+
 

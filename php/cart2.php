@@ -52,12 +52,15 @@ echo $string;
 }
 ?>
 
+<div class="container-fluid" id="alertaa"></div>
+
 <script>
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
    var total_req = new  XMLHttpRequest();
    total_req.onload = function(){
    	  if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
    	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+   	 if(this.responseText<1){$('#alertaa').append('<h1>Adauga cateva produse in cos si dupa vino aici... pana atunci, pagina va fi blocata!</h1>');$('#form2').remove();$('#remove2').remove();}
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();
@@ -114,14 +117,16 @@ $("#btn_cart").click(function(){
 
 </script>';die();};?>
 
+<div id="remove2">
 <h2>Completeaza datele de livrare: </h2>
 <h3>Sau completeaza <b>automat</b> dupa datele salvate</h3><button class="btn btn-elegant" id="completeaza_automat">Completeaza automat</button>
 <h4>Daca nu ai date salvate, la finalul formularului apasa butonul de salvare a datelor</h4>
+</div>
 
 <div class="row" id="erori">
 </div>
 
-<div class="login-box animated fadeInUp">
+<div class="login-box animated fadeInUp" id="form2">
 			<div class="box-header">
 				<h2>Date de contact</h2>
 			</div>

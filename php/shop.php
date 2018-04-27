@@ -107,13 +107,13 @@
         <li>Bumbac <input type="checkbox"  id="bumbac" name="bumbac"></li><br>
         <li>Lycra <input type="checkbox" id="lycra" name="lycra"></li><br>
         <li>Poliamida <input type="checkbox" id="poliamida" name="poliamida"></li><br>
-        <li>Flausat <input type="checkbox" id="flausat" name="flausat"></li><br>
+        <li>Microfibra <input type="checkbox" id="microfibra" name="microfibra"></li><br>
 
         </ul>
        </li>
        <br>
        <li>
-       Pentru:<br>
+       Recomandate pentru:<br>
         <br>
         <ul>
         <li>sport <input type="checkbox"  id="sport" name="sport"></li><br>
@@ -165,28 +165,28 @@
        else if($('#woman').prop('checked')){string+="woman=true";ok=true;}
        
        if($('#children').prop('checked')&&ok==true){string+='&';string+="children=true";}
-       else if ($('#children').prop('checked')){string+='children=true';};
+       else if ($('#children').prop('checked')){string+='children=true';ok=true;};
        
        if($('#sport').prop('checked')&&ok==true){string+='&';string+="sport=true";}
-       else if ($('#sport').prop('checked')){string+='sport=true';};
+       else if ($('#sport').prop('checked')){string+='sport=true';ok=true;};
        
        if($('#casual').prop('checked')&&ok==true){string+='&';string+="casual=true";}
-       else if ($('#casual').prop('checked')){string+='casual=true';};
+       else if ($('#casual').prop('checked')){string+='casual=true';ok=true;};
 
        if($('#elegant').prop('checked')&&ok==true){string+='&';string+="elegant=true";}
-       else if ($('#elegant').prop('checked')){string+='elegant=true';};
+       else if ($('#elegant').prop('checked')){string+='elegant=true';ok=true;};
 
        if($('#poliamida').prop('checked')&&ok==true){string+='&';string+="poliamida=true";}
-       else if ($('#poliamida').prop('checked')){string+='poliamida=true';};
+       else if ($('#poliamida').prop('checked')){string+='poliamida=true';ok=true;};
 
        if($('#lycra').prop('checked')&&ok==true){string+='&';string+="lycra=true";}
-       else if ($('#lycra').prop('checked')){string+='lycra=true';};
+       else if ($('#lycra').prop('checked')){string+='lycra=true';ok=true;};
 
        if($('#bumbac').prop('checked')&&ok==true){string+='&';string+="bumbac=true";}
-       else if ($('#bumbac').prop('checked')){string+='bumbac=true';};
+       else if ($('#bumbac').prop('checked')){string+='bumbac=true';ok=true;};
 
-       if($('#flausat').prop('checked')&&ok==true){string+='&';string+="flausat=true";}
-       else if ($('#flausat').prop('checked')){string+='flausat=true';};
+       if($('#microfibra').prop('checked')&&ok==true){string+='&';string+="microfibra=true";}
+       else if ($('#microfibra').prop('checked')){string+='microfibra=true';ok=true;};
 
 
        window.location.replace(string);
@@ -229,7 +229,7 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     if($_GET['children'] ==='true'){$('#children').prop('checked', true);}
     if($_GET['lycra'] === 'true'){$('#lycra').prop('checked', true);}
     if($_GET['bumbac'] === 'true'){$('#bumbac').prop('checked', true);}
-    if($_GET['flausat'] === 'true'){$('#flausat').prop('checked', true);}
+    if($_GET['microfibra'] === 'true'){$('#microfibra').prop('checked', true);}
     if($_GET['poliamida'] === 'true'){$('#poliamida').prop('checked', true);}
     if($_GET['sport'] === 'true'){$('#sport').prop('checked', true);}
     if($_GET['casual'] === 'true'){$('#casual').prop('checked', true);}

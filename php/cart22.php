@@ -60,6 +60,7 @@ echo $string;
    total_req.onload = function(){
    	 if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
    	 else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+   	 if(this.responseText<1){$('#remove').remove();}
    };
    total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
    total_req.send();
@@ -115,7 +116,7 @@ $("#btn_cart").click(function(){
 });
 
 </script>';die();};?>
-<div class="row">
+<div class="row" id="remove">
 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-elegant btn-block" id="persoana_fizica_btn" style="font-size:20px;">Sunt persoana <b>fizica</b></button></div>
 	<div class="col-md-6 col-xs-6 col-sm-6 col-xl-6"><button class="btn btn-elegant btn-block" id="persoana_juridica_btn" style="font-size:20px;">Sunt persoana <b>juridica</b></button></div>
 </div>

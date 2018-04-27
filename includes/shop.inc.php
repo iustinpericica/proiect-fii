@@ -36,14 +36,17 @@ if(isset($_GET['man'])){
 		$image = "../images/sock$var.jpg";
 		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
 <div class="view overlay">
-    <img src=' . $image . ' class="img-fluid " alt="">
+    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
     <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
 </div>
+</div>
 </div>';
 	}
+
 };
 
 if(isset($_GET['woman'])){
@@ -51,13 +54,15 @@ if(isset($_GET['woman'])){
 	while ($row=mysqli_fetch_row($woman)){
 		$var = $row[0];
 		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
+		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
 <div class="view overlay">
     <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
     <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+</div>
 </div>
 </div>';
 	}
@@ -70,11 +75,13 @@ if(isset($_GET['children'])){
 		$image = "../images/sock$var.jpg";
 		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
 <div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <img src=' . $image . ' class="img-fluid img-responsive " alt="">
+    <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+</div>
 </div>
 </div>';
 	}
@@ -89,13 +96,15 @@ if(isset($_GET['search'])){
    while ($row=mysqli_fetch_row($result)){
 		$var = $row[0];
 		$image = "../images/sock$var.jpg";
-		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
+		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
 <div class="view overlay">
     <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
     <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+</div>
 </div>
 </div>';
 	}
@@ -108,11 +117,13 @@ if(!isset($_GET['man']) && !isset($_GET['woman']) && !isset($_GET['children']) &
 		$image = "../images/sock$var.jpg";
 		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4">
 <div class="view overlay">
-    <img src=' . $image . ' class="img-fluid img-responsive" alt="">
+    <img src=' . $image . ' class="img-fluid img-responsive "  alt="">
+    <div class="img-produs">
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
     <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+</div>
 </div>
 </div>';
 	}

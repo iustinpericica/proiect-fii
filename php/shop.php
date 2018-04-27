@@ -91,13 +91,40 @@
 	       
 		  <li>
 		   Pentru:
-			  <br>
+			  <br><br>
 			  <ul>
 			  <li>Femei <i class="fa fa-female" style="font-size:20px"> </i> <input type="checkbox"  id="woman" name="woman"></li><br>
 			  <li>Barbati <i class="fa fa-male" style="font-size:20px"> </i> <input type="checkbox" id="man" name="man"></li><br>
 			  <li>Copii <i class="fa fa-child" style="font-size:20px"> </i> <input type="checkbox" id="children" name="children"></li><br>
 			  </ul>
 			 </li>
+
+       <br>
+       <li>
+       De:
+        <br><br>
+        <ul>
+        <li>Bumbac <input type="checkbox"  id="bumbac" name="bumbac"></li><br>
+        <li>Lycra <input type="checkbox" id="lycra" name="lycra"></li><br>
+        <li>Poliamida <input type="checkbox" id="poliamida" name="poliamida"></li><br>
+        <li>Flausat <input type="checkbox" id="flausat" name="flausat"></li><br>
+
+        </ul>
+       </li>
+       <br>
+       <li>
+       Pentru:<br>
+        <br>
+        <ul>
+        <li>sport <input type="checkbox"  id="sport" name="sport"></li><br>
+        <li>casual <input type="checkbox" id="casual" name="casual"></li><br>
+        <li>Ocazii speciale <input type="checkbox" id="elegant" name="elegant"></li><br>
+        
+
+        </ul>
+       </li>
+
+
 		   </ul>
 	<button id="arata" class="btn btn-info">Arata: </button>
 			
@@ -133,10 +160,35 @@
         var string = "shop.php?";
         var ok=false;
        if($('#man').prop('checked')) {ok=true;string+="man=true";}
+       
        if($('#woman').prop('checked') && ok==true){string+='&';string+="woman=true";}
        else if($('#woman').prop('checked')){string+="woman=true";ok=true;}
+       
        if($('#children').prop('checked')&&ok==true){string+='&';string+="children=true";}
        else if ($('#children').prop('checked')){string+='children=true';};
+       
+       if($('#sport').prop('checked')&&ok==true){string+='&';string+="sport=true";}
+       else if ($('#sport').prop('checked')){string+='sport=true';};
+       
+       if($('#casual').prop('checked')&&ok==true){string+='&';string+="casual=true";}
+       else if ($('#casual').prop('checked')){string+='casual=true';};
+
+       if($('#elegant').prop('checked')&&ok==true){string+='&';string+="elegant=true";}
+       else if ($('#elegant').prop('checked')){string+='elegant=true';};
+
+       if($('#poliamida').prop('checked')&&ok==true){string+='&';string+="poliamida=true";}
+       else if ($('#poliamida').prop('checked')){string+='poliamida=true';};
+
+       if($('#lycra').prop('checked')&&ok==true){string+='&';string+="lycra=true";}
+       else if ($('#lycra').prop('checked')){string+='lycra=true';};
+
+       if($('#bumbac').prop('checked')&&ok==true){string+='&';string+="bumbac=true";}
+       else if ($('#bumbac').prop('checked')){string+='bumbac=true';};
+
+       if($('#flausat').prop('checked')&&ok==true){string+='&';string+="flausat=true";}
+       else if ($('#flausat').prop('checked')){string+='flausat=true';};
+
+
        window.location.replace(string);
        });
 
@@ -175,6 +227,13 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     if($_GET['man'] ==='true'){$('#man').prop('checked', true);}
     if($_GET['woman'] ==='true'){$('#woman').prop('checked', true);}
     if($_GET['children'] ==='true'){$('#children').prop('checked', true);}
+    if($_GET['lycra'] === 'true'){$('#lycra').prop('checked', true);}
+    if($_GET['bumbac'] === 'true'){$('#bumbac').prop('checked', true);}
+    if($_GET['flausat'] === 'true'){$('#flausat').prop('checked', true);}
+    if($_GET['poliamida'] === 'true'){$('#poliamida').prop('checked', true);}
+    if($_GET['sport'] === 'true'){$('#sport').prop('checked', true);}
+    if($_GET['casual'] === 'true'){$('#casual').prop('checked', true);}
+    if($_GET['elegant'] === 'true'){$('#elegant').prop('checked', true);}
 });
 </script>
 
@@ -331,8 +390,21 @@ $('#10').click(function(){
 $('#11').click(function(){
   window.location.replace("produs.php?produs=11");
 });
+
+$(window).resize(function() {
+  // This will execute whenever the window is resized
+  console.log($(window).width()); // New height
+  
+});
 </script>
-	  
+
+<style type="text/css">
+  
+  .img-produs{
+      height:100px
+  }
+
+</style>
   </body>
   </html>
 

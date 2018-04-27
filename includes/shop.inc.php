@@ -2,9 +2,7 @@
 
 require 'dbconnection.inc.php';
 
-if(isset($_GET['pret'])){
-	$pret = $_GET['pret'];
-}
+
 
 
 if(isset($_GET['search'])){
@@ -82,6 +80,12 @@ else{
        if($i != $num)$sql.= "pentru = '$value' OR ";
        else $sql.= "pentru = '$value' )";
    }
+   if(isset($_GET['pret'])){
+      $pret = $_GET['pret'];
+      if($pret == 'crescator')$sql.="ORDER BY pret ASC";
+      else $sql.="ORDER BY pret DESC";
+}
+
    $sql.=';';
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){

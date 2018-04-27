@@ -197,6 +197,13 @@
           if($('#man').prop('checked')) string+="&man=true";
           if($('#woman').prop('checked'))string+="&woman=true";
           if($('#children').prop('checked'))string+="&children=true";
+          if($('#bumbac').prop('checked'))string+="&bumbac=true";
+          if($('#lycra').prop('checked'))string+="&lycra=true";
+          if($('#poliamida').prop('checked'))string+="&poliamida=true";
+          if($('#microfibra').prop('checked'))string+="&microfibra=true";
+          if($('#sport').prop('checked'))string+="&sport=true";
+          if($('#casual').prop('checked'))string+="&casual=true";
+          if($('#elegant').prop('checked'))string+="&elegant=true";
           window.location.replace(string);
        });
 
@@ -205,14 +212,28 @@
           if($('#man').prop('checked')) string+="&man=true";
           if($('#woman').prop('checked'))string+="&woman=true";
           if($('#children').prop('checked'))string+="&children=true";
+          if($('#bumbac').prop('checked'))string+="&bumbac=true";
+          if($('#lycra').prop('checked'))string+="&lycra=true";
+          if($('#poliamida').prop('checked'))string+="&poliamida=true";
+          if($('#microfibra').prop('checked'))string+="&microfibra=true";
+          if($('#sport').prop('checked'))string+="&sport=true";
+          if($('#casual').prop('checked'))string+="&casual=true";
+          if($('#elegant').prop('checked'))string+="&elegant=true";
           window.location.replace(string);
        });
 
        $('#relevanta').click(function(){
          var string = "shop.php?";
        if($('#man').prop('checked')) string+="&man=true";
-       if($('#woman').prop('checked'))string+="&woman=true";
-       if($('#children').prop('checked'))string+="&children=true";
+          if($('#woman').prop('checked'))string+="&woman=true";
+          if($('#children').prop('checked'))string+="&children=true";
+          if($('#bumbac').prop('checked'))string+="&bumbac=true";
+          if($('#lycra').prop('checked'))string+="&lycra=true";
+          if($('#poliamida').prop('checked'))string+="&poliamida=true";
+          if($('#microfibra').prop('checked'))string+="&microfibra=true";
+          if($('#sport').prop('checked'))string+="&sport=true";
+          if($('#casual').prop('checked'))string+="&casual=true";
+          if($('#elegant').prop('checked'))string+="&elegant=true";
        window.location.replace(string);
        });
 

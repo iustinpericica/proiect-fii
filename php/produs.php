@@ -45,10 +45,10 @@
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
 	 
-	  <div class="col-md-1 col-sm-1" ><a href="../php/contact.php">Contact</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/shop.php">Magazin</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/cont.php" id="cont_replaced">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/harta.php">Harta</a></div> 
+	  <div class="col-md-1 col-sm-1" ><a href="../php/contact.php" style="font-size:20px;">Contact</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="../php/shop.php" style="font-size:20px;"> Magazin</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="../php/cont.php" id="cont_replaced" style="font-size:20px;">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="../php/harta.php" style="font-size:20px;">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>

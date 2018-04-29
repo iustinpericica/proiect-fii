@@ -14,6 +14,7 @@
     <link href="../mdb/css/mdb.min.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
+
 <header> 
 	<div class="container-fluid row" id="banner">
 	  <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
@@ -80,6 +81,7 @@ echo $string;
 	   </div>
 	</div>
 	  <div style="visibility: hidden">ceva</div>
+	  
 </header>
 	
 <?php

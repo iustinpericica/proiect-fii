@@ -46,10 +46,10 @@
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
    
-    <div class="col-md-1 col-sm-1" ><a href="contact.php">Contact</a></div>
-    <div class="col-md-1 col-sm-1"><a href="shop.php">Magazin</a></div>
-    <div class="col-md-1 col-sm-1"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
-    <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
+    <div class="col-md-1 col-sm-1" ><a href="contact.php" style="font-size:20px;">Contact</a></div>
+    <div class="col-md-1 col-sm-1"><a href="shop.php" style="font-size:20px;">Magazin</a></div>
+    <div class="col-md-1 col-sm-1"><a href="cont.php"  style="font-size:20px;" id="cont_replaced">Contul tau</a></div>
+    <div class="col-md-1 col-sm-1"><a href="harta.php" style="font-size:20px;">Harta</a></div> 
     <div class="col-md-4 col-sm-4"></div>
     <div class="col-md-4 col-sm-4">
 
@@ -188,7 +188,6 @@
        if($('#microfibra').prop('checked')&&ok==true){string+='&';string+="microfibra=true";}
        else if ($('#microfibra').prop('checked')){string+='microfibra=true';ok=true;};
 
-
        window.location.replace(string);
        });
 
@@ -204,6 +203,7 @@
           if($('#sport').prop('checked'))string+="&sport=true";
           if($('#casual').prop('checked'))string+="&casual=true";
           if($('#elegant').prop('checked'))string+="&elegant=true";
+
           window.location.replace(string);
        });
 
@@ -410,6 +410,50 @@ $('#10').click(function(){
 
 $('#11').click(function(){
   window.location.replace("produs.php?produs=11");
+});
+
+$('#13').click(function(){
+  window.location.replace("produs.php?produs=13");
+});
+
+$('#12').click(function(){
+  window.location.replace("produs.php?produs=12");
+});
+
+$('#14').click(function(){
+  window.location.replace("produs.php?produs=14");
+});
+
+$('#15').click(function(){
+  window.location.replace("produs.php?produs=15");
+});
+
+$('#16').click(function(){
+  window.location.replace("produs.php?produs=16");
+});
+
+$('#17').click(function(){
+  window.location.replace("produs.php?produs=17");
+});
+
+$('#18').click(function(){
+  window.location.replace("produs.php?produs=18");
+});
+
+$('#19').click(function(){
+  window.location.replace("produs.php?produs=19");
+});
+
+$('#20').click(function(){
+  window.location.replace("produs.php?produs=20");
+});
+
+$('#21').click(function(){
+  window.location.replace("produs.php?produs=21");
+});
+
+$('#22').click(function(){
+  window.location.replace("produs.php?produs=22");
 });
 
 $(window).resize(function() {

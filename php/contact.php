@@ -103,9 +103,10 @@ Salut!
  <p>Ne poti suna la :0744543638</p>
  <p>Ne poti trimite un mail: la: emilelmaroo@yahoo.co.uk </p>
 
- Saaaaau aici:
  <div id="map">
  </div>
+
+ Saaaaau aici:<br>
 <form action="../includes/mail.inc.php" method="POST">
 	E-mailul tau: <input name="email"><br>
 	Numele si prenumele: <input name="email"><br>

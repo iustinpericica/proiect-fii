@@ -9,6 +9,11 @@ if(isset($_GET['search'])){
 	$ok=true;
    $text = $_GET['search'];
    $sql = "SELECT * FROM produse WHERE text LIKE '%$text%';";
+   if(isset($_GET['pret'])){
+      $pret = $_GET['pret'];
+      if($pret == 'crescator')$sql.="ORDER BY pret ASC";
+      else $sql.="ORDER BY pret DESC";
+}
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){
 		$var = $row[0];

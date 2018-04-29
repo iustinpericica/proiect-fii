@@ -72,10 +72,10 @@ echo $string;
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
 	 
-	  <div class="col-md-1 col-sm-1" ><a href="contact.php">Contact</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="shop.php">Magazin</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
+	  <div class="col-md-1 col-sm-1" ><a href="contact.php" style="font-size:20px;">Contact</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="shop.php" style="font-size:20px;">Magazin</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="cont.php" style="font-size:20px;" id="cont_replaced">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="harta.php" style="font-size:20px;" >Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		

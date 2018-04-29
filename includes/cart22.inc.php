@@ -69,9 +69,12 @@ else {
 				
 			}
 		}
+		$_SESSION['cart22'] = true;
 		header('Location: ../php/cart3.php');
   }
 }
+
+$_SESSION['cart22'] = true;
 	
 
 

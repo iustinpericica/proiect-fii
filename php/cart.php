@@ -103,11 +103,13 @@ echo $string;
 		for(i in data){
             
             p = data[i][0];
-            var string = '../includes/produse.inc.php?id=';
-            
-            string += p;
             marime = data[i][2];
             grosime = data[i][3].toString();
+            var string = '../includes/produse.inc.php?id=';
+            string += p;
+            string+='&marime=';
+            string+=marime;
+            if(grosime){string+='&grosime=';string+=grosime;}
 
             $.get(string , function(date){
 
@@ -115,13 +117,16 @@ echo $string;
              
              var string1 = '<div class="row img-thumbnail" style="margin-bottom: 20px;">\
       <div class="col-md-4 col-xs-6 col-xl-4 col-sm-6"><img src="../images/sock' + date['idp'] + '1.jpg" class="img-responsive" alt="sock1"></div>\
-      <div class="col-md-8 col-xs-6 col-xl-8 col-sm-6">' +  date["descriere"] +'</div>\
-      Marime:' + marime + '';
-      if(grosime != 0) {string1+='<br>Grosime: '; string1+=grosime; }
+      <div class="col-md-8 col-xs-6 col-xl-8 col-sm-6">' +  date["descriere"] +'</div><br><br>\
+      Marime:<spann id="marime">' + marime + '</spann><br><br>\
+      ID produs:<spannn >' + date['idp'] + '</spannn>\
+      '
+;
+      if(grosime != 0) {string1+='<br><br>Grosime: <span>'; string1+=grosime; string1+='</span>'}
 
-      string1+='<br>Cantitate: <input type="number"  name="cantitate" value="' + date['cantitate']  + '"><br>\
-      <button class="btn btn-warning" onclick="actualizeaza();">Actualizeaza cantitatea</button>\
-      <button class="btn btn-danger" id=' +  date['idp']  + ' onclick = "fdelete(' + date['idp'] + ',' + marime + ','  +  grosime  + ' );">Sterge produsul</button>\
+      string1+='<br><br>Cantitate: <input type="number"  name="cantitate" value="' + date['cantitate']  + '"><br>\
+      <button class="btn btn-warning btn_act">Actualizeaza cantitatea</button>\
+      <button class="btn btn-danger btn_delete" id=' +  date['idp']  + '>Sterge produsul</button>\
       </div>\
       ';
 
@@ -156,22 +161,34 @@ echo $string;
 
 <script>
 
-var fdelete = function(id , marime , grosime){
-  var string = "../includes/sterge_cos.inc.php?idp=";
-  string += id;
-  string+= '&marime=';
+$('.btn_act').click(function(){
+   var cantitate = $(this).siblings('input').val();
+   var marime = $(this).siblings('spann').text();
+   var grosime = $(this).siblings('span').text();
+   var idp  =  $(this).siblings('spannn').text();
+   var string = '../includes/cosupdate.inc.php?id=';
+   string+=idp;
+   string+='&cantitate=';
+   string+=cantitate;
+   string+='&marime=';
+   string+=marime;
+   if(grosime!=''){string+='&grosime=';string+=grosime;}
+   window.location.replace(string);
+
+});
+
+$('.btn_delete').click(function(){
+  var grosime = $(this).siblings('span').text();
+  var marime = $(this).siblings('spann').text();
+  var idp  =  $(this).siblings('spannn').text();
+  var string = '../includes/sterge_cos.inc.php?idp=';
+  string += idp;
+  string+='&marime=';
   string+=marime;
-  if(grosime){string+='&grosime=';string+=grosime;}
+  if(grosime!=''){string+='&grosime=';string+=grosime;}
   window.location.replace(string);
-};
+});
 
-
-var actualizeaza = function(){
-
-   var value = $(this).siblings('input').val();
-   alert(value);
-
-};
 
 </script>
 

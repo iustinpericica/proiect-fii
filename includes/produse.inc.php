@@ -7,9 +7,16 @@ $var = $_GET['id'];
 $idc = $_SESSION['idc'];
 $result = $conn->query("SELECT * FROM produse WHERE id='$var'");
 $res = mysqli_fetch_assoc($result);
+if(isset($_GET['grosime'])){
+$grosime = $_GET['grosime'];
+$marime = $_GET['marime'];
+$sql = "SELECT * FROM produsec WHERE idp='$var' AND idc = '$idc' AND marime = '$marime' AND grosime = '$grosime';";
+}
 
-$sql = "SELECT * FROM produsec WHERE idp='$var' AND idc = '$idc';";
-
+else {
+	$marime = $_GET['marime'];
+$sql = "SELECT * FROM produsec WHERE idp='$var' AND idc = '$idc' AND marime = '$marime';";
+}
 $result = $conn->query($sql);
 $res1 = mysqli_fetch_assoc($result);
 //echo $sql;

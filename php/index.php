@@ -18,17 +18,18 @@
 <header> 
 	<div class="container-fluid row" id="banner">
 	  <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
-		  <button id="shop" class="btn btn-elegant">Shop</span>
-		</div>
+		  <button id="shop" class="btn btn-elegant">Shop</button>
+	  </div>
 	  <div class="col-md-6 col-xs-0 col-sm-6">
 		
-		</div>
+	</div>
 	
 		<div class="col-md col-xs col-sm">
 		  <i class="fa fa-facebook-f" id="fb" style="font-size:20px;margin-right:10px;"></i>
 		  <i class="fa fa-instagram"  id="insta" style="font-size:20px;"></i>
 		</div>
 	</div>
+
      <div class="row container-fluid">
 	     <div class="col-md-2 col-sm-4 col-xs-6" style="font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';font-size:25px;cursor:pointer;" id="home_page">
 		   El Maro
@@ -42,6 +43,7 @@
 		    <button class="btn btn-elegant animated shake" id="to_be_replaced">Log In</button>
 		 </div>
 	   </div>
+
 <?php 
 
 if(isset($_GET['news'])&&$_GET['news']==='succes'){
@@ -51,6 +53,7 @@ $string = "<div class='alert alert-success' role='alert' id='alertnews'>
 echo $string;
 }
 ?>
+
 
 <script>
 	// ----    ADAUG PRETUL TOTALULUI DIN COS --
@@ -100,6 +103,53 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 	  ;
 }
 ?>
+
+<div class="container-fluid" style="margin-bottom:50px;margin-top: 50px;">
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">Despre noi</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">- El Maro -</h3>
+  <p style="font-size: 18px;">
+  	Noi suntem ElMaro, ne mandrim cu traditie din anul 1975, de atunci am ramas pe piata, datorita calitatii produselor, fabricate in Romania, orasul Roman. Avem o gama variata de produse, de la dresuri pana la sosete de sport. Am fost sponsorii celor mai mari campionate de tenis din Romania si inca o facem cand ni se iveste ocazia.
+  </p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color:black">Datam din 1975</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p class="text-center" style="font-size: 20px;">Lideri in Romania</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"><button id="shop2" class="btn btn-elegant">Mergi la produsele noastre si nu vei fi dezamagit</button></span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p class="text-center" style="font-size: 20px;">Calitatea sosetelor provenita din cusatura fina si firele proaspat produse</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <button class="btn btn-elegant" id="sus">Mergi sus</button>
+  </div>
+</div>
+
+</div>
 <footer class="container-fluid">
   <div class="row">
 	 <div class="col-md-5 center-block text-center">
@@ -110,17 +160,17 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 			<div class="col-md-4">
 			  <ul class="lista-footer">
 			     El Maro
-			   <li>Despre</li>
-			   <li>Contact</li>
-			   <li>Fii unul de al nostru!</li>
+			   <li id="despre">Despre</li>
+			   <li id="contactf">Contact</li>
+			   <li id="fii">Fii unul de al nostru!</li>
 			   </ul>
 			</div>
 			
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			  <ul  class="lista-footer">Shop
-			    <li>Cum comand?</li>
-				<li>Livrare </li>
-				<li>Termeni&Conditii</li>
+			    <li id="cum_comand">Cum comand?</li>
+				<li id="livrare">Livrare </li>
+				<li id="termeni">Termeni&Conditii</li>
 			  </ul>
 			</div>
 			  
@@ -135,7 +185,20 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 		  </div>
 	  </div>
 	</div>
+
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
+
 </body>
 	
 <style>
@@ -149,11 +212,64 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
   }
 }
 
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../images/sock31.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("../images/background1.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("../images/sock31.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+
 </style>
 
 <script>
 
 
+$('#sus').click(function(){
+       $('html, body').animate({scrollTop : 0},800);
+});
 $('#home_page').click(function(){
 	window.location.replace("index.php");
 });
@@ -173,6 +289,10 @@ $('#to_be_replaced').click(function(){
 });
 
 $('#shop').click(function(){
+	window.location.replace("shop.php");
+});
+
+$('#shop2').click(function(){
 	window.location.replace("shop.php");
 });
 

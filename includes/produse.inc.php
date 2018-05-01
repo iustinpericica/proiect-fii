@@ -21,6 +21,10 @@ $data->pret = $res['pret'];
 $data->material = $res['material'];
 $data->pentru = $res['pentru'];
 $data->cantitate = $res1['cant'];
+$data ->culoare  = $res['culoare'];
+$data->model = $res['model'];
+$data->sex = $res['tip'];
+$data->marime = $res['marime'];
 $data->textm = $res['textm'];
 $json = json_encode($data);
 

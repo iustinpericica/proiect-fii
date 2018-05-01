@@ -117,24 +117,18 @@
     <ol class="carousel-indicators">\
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>\
       <li data-target="#myCarousel" data-slide-to="1"></li>\
-      <li data-target="#myCarousel" data-slide-to="2"></li>\
     </ol>\
 \
     <!-- Wrapper for slides -->\
     <div class="carousel-inner">\
       <div class="item active">\
-        <img src="../images/sock' +  idp  +   '.jpg" alt="Los Angeles" class="img-fluid">\
+        <img src="../images/sock' +  idp  +   '1.jpg" alt="poza 1" class="img-fluid">\
       </div>\
 \
       <div class="item">\
-        <img src="../images/sock' +  idp  +   '.jpg" alt="Chicago" class="img-fluid">\
+        <img src="../images/sock' +  idp  +   '2.jpg" alt="poza 2" class="img-fluid">\
       </div>\
     \
-      <div class="item">\
-        <img src="../images/sock' +  idp  +   '.jpg" alt="New york" class="img-fluid">\
-      </div>\
-    </div>\
-\
     <!-- Left and right controls -->\
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">\
       <span class="glyphicon glyphicon-chevron-left"></span>\
@@ -163,9 +157,26 @@
   ID produs: <span id="idp"></span>
 </div><br>
 
+<div class="container-fluid" id="marimi">
+  
+
+
+</div>
+
+
    <div class="row container-fluid">
+    <div id="divmodel">Model: <span id="model"></span></div><br><br>
+    Culoare: <br><div class="square" style="height:50px;width:50px;border-radius:5px;box-shadow: 3px 3px grey;"></div><br>
+    <div id="divacelasi">
+    <p>Acelasi produs cu alt model sau culoare:</p>
+    <div id="acelasi" class="row">
+      
+
+
+    </div><br>
+  </div>
    	<div class="col-md-2 col-xs-6 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
-   	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><input type="number" id="cantitate_dorita" name="cantitate" style="width:100%;"></div>
+   	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3">Cantitate: <input type="number" id="cantitate_dorita" name="cantitate" style="width:100%;"></div>
    	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><button class="btn btn-elegant" id="btn_cumpara" style="font-size:10px;">Adauga in cos!</button></div>
    	 <div class="col-md-4 col-xs-6 col-sm-4 col-xl-4">cantitate ramasa <span id="cantitate"></span></div>
  </div>
@@ -176,6 +187,43 @@
 
 
 <script>
+
+var schimba = function(a){
+   string = "produs.php?produs=";
+   string+=a;
+   window.location.replace(string);
+};
+
+
+
+jQuery.ajaxSetup({async:false});
+
+var string = "../includes/frati.inc.php?id=";
+string+=$_GET['produs'];
+
+$.get(string , function(data){
+   if(data != 'grupai'){
+   data = JSON.parse(data);
+   for( i in data){
+    id1 = data[i];
+    var string1 = '../includes/produse.inc.php?id=';
+    string1 += id1;
+    $.get(string1 , function(data1){
+        
+        data1 = JSON.parse(data1);
+        console.log(data1);
+        if(data1['idp'] != $_GET['produs']){
+        $('#acelasi').append('<div class="col-md-2 col-xs-4 col-sm-3 col-xl-2" style="border: 1px solid black;cursor: pointer;" onclick="schimba(' + id1 + ');"><div style="height:50px;width:50px;border-radius:5px;box-shadow: 3px 3px grey;background-color:' + data1['culoare'] + '"></div> <br>Model: <span class="modela">' + data1['model']  +   '</span></div>');}
+
+
+
+    });
+
+   }
+ }
+ else $('#divacelasi').remove();
+});
+
  var req = new XMLHttpRequest();
  req.onload= function(){
     var res = JSON.parse(this.responseText);
@@ -186,6 +234,44 @@
     $('#material').replaceWith(res['material']);
     $('#pentru').replaceWith(res['pentru']);
     $('#idp').replaceWith(res['idp']);
+    $('.square').css('background-color' , res['culoare']);
+    if(res['model']!=0)$('#model').replaceWith(res['model']);
+    else $('#divmodel').remove();
+    if(res['marime']!='dres'){
+      if(res['marime']!='universala'){
+      var marime = JSON.parse(res['marime']);
+      var string = 'Marime: <select id="marime">'
+      for( i in marime){
+        string+= '<option value="';
+        string+=marime[i];
+        string+='">';
+        string+=marime[i];
+        string+="</option>";
+       
+      }
+      $('#marimi').append(string);
+      $('#marimi').append('<br><br>')
+    }
+    else {var marime = "Marime: universala";$('#marimi').append(marime);$('#marimi').append('<br>');}
+  }
+
+    else {
+      $('#marimi').append('Marime: <select id="marime">\
+  <option value="2">2</option>\
+  <option value="3">3</option>\
+  <option value="4">4</option>\
+  <option value="5">5</option>\
+  <option value="6">6</option>\
+</select>\
+\
+<br><br><br>\
+\
+Grosime: <select id="grosime">\
+  <option value="20DEN">20DEN</option>\
+  <option value="40DEN">40DEN</option>\
+  <option value="70DEN">70DEN</option>\
+</select><br><br>');
+    }
  };
  var string = '../includes/produse.inc.php?id=';
  var idp = $_GET['produs'];
@@ -197,55 +283,83 @@
 <!-- ADAUG IN COSULET -->
 
 <script>
+  
+
+
 	$('#btn_cumpara').click(function(){
+
+       var e = document.getElementById("marime");
+       var marime_selectata = e.options[e.selectedIndex].text;
+       if(document.getElementById('grosime') !== null){
+        var g = document.getElementById("grosime");
+        var grosime_selectata = g.options[g.selectedIndex].text;
+       }
+       
+
+
        if($('#cantitate_dorita').val()<1)alert('alege o cantitate pozitiva..');
+
        else {
        	  cant = $('#cantitate_dorita').val();
        	  string = "../includes/cos.inc.php?id=";
        	  string+=idp.toString();
        	  string+='&cantitate=';
        	  string += cant;
+          string+='&marime=';
+          string+=marime_selectata;
+          if(grosime_selectata != null) {string+='&grosime=';string+=grosime_selectata;}
        	  window.location.replace(string);
        }
 	});
 </script>
-
 <footer class="container-fluid">
   <div class="row">
-	 <div class="col-md-5" >
-	 #poza
-	 </div>
-	  <div class="col-md-7">
-	    <div class="row">
-			<div class="col-md-4">
-			  <ul class="lista-footer">
-			     El Maro
-			   <li>Despre</li>
-			   <li>Contact</li>
-			   <li>Fii unul de al nostru!</li>
-			   </ul>
-			</div>
-			
-			<div class="col-md-4 col-sm-6 col-xs-12">
-			  <ul  class="lista-footer">Shop
-			    <li>Cum comand?</li>
-				<li>Livrare </li>
-				<li>Termeni&Conditii</li>
-			  </ul>
-			</div>
-			  
-			<div class="col-md-4">
-			  Aboneaza-te la Newsletter
-			  <form method="post" action="../includes/news.inc.php">
-			  E-mail:<input name="email" placeholder="exemplu@yahoo.com">
-			  <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
-			  <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
-			  </form>
-			</div>
-		  </div>
-	  </div>
-	</div>
+   <div class="col-md-5 center-block text-center">
+   <img src="../images/logo.png" class="img-fluid " id="logo">
+   </div>
+    <div class="col-md-7">
+      <div class="row">
+      <div class="col-md-4">
+        <ul class="lista-footer">
+           El Maro
+         <li id="despre">Despre</li>
+         <li id="contactf">Contact</li>
+         <li id="fii">Fii unul de al nostru!</li>
+         </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul  class="lista-footer">Shop
+          <li id="cum_comand">Cum comand?</li>
+        <li id="livrare">Livrare </li>
+        <li id="termeni">Termeni&Conditii</li>
+        </ul>
+      </div>
+        
+      <div class="col-md-4">
+        Aboneaza-te la Newsletter
+        <form method="post" action="../includes/news.inc.php">
+        E-mail:<input name="email" placeholder="exemplu@yahoo.com">
+        <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
+        <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
 </body>
 	
 <script>
@@ -282,7 +396,16 @@ $('#btn_cart').click(function(){
 </script>
    
 
+<style type="text/css">
+   #logo{
+    height:100px;
+  }
 
+  @media only screen and (max-width: 600px) {
+   #logo{
+    height:50px;
+  }
+</style>
 
 <?php
  

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2018 at 10:26 PM
+-- Generation Time: May 01, 2018 at 12:49 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -51,24 +51,49 @@ CREATE TABLE `comenzi` (
   `c9` int(6) DEFAULT NULL,
   `p10` int(6) DEFAULT NULL,
   `c10` int(6) DEFAULT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `p11` int(6) NOT NULL,
+  `c11` int(6) NOT NULL,
+  `p12` int(6) NOT NULL,
+  `c12` int(6) NOT NULL,
+  `p13` int(6) NOT NULL,
+  `c13` int(6) NOT NULL,
+  `p14` int(6) NOT NULL,
+  `c14` int(6) NOT NULL,
+  `p15` int(6) NOT NULL,
+  `c15` int(6) NOT NULL,
+  `p16` int(6) NOT NULL,
+  `c16` int(6) NOT NULL,
+  `p17` int(6) NOT NULL,
+  `c17` int(11) NOT NULL,
+  `p18` int(11) NOT NULL,
+  `c18` int(11) NOT NULL,
+  `p19` int(11) NOT NULL,
+  `c19` int(11) NOT NULL,
+  `p20` int(11) NOT NULL,
+  `c20` int(11) NOT NULL,
+  `p21` int(11) NOT NULL,
+  `c21` int(11) NOT NULL,
+  `p22` int(11) NOT NULL,
+  `c22` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comenzi`
 --
 
-INSERT INTO `comenzi` (`id`, `idc`, `p1`, `c1`, `p2`, `c2`, `p3`, `c3`, `p4`, `c4`, `p5`, `c5`, `p6`, `c6`, `p7`, `c7`, `p8`, `c8`, `p9`, `c9`, `p10`, `c10`, `date`) VALUES
-(5, 10, 1, 2, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:06:35'),
-(6, 10, 1, 2, 2, 5, NULL, NULL, NULL, NULL, NULL, NULL, 6, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:40:53'),
-(7, 12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, 10, NULL, NULL, '2018-04-25 15:35:52'),
-(8, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 20, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:00:47'),
-(9, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:17:50'),
-(10, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07'),
-(11, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07'),
-(12, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:20'),
-(13, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:41'),
-(14, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:19:35');
+INSERT INTO `comenzi` (`id`, `idc`, `p1`, `c1`, `p2`, `c2`, `p3`, `c3`, `p4`, `c4`, `p5`, `c5`, `p6`, `c6`, `p7`, `c7`, `p8`, `c8`, `p9`, `c9`, `p10`, `c10`, `date`, `p11`, `c11`, `p12`, `c12`, `p13`, `c13`, `p14`, `c14`, `p15`, `c15`, `p16`, `c16`, `p17`, `c17`, `p18`, `c18`, `p19`, `c19`, `p20`, `c20`, `p21`, `c21`, `p22`, `c22`) VALUES
+(5, 10, 1, 2, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:06:35', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 10, 1, 2, 2, 5, NULL, NULL, NULL, NULL, NULL, NULL, 6, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-24 19:40:53', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, 10, NULL, NULL, '2018-04-25 15:35:52', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(8, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 20, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:00:47', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(9, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:17:50', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(11, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:07', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(12, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:20', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(13, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:18:41', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(14, 10, 1, 1, 2, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-25 16:19:35', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(15, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-04-27 20:31:27', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -93,7 +118,9 @@ INSERT INTO `comenzi_facturare_fizica` (`id`, `idc`, `nume`, `prenume`, `numar_t
 (19, 10, 'pericica', 'iustin', '0741198606', 5),
 (20, 12, 'Pericica', 'Maria', '0740253777', 7),
 (21, 13, 'Lacramioara', 'Lacra', '0745585506', 8),
-(22, 10, 'pericica', 'iustin', '0741198606', 14);
+(22, 10, 'pericica', 'iustin', '0741198606', 14),
+(23, 10, 'pericica', 'iustin', '0741198606', 0),
+(25, 10, 'pericica', 'iustin', '0741198606', 15);
 
 -- --------------------------------------------------------
 
@@ -155,7 +182,10 @@ INSERT INTO `comenzi_livrare` (`id`, `idc`, `id_comanda`, `pret`, `oras`, `judet
 (11, 10, 11, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
 (12, 10, 12, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
 (13, 10, 13, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
-(14, 10, 14, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606');
+(14, 10, 14, 100, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(15, 10, 0, 24, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(16, 10, 0, 24, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606'),
+(17, 10, 15, 30, 'roman', 'neamt', 'aviatorilot', '14 A', '0741198606');
 
 -- --------------------------------------------------------
 
@@ -260,35 +290,44 @@ CREATE TABLE `produse` (
   `stoc` int(10) NOT NULL,
   `textm` varchar(500) NOT NULL,
   `pentru` varchar(30) NOT NULL,
-  `material` varchar(100) NOT NULL
+  `material` varchar(100) NOT NULL,
+  `culoare` varchar(30) NOT NULL,
+  `model` varchar(100) NOT NULL,
+  `grupa` int(11) NOT NULL,
+  `marime` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produse`
 --
 
-INSERT INTO `produse` (`id`, `tip`, `pret`, `text`, `stoc`, `textm`, `pentru`, `material`) VALUES
-(1, 'man', 3, 'Soseta sport, de barbati lunga; recomandata pentru tenis de camp', 5000, 'Soseta sport, recomandata persoanelor care iubesc miscarea. \r\n Soseta este lunga, textura este adecvata pentru aerarea piciorului.', 'sport', 'bumbac-80% , poliamida-15% , elasthan-5%.'),
-(2, 'woman', 4, 'Soseta de bumbac pentru femei; recomandata pentru toate anotimpurile.', 15000, 'Soseta de bumbac pentru femei cu variatii de modele-bob de orez, glat, rip.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%.e'),
-(3, 'man', 5, 'Soseta scurta, pentru barbati de sport', 10000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.'),
-(4, 'man', 6, 'Soseta de barbati lunga pentru pantalon lung la ocazii speciale.', 10000, 'Soseta este recomandata persoanelor care sunt invitate la diverse ocazii speciale.', 'elegant', 'bumbac tip bambus-60%, lycra-35%, elasthan-5%.'),
-(5, 'man', 6, 'Soseta flausat interior pentru iarna', 12000, 'Soseta flausat interior pentru barbati, recomandata anotimpurilor friguroase.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
-(6, 'woman', 5, 'Soseta flausat exterior pentru femei pentru anotimpuri friguroase', 10000, 'Soseta flausat exterior pentru femei, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
-(7, 'woman', 10, 'Ciorapi port jartier, recomandati femeilor la a doua varsta', 8000, 'Ciorapi pentru femei de varsta a doua in timpuri friguroase din bumbac 100%.', 'casual', 'bumbac-100%;'),
-(8, 'man', 7, 'Soseta scurta de sport, pentru barbati', 12000, 'Soseta scurta sport pentru barbatii iubitori de miscare, cu textura foarte fina.', 'sport', 'bumbac-65%, lycra-30%, elasthan-5%.'),
-(9, 'woman', 7, 'Soseta scurta de sport, pentru femei', 10000, 'Soseta scurta sport pentru femei iubitoare de miscare, cu textura foarte fina.', 'sport', '65%-bumbac, 30%-lycra, 5%-elasthan.'),
-(10, 'children', 5, 'Soseta flausat exterior pentru copii', 8000, 'Soseta flausat exterior pentru copii, recomandata anotimpului rece.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
-(11, 'woman', 5, 'Soseta scurta, pentru femei, de sport', 8000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.'),
-(12, 'man', 5, 'Soseta flausat exterior de barbati pentru anotimpuri friguroase', 12000, 'Soseta flausat exterior pentru barbati, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;'),
-(13, 'woman', 6, 'Dres femei poliamida 20 DEN', 20000, 'Dres femei poliamida 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-95%, 5%-elasthan.'),
-(14, 'woman', 8, 'Soseta bumbac cu lycra pentru femei', 5000, 'Soseta bumbac cu lycra pentru femei, cu eticheta fina, fara cusatura.', 'casual', '65%-bumbac, 30%-lycra, 5%-elasthan.'),
-(15, 'woman', 8, 'Dres femei lycra 20 DEN ', 20000, 'Dres femei lycra 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-80%, 15%-lycra, 5%-elasthan.'),
-(16, 'woman', 10, 'Dres femei din microfibra 70 DEN', 15000, 'Dres femei din microfibra 70 DEN, marimi de la 2 -> 6, culori: bej, gri, negru.', 'casual', 'microfibra-80%, lycra-15%, elasthan-5%. '),
-(17, 'woman', 4, 'Sosete femei 3/4 lycra (gambalete)', 10000, 'Sosete femei 3/4 lycra, gambalete, marime universala, culori:bej, negru.\r\n 2 perechi/plic.', 'casual', 'poliamida-80%, lycra-15%, elasthan-5%.'),
-(18, 'woman', 15, 'Colanti elasticizati 70 DEN ', 8000, 'Colanti elasticizati 70 DEN, marimi si culori diferite, se recomanda pentru anotimpuri reci.', 'casual', 'microfibra-80%, lycra-15%, 5%-elasthan.'),
-(19, 'woman', 3, 'Sosete 3/4 poliamida (gambalete)', 15000, 'Sosete 3/4 poliamida (gambalete), marimi universale, culori:bej, negru.', 'casual', 'poliamida-95%, elasthan-5%.'),
-(20, 'children', 4, 'Dres fetite microfibra 40 DEN', 10000, 'Dres de fetite microfibra 40 DEN, marimi de la 2 ani -> 12 ani, culori diferite:alb, roz, crem, rosu, violet, negru. Recomandate anotimpurilor primavara si toamna.', 'casual', 'microfibra-80%, 15%-lycra, 5%-elasthan.'),
-(21, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.');
+INSERT INTO `produse` (`id`, `tip`, `pret`, `text`, `stoc`, `textm`, `pentru`, `material`, `culoare`, `model`, `grupa`, `marime`) VALUES
+(1, 'man', 3, 'Soseta sport, de barbati lunga; recomandata pentru tenis de camp', 5000, 'Soseta sport, recomandata persoanelor care iubesc miscarea. \r\n Soseta este lunga, textura este adecvata pentru aerarea piciorului.', 'sport', 'bumbac-80% , poliamida-15% , elasthan-5%.', '#eff4fc', 'cu o dunga rosie si una neagra', 0, '[\"40\",\"42\",\"44\"]'),
+(2, 'woman', 4, 'Soseta de bumbac pentru femei; recomandata pentru toate anotimpurile.', 15000, 'Soseta de bumbac pentru femei cu variatii de modele-bob de orez, glat, rip.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%.e', '#eff4fc', '0', 0, '[\"36\",\"38\"]'),
+(3, 'man', 5, 'Soseta scurta, pentru barbati de sport', 10000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.', '#000000', '0', 0, '[\"40\",\"42\",\"44\"]'),
+(4, 'man', 6, 'Soseta de barbati lunga pentru pantalon lung la ocazii speciale.', 10000, 'Soseta este recomandata persoanelor care sunt invitate la diverse ocazii speciale.', 'elegant', 'bumbac tip bambus-60%, lycra-35%, elasthan-5%.', '#2F333E', '0', 0, '[\"40\",\"42\",\"44\"]'),
+(5, 'man', 6, 'Soseta flausat interior pentru iarna', 12000, 'Soseta flausat interior pentru barbati, recomandata anotimpurilor friguroase.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;', '#162D58', '0', 0, '[\"40\",\"42\",\"44\"]'),
+(6, 'woman', 5, 'Soseta flausat exterior pentru femei pentru anotimpuri friguroase', 10000, 'Soseta flausat exterior pentru femei, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;', '#eff4fc', '0', 0, '[\"36\",\"38\"]'),
+(7, 'woman', 10, 'Ciorapi port jartier, recomandati femeilor la a doua varsta', 8000, 'Ciorapi pentru femei de varsta a doua in timpuri friguroase din bumbac 100%.', 'casual', 'bumbac-100%;', '#C37F83', '0', 0, '[\"36\",\"38\"]'),
+(8, 'man', 7, 'Soseta scurta de sport, pentru barbati', 12000, 'Soseta scurta sport pentru barbatii iubitori de miscare, cu textura foarte fina.', 'sport', 'bumbac-65%, lycra-30%, elasthan-5%.', '#000000', '0', 0, '[\"40\",\"42\",\"44\"]'),
+(9, 'woman', 7, 'Soseta scurta de sport, pentru femei', 10000, 'Soseta scurta sport pentru femei iubitoare de miscare, cu textura foarte fina.', 'sport', '65%-bumbac, 30%-lycra, 5%-elasthan.', '#eff4fc', 'buline', 1, '[\"36\",\"38\"]'),
+(10, 'children', 5, 'Soseta flausat exterior pentru copii', 8000, 'Soseta flausat exterior pentru copii, recomandata anotimpului rece.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;', '#161D3B', '0', 0, '[\"18\",\"20\",\"22\"]'),
+(11, 'woman', 5, 'Soseta scurta, pentru femei, de sport', 8000, 'Soseta recomandata persoanelor iubitoare de sport, drumetii.', 'sport', 'bumbac-70%, lycra-25%, elasthan-5%.', '#eff4fc', '0', 0, '[\"36\",\"38\"]'),
+(12, 'man', 5, 'Soseta flausat exterior de barbati pentru anotimpuri friguroase', 12000, 'Soseta flausat exterior pentru barbati, recomandata anotimpului de iarna, foarte practica in momentele de plimbare prin zapada.', 'casual', 'bumbac-80%, poliamida-15%, elasthan-5%;', '#000000', '0', 0, '[\"40\",\"42\",\"44\"]'),
+(13, 'woman', 6, 'Dres femei poliamida 20 DEN', 20000, 'Dres femei poliamida 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-95%, 5%-elasthan.', '#967765', '0', 0, 'dres'),
+(14, 'woman', 8, 'Soseta bumbac cu lycra pentru femei', 5000, 'Soseta bumbac cu lycra pentru femei, cu eticheta fina, fara cusatura.', 'casual', '65%-bumbac, 30%-lycra, 5%-elasthan.', '#C19FD1', '0', 0, '[\"36\",\"38\"]'),
+(15, 'woman', 8, 'Dres femei lycra 20 DEN ', 20000, 'Dres femei lycra 20 DEN, pentru uz cotidian, comod si relaxant.', 'casual', 'poliamida-80%, 15%-lycra, 5%-elasthan.', '#52413A', '0', 0, 'dres'),
+(16, 'woman', 10, 'Dres femei din microfibra 70 DEN', 15000, 'Dres femei din microfibra 70 DEN, marimi de la 2 -> 6, culori: bej, gri, negru.', 'casual', 'microfibra-80%, lycra-15%, elasthan-5%. ', '#231E24', '0', 0, 'dres'),
+(17, 'woman', 4, 'Sosete femei 3/4 lycra (gambalete)', 10000, 'Sosete femei 3/4 lycra, gambalete, marime universala, culori:bej, negru.\r\n 2 perechi/plic.', 'casual', 'poliamida-80%, lycra-15%, elasthan-5%.', '#624c3e', '0', 0, 'universala'),
+(18, 'woman', 15, 'Colanti elasticizati 70 DEN ', 8000, 'Colanti elasticizati 70 DEN, marimi si culori diferite, se recomanda pentru anotimpuri reci.', 'casual', 'microfibra-80%, lycra-15%, 5%-elasthan.', '#000000', '0', 0, 'dres'),
+(19, 'woman', 3, 'Sosete 3/4 poliamida (gambalete)', 15000, 'Sosete 3/4 poliamida (gambalete), marimi universale, culori:bej, negru.', 'casual', 'poliamida-95%, elasthan-5%.', '#AF806C', '0', 0, 'dres'),
+(20, 'children', 4, 'Dres fetite microfibra 40 DEN', 10000, 'Dres de fetite microfibra 40 DEN, marimi de la 2 ani -> 12 ani, culori diferite:alb, roz, crem, rosu, violet, negru. Recomandate anotimpurilor primavara si toamna.', 'casual', 'microfibra-80%, 15%-lycra, 5%-elasthan.', '#000000', '0', 0, '[\"18\",\"20\",\"22\"]'),
+(21, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.', '#D6DDE9', '3 linii cu cate 3 cerculete pe fiecare', 2, '[\"40\",\"42\",\"44\"]'),
+(22, 'children', 4, 'Soseta pentru copii', 70, 'Soseta pentru copii de 2->6 ani foarte dragute.', 'casual', 'bumbac-75%, poliamida-20%, elasthan-5%.', '#F6E846', '0', 0, '[\"18\",\"20\",\"22\"]'),
+(23, 'woman', 7, 'Soseta scurta de sport, pentru femei', 10000, 'Soseta scurta sport pentru femei iubitoare de miscare, cu textura foarte fina.', 'sport', '65%-bumbac, 30%-lycra, 5%-elasthan.', '#eff4fc', 'stelute', 1, '[\"36\",\"38\"]'),
+(24, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.', '#25292F', '2 grupe de linii despartite de 3 forme geometrice', 2, '[\"40\",\"42\",\"44\"]'),
+(25, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.', '#1F2229', 'o linie formata din diferite modele', 2, '[\"40\",\"42\",\"44\"]'),
+(26, 'man', 7, 'Sosete bumbac + lycra pentru barbati', 12000, 'Sosete de bumbac + lycra pentru barbati, marimi si culori diferite pentru ocazii speciale.', 'casual', 'bumbac-80%, lycra-15%, elasthan-5%.', '#1D2F4E', 'simplu- albastru fin', 2, '[\"40\",\"42\",\"44\"]');
 
 -- --------------------------------------------------------
 
@@ -299,25 +338,19 @@ INSERT INTO `produse` (`id`, `tip`, `pret`, `text`, `stoc`, `textm`, `pentru`, `
 CREATE TABLE `produsec` (
   `idp` int(6) DEFAULT NULL,
   `idc` int(6) DEFAULT NULL,
-  `cant` int(10) DEFAULT NULL
+  `cant` int(10) DEFAULT NULL,
+  `marime` varchar(20) NOT NULL,
+  `grosime` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produsec`
 --
 
-INSERT INTO `produsec` (`idp`, `idc`, `cant`) VALUES
-(2, 10, 4),
-(33, 0, 1),
-(23, 0, 2),
-(5, 0, 4),
-(4, 0, 16),
-(3, 0, 8),
-(0, 0, 2),
-(9, 12, 10),
-(7, 13, 20),
-(11, 10, 2),
-(1, 10, 2);
+INSERT INTO `produsec` (`idp`, `idc`, `cant`, `marime`, `grosime`) VALUES
+(0, 0, 2, '', ''),
+(3, 10, 2, '42', ''),
+(15, 10, 3, '5', '40DEN');
 
 -- --------------------------------------------------------
 
@@ -423,13 +456,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comenzi`
 --
 ALTER TABLE `comenzi`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `comenzi_facturare_fizica`
 --
 ALTER TABLE `comenzi_facturare_fizica`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `comenzi_facturare_juridica`
@@ -441,7 +474,7 @@ ALTER TABLE `comenzi_facturare_juridica`
 -- AUTO_INCREMENT for table `comenzi_livrare`
 --
 ALTER TABLE `comenzi_livrare`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `date`

@@ -89,46 +89,52 @@ echo $string;
 ?>	
 
 <script>
-
+  jQuery.ajaxSetup({async:false});
 	$('#pu').click(function(){
         window.location.replace('cart2.php');
 	});
-	var req = new XMLHttpRequest();
-	var data;
 	var date;
 	var p;
-	req.onload = function(){
-		data = JSON.parse(this.responseText);
+
+	$.get('../includes/cart.inc.php' , function(data){
+		data = JSON.parse(data);
+    console.log(data);
+    
 		for(i in data){
-            var relatii = new XMLHttpRequest();
+            
             p = data[i][0];
-            relatii.onload = function(){
-                 date = JSON.parse(this.responseText);
-                 $('#produse_cos').append('<div class="row img-thumbnail" style="margin-bottom: 20px;">\
- 			<div class="col-md-4 col-xs-6 col-xl-4 col-sm-6"><img src="../images/sock' + date['idp'] + '.jpg" class="img-responsive" alt="sock1"></div>\
- 			<div class="col-md-8 col-xs-6 col-xl-8 col-sm-6">' +  date["descriere"] +'</div>\
- 			Cantitate: <input type="number" id = c' +  date['idp']  + ' name="cantitate" value="' + date['cantitate']  + '"><br>\
- 			<button class="btn btn-warning" id = u' +  date['idp']  + '>Actualizeaza cantitatea</button>\
- 			<button class="btn btn-danger" id=' +  date['idp']  + '>Sterge produsul</button>\
- 	    </div>\
- 	    ');
-            }
             var string = '../includes/produse.inc.php?id=';
-            string += data[i][0];
-           //console.log(data[i][0]);
-            relatii.open('GET' , string , true);
             
-            //console.log(data[i][0]);
-            relatii.send();
+            string += p;
+            marime = data[i][2];
+            grosime = data[i][3].toString();
+
+            $.get(string , function(date){
+
+             date = JSON.parse(date);
+             
+             var string1 = '<div class="row img-thumbnail" style="margin-bottom: 20px;">\
+      <div class="col-md-4 col-xs-6 col-xl-4 col-sm-6"><img src="../images/sock' + date['idp'] + '1.jpg" class="img-responsive" alt="sock1"></div>\
+      <div class="col-md-8 col-xs-6 col-xl-8 col-sm-6">' +  date["descriere"] +'</div>\
+      Marime:' + marime + '';
+      if(grosime != 0) {string1+='<br>Grosime: '; string1+=grosime; }
+
+      string1+='<br>Cantitate: <input type="number"  name="cantitate" value="' + date['cantitate']  + '"><br>\
+      <button class="btn btn-warning" onclick="actualizeaza();">Actualizeaza cantitatea</button>\
+      <button class="btn btn-danger" id=' +  date['idp']  + ' onclick = "fdelete(' + date['idp'] + ',' + marime + ','  +  grosime  + ' );">Sterge produsul</button>\
+      </div>\
+      ';
+
+             $('#produse_cos').append(string1); 
+          
+
+   });          
             
-            //console.log(data[i][0]);
 			
 		};
-	};
-	req.open('GET' , '../includes/cart.inc.php' , true);
-	req.send();
+	});
+	
 </script>
-
 
 <!-- ALERTA DE STERGERE -->
 
@@ -149,184 +155,24 @@ echo $string;
 </script>
 
 <script>
-$(document).on("click", "#1", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=1");
-});
 
-$(document).on("click", "#2", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=2");
-});
+var fdelete = function(id , marime , grosime){
+  var string = "../includes/sterge_cos.inc.php?idp=";
+  string += id;
+  string+= '&marime=';
+  string+=marime;
+  if(grosime){string+='&grosime=';string+=grosime;}
+  window.location.replace(string);
+};
 
-$(document).on("click", "#3", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=3");
-});
 
-$(document).on("click", "#4", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=4");
-});
+var actualizeaza = function(){
 
-$(document).on("click", "#5", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=5");
-});
-$(document).on("click", "#6", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=6");
-});
-$(document).on("click", "#7", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=7");
-});
-$(document).on("click", "#8", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=8");
-});
-$(document).on("click", "#9", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=9");
-});
-$(document).on("click", "#10", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=10");
-});
-$(document).on("click", "#11", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=11");
-});
-$(document).on("click", "#12", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=12");
-});
-$(document).on("click", "#13", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=13");
-});
-$(document).on("click", "#14", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=14");
-});
-$(document).on("click", "#15", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=15");
-});
-$(document).on("click", "#16", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=16");
-});
-$(document).on("click", "#17", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=17");
-});
-$(document).on("click", "#18", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=18");
-});
-$(document).on("click", "#19", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=19");
-});
-$(document).on("click", "#20", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=20");
-});
+   var value = $(this).siblings('input').val();
+   alert(value);
 
-$(document).on("click", "#21", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=21");
-});
+};
 
-$(document).on("click", "#22", function(){
-   window.location.replace("../includes/sterge_cos.inc.php?idp=22");
-});
-$(document).on("click", "#u1", function(){
-   var cant = $('#c1').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=1&cantitate=" + cant);
-});
-
-$(document).on("click", "#u2", function(){
-   var cant = $('#c2').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=2&cantitate=" + cant);
-});
-$(document).on("click", "#u3", function(){
-  var cant = $('#c3').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=3&cantitate=" + cant);
-});
-$(document).on("click", "#u4", function(){
-   var cant = $('#c4').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=4&cantitate=" + cant);
-});
-$(document).on("click", "#u5", function(){
-   var cant = $('#c5').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=5&cantitate=" + cant);
-});
-$(document).on("click", "#u6", function(){
-   var cant = $('#c6').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=6&cantitate=" + cant);
-});
-$(document).on("click", "#u7", function(){
-   var cant = $('#c7').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=7&cantitate=" + cant);
-});
-$(document).on("click", "#u8", function(){
-   var cant = $('#c8').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=8&cantitate=" + cant);
-});
-$(document).on("click", "#u9", function(){
-   var cant = $('#c9').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=9&cantitate=" + cant);
-});
-$(document).on("click", "#u10", function(){
-   var cant = $('#c10').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=10&cantitate=" + cant);
-});
-
-$(document).on("click", "#u11", function(){
-   var cant = $('#c11').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=11&cantitate=" + cant);
-});
-
-$(document).on("click", "#u11", function(){
-   var cant = $('#c11').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=11&cantitate=" + cant);
-});
-
-$(document).on("click", "#u12", function(){
-   var cant = $('#c12').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=12&cantitate=" + cant);
-});
-
-$(document).on("click", "#u13", function(){
-   var cant = $('#c13').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=13&cantitate=" + cant);
-});
-
-$(document).on("click", "#u14", function(){
-   var cant = $('#c14').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=14&cantitate=" + cant);
-});
-
-$(document).on("click", "#u15", function(){
-   var cant = $('#c15').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=15&cantitate=" + cant);
-});
-
-$(document).on("click", "#u16", function(){
-   var cant = $('#c16').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=16&cantitate=" + cant);
-});
-
-$(document).on("click", "#u17", function(){
-   var cant = $('#c17').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=17&cantitate=" + cant);
-});
-
-$(document).on("click", "#u18", function(){
-   var cant = $('#c18').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=18&cantitate=" + cant);
-});
-
-$(document).on("click", "#u19", function(){
-   var cant = $('#c19').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=19&cantitate=" + cant);
-});
-
-$(document).on("click", "#u20", function(){
-   var cant = $('#c20').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=20&cantitate=" + cant);
-});
-
-$(document).on("click", "#u21", function(){
-   var cant = $('#c21').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=21&cantitate=" + cant);
-});
-
-$(document).on("click", "#u22", function(){
-   var cant = $('#c22').val();
-   window.location.replace("../includes/cosupdate.inc.php?id=22&cantitate=" + cant);
-});
 </script>
 
 
@@ -360,42 +206,54 @@ $(document).on("click", "#u22", function(){
 
 <?php if(!isset($_SESSION['idc'])){echo '<h3 class="red-text text-center">Mai intai fa-ti un cont!</h3>';}
 ?>	
-
 <footer class="container-fluid">
   <div class="row">
-	 <div class="col-md-5" >
-	 #poza
-	 </div>
-	  <div class="col-md-7">
-	    <div class="row">
-			<div class="col-md-4">
-			  <ul class="lista-footer">
-			     El Maro
-			   <li>Despre</li>
-			   <li>Contact</li>
-			   <li>Fii unul de al nostru!</li>
-			   </ul>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-			  <ul  class="lista-footer">Shop
-			    <li>Cum comand?</li>
-				<li>Livrare </li>
-				<li>Termeni&Conditii</li>
-			  </ul>
-			</div>
-			  
-			<div class="col-md-4">
-			  Aboneaza-te la Newsletter
-			  <form method="post" action="../includes/news.inc.php">
-			  E-mail:<input name="email" placeholder="exemplu@yahoo.com">
-			  <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
-			  <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
-			  </form>
-			</div>
-		  </div>
-	  </div>
-	</div>
+   <div class="col-md-5 center-block text-center">
+   <img src="../images/logo.png" class="img-fluid " id="logo">
+   </div>
+    <div class="col-md-7">
+      <div class="row">
+      <div class="col-md-4">
+        <ul class="lista-footer">
+           El Maro
+         <li id="despre">Despre</li>
+         <li id="contactf">Contact</li>
+         <li id="fii">Fii unul de al nostru!</li>
+         </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul  class="lista-footer">Shop
+          <li id="cum_comand">Cum comand?</li>
+        <li id="livrare">Livrare </li>
+        <li id="termeni">Termeni&Conditii</li>
+        </ul>
+      </div>
+        
+      <div class="col-md-4">
+        Aboneaza-te la Newsletter
+        <form method="post" action="../includes/news.inc.php">
+        E-mail:<input name="email" placeholder="exemplu@yahoo.com">
+        <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
+        <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
 </body>
 
 
@@ -431,7 +289,14 @@ $('#btn_cart').click(function(){
 
 </script>
    
+<style type="text/css"> #logo{
+    height:100px;
+  }
 
+  @media only screen and (max-width: 600px) {
+   #logo{
+    height:50px;
+  }</style>
 
 
 <?php

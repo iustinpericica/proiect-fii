@@ -16,6 +16,8 @@ if(isset($_GET['id']) && isset($_GET['cantitate'])){
    $idc =  make_safe($_SESSION['idc']);
    $idp=  make_safe($_GET['id']);
    $cant = make_safe($_GET['cantitate']);
+   if($cant == 0){$conn->query("DELETE FROM  produsec WHERE idc = '$idc' AND idp = '$idp' ");}
+       
    $conn->query("UPDATE produsec SET cant = $cant WHERE idc = '$idc' AND idp = '$idp' ");
    $string = 'Location: ../php/cart.php';
    header($string);  

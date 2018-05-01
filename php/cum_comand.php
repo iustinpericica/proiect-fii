@@ -108,7 +108,6 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
   <p><button id="mergishop" class="btn btn-default">Mergi la magazin!</button></p>
   <p>Dupa ce ai adaugat produsele in cos, apasa pe pasul urmator in pagina cosului, urmeaza toti pasii si GATA- te-ai ales cu produsele care o sa te multumeasca garantat!</p>
 </div>
-
 <footer class="container-fluid">
   <div class="row">
 	 <div class="col-md-5 center-block text-center">
@@ -119,17 +118,17 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 			<div class="col-md-4">
 			  <ul class="lista-footer">
 			     El Maro
-			   <li>Despre</li>
-			   <li>Contact</li>
-			   <li>Fii unul de al nostru!</li>
+			   <li id="despre">Despre</li>
+			   <li id="contactf">Contact</li>
+			   <li id="fii">Fii unul de al nostru!</li>
 			   </ul>
 			</div>
 			
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			  <ul  class="lista-footer">Shop
-			    <li>Cum comand?</li>
-				<li>Livrare </li>
-				<li>Termeni&Conditii</li>
+			    <li id="cum_comand">Cum comand?</li>
+				<li id="livrare">Livrare </li>
+				<li id="termeni">Termeni&Conditii</li>
 			  </ul>
 			</div>
 			  
@@ -144,7 +143,19 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 		  </div>
 	  </div>
 	</div>
+
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
 </body>
 	
 <style>

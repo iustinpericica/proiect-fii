@@ -49,10 +49,10 @@ session_start();
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
 	 
-	  <div class="col-md-1 col-sm-1" ><a href="contact.php">Contact</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="shop.php">Magazin</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="harta.php">Harta</a></div> 
+	  <div class="col-md-1 col-sm-1" ><a href="contact.php" style="font-size:20px;">Contact</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="shop.php" style="font-size:20px;">Magazin</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="cont.php" style="font-size:20px;" id="cont_replaced">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-1"><a href="harta.php" style="font-size:20px;">Harta</a></div> 
 	  <div class="col-md-4 col-sm-4"></div>
 	  <div class="col-md-4 col-sm-4">
 		
@@ -111,13 +111,13 @@ $("#btn_cart").click(function(){
 <div class="text-center" id="contul_meu" style="font-size:30px;">Contul meu </div>
 
 <div class="text-center" style="width:40%;font-size:20px;">
-  Salut <?php echo $_SESSION['user']?>
+  Salut, <?php echo $_SESSION['user']?>
 
  </div>
 
 <div class="row">
   <div class="col-md-1 col-xs-2 col-sm-1 col-xl-1 border"></div>
-  <div class="col-md-2 col-xs-8 col-sm-4 col-xl-2 text-center" id="contul_meu_1"> Contul meu </div>
+
   <div class="col-md-1 col-xs-2 col-sm-1 col-xl-1 border"></div>
   <div class="col-md-8 col-xs-0 col-sm-6 col-xl-8"></div>
 </div>
@@ -366,41 +366,52 @@ $('#schimba_parola').css('visibility' , 'hidden');
 </script>
 <footer class="container-fluid">
   <div class="row">
-	 <div class="col-md-5" >
-	 #poza
-	 </div>
-	  <div class="col-md-7">
-	    <div class="row">
-			<div class="col-md-4">
-			  <ul class="lista-footer">
-			     El Maro
-			   <li>Despre</li>
-			   <li>Contact</li>
-			   <li>Fii unul de al nostru!</li>
-			   </ul>
-			</div>
-			
-			<div class="col-md-4 col-sm-6 col-xs-12">
-			  <ul  class="lista-footer">Shop
-			    <li>Cum comand?</li>
-				<li>Livrare </li>
-				<li>Termeni&Conditii</li>
-			  </ul>
-			</div>
-			  
-			<div class="col-md-4">
-			  Aboneaza-te la Newsletter
-			  <form method="post" action="../includes/news.inc.php">
-			  E-mail:<input name="email" placeholder="exemplu@yahoo.com">
-			  <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
-			  <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
-			  </form>
-			</div>
-		  </div>
-	  </div>
-	</div>
+   <div class="col-md-5 center-block text-center">
+   <img src="../images/logo.png" class="img-fluid " id="logo">
+   </div>
+    <div class="col-md-7">
+      <div class="row">
+      <div class="col-md-4">
+        <ul class="lista-footer">
+           El Maro
+         <li id="despre">Despre</li>
+         <li id="contactf">Contact</li>
+         <li id="fii">Fii unul de al nostru!</li>
+         </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul  class="lista-footer">Shop
+          <li id="cum_comand">Cum comand?</li>
+        <li id="livrare">Livrare </li>
+        <li id="termeni">Termeni&Conditii</li>
+        </ul>
+      </div>
+        
+      <div class="col-md-4">
+        Aboneaza-te la Newsletter
+        <form method="post" action="../includes/news.inc.php">
+        E-mail:<input name="email" placeholder="exemplu@yahoo.com">
+        <div class="row">Nume:<input name="nume" placeholder="Nume"></div>
+        <button value="submit" type="submit" class="btn btn-elegant">Submit</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
 
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
 
 </body>
 	
@@ -479,6 +490,15 @@ else {
  	height:120px;
  	widht:auto;
  }
+
+  #logo{
+    height:100px;
+  }
+
+  @media only screen and (max-width: 600px) {
+   #logo{
+    height:50px;
+  }
 }
 </style>
 

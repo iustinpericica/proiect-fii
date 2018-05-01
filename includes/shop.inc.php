@@ -8,16 +8,17 @@ require 'dbconnection.inc.php';
 if(isset($_GET['search'])){
 	$ok=true;
    $text = $_GET['search'];
-   $sql = "SELECT * FROM produse WHERE text LIKE '%$text%';";
+   $sql = "SELECT * FROM produse WHERE text LIKE '%$text%'";
    if(isset($_GET['pret'])){
       $pret = $_GET['pret'];
-      if($pret == 'crescator')$sql.="ORDER BY pret ASC";
-      else $sql.="ORDER BY pret DESC";
+      if($pret == 'crescator')$sql.=" ORDER BY pret ASC;";
+      else if($pret == 'descrescator') $sql.=" ORDER BY pret DESC;";
+            else $sql.=';';
 }
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){
 		$var = $row[0];
-		$image = "../images/sock$var.jpg";
+		$image = "../images/sock{$var}1.jpg";
 		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
 <div class="view overlay">
     <img src=' . $image . ' class="img-fluid img-responsive" alt="">
@@ -25,7 +26,7 @@ if(isset($_GET['search'])){
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
-    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+    <div class="text-center" style="font-size:20px;">' . $row[3] . '</div> <p style="font-size:25px;"class="text-center"><b>' . $row[2] . ' lei</b></p>
 </div>
 </div>
 </div>';
@@ -87,15 +88,16 @@ else{
    }
    if(isset($_GET['pret'])){
       $pret = $_GET['pret'];
-      if($pret == 'crescator')$sql.="ORDER BY pret ASC";
-      else $sql.="ORDER BY pret DESC";
+      if($pret == 'crescator')$sql.=" ORDER BY pret ASC";
+      else $sql.=" ORDER BY pret DESC";
 }
 
    $sql.=';';
+
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){
         $var = $row[0];
-        $image = "../images/sock$var.jpg";
+        $image = "../images/sock{$var}1.jpg";
         echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
 <div class="view overlay">
     <img src=' . $image . ' class="img-fluid img-responsive" alt="">
@@ -103,7 +105,7 @@ else{
     <div class="mask flex-center rgba-black-strong">
         <p class="white-text"><button id=' . $var . ' class="btn btn-elegant">Detalii</button></p>
     </div>
-    <div class="text-center">' . $row[3] . '</div> <p class="text-center">' . $row[2] . ' lei</p>
+    <div class="text-center" style="font-size:20px;">' . $row[3] . '</div> <p style="font-size:25px;"class="text-center"><b>' . $row[2] . ' lei</b></p>
 </div>
 </div>
 </div>';

@@ -79,46 +79,44 @@
    
 </script>
 
-<div class="text-center container-fluid row" id="shop">
-	    Shop
-	  </div>
+
 <!-- PRODUSE IN FRRONT-END -->
-<div class="container-fluid row">
+<div class="container-fluid row" style="margin-top: 30px;">
 	   <div class="col-md-2 col-sm-3 col-xs-4 col-xl-2" id="meniu_filtrare"  >
 		   
 		  
 	     <ul style="width:100%;margin:0;">
 	       
-		  <li>
+		  <li class="filtru">
 		   Pentru:
 			  <br><br>
 			  <ul>
-			  <li>Femei <i class="fa fa-female" style="font-size:20px"> </i> <input type="checkbox"  id="woman" name="woman"></li><br>
-			  <li>Barbati <i class="fa fa-male" style="font-size:20px"> </i> <input type="checkbox" id="man" name="man"></li><br>
-			  <li>Copii <i class="fa fa-child" style="font-size:20px"> </i> <input type="checkbox" id="children" name="children"></li><br>
+			  <li><input type="checkbox"  id="woman" name="woman"> Femei <i class="fa fa-female" style="font-size:20px"> </i> </li><br>
+			  <li><input type="checkbox" id="man" name="man"> Barbati <i class="fa fa-male" style="font-size:20px"> </i> </li><br>
+			  <li><input type="checkbox" id="children" name="children"> Copii <i class="fa fa-child" style="font-size:20px"> </i> </li><br>
 			  </ul>
 			 </li>
 
        <br>
-       <li>
+       <li class="filtru">
        De:
         <br><br>
         <ul>
-        <li>Bumbac <input type="checkbox"  id="bumbac" name="bumbac"></li><br>
-        <li>Lycra <input type="checkbox" id="lycra" name="lycra"></li><br>
-        <li>Poliamida <input type="checkbox" id="poliamida" name="poliamida"></li><br>
-        <li>Microfibra <input type="checkbox" id="microfibra" name="microfibra"></li><br>
+        <li><input type="checkbox"  id="bumbac" name="bumbac"> Bumbac </li><br>
+        <li><input type="checkbox" id="lycra" name="lycra"> Lycra </li><br>
+        <li><input type="checkbox" id="poliamida" name="poliamida"> Poliamida </li><br>
+        <li><input type="checkbox" id="microfibra" name="microfibra"> Microfibra </li><br>
 
         </ul>
        </li>
        <br>
-       <li>
+       <li class="filtru">
        Recomandate pentru:<br>
         <br>
         <ul>
-        <li>sport <input type="checkbox"  id="sport" name="sport"></li><br>
-        <li>casual <input type="checkbox" id="casual" name="casual"></li><br>
-        <li>Ocazii speciale <input type="checkbox" id="elegant" name="elegant"></li><br>
+        <li><input type="checkbox"  id="sport" name="sport"> sport </li><br>
+        <li><input type="checkbox" id="casual" name="casual"> casual </li><br>
+        <li><input type="checkbox" id="elegant" name="elegant"> Ocazii speciale </li><br>
         
 
         </ul>
@@ -127,14 +125,13 @@
 
 		   </ul>
 	<button id="arata" class="btn btn-info">Arata: </button>
-			
   </div>
 	
 	   <div class="col-md-10 col-sm-9 col-xs-8 col-xl-10">
 	  
 		  <div class="row"  style="margin-bottom:20px;">
-		  <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">Sortare dupa:</div>
-      <div class="col-md-0 col-xs-4 col-sm-2 col-xl-0"></div>
+		  <div class="col-md-3 col-xs-3 col-sm-3 col-xl-2 text-center" id="sortare_dupa">Sortare dupa:</div>
+      <div class="col-md-0 col-xs-2 col-sm-2 col-xl-0"></div>
 		  <div class="col-md-2 col-xs-2 col-sm-2 col-xl-2">
 			  
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Selectati:
@@ -153,6 +150,8 @@
  </div>
 </div>
 </div>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up"></i></button>   
 
 <script>
       
@@ -192,7 +191,20 @@
        });
 
        $('#crescator').click(function(){
+          var $_GET = {};
           var string = "shop.php?pret=crescator";
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    if($_GET['search']) { string = "shop.php?pret=crescator&search=";
+                         string+=$_GET['search'];}
+
+    else {
+           string = "shop.php?pret=crescator";
           if($('#man').prop('checked')) string+="&man=true";
           if($('#woman').prop('checked'))string+="&woman=true";
           if($('#children').prop('checked'))string+="&children=true";
@@ -203,12 +215,31 @@
           if($('#sport').prop('checked'))string+="&sport=true";
           if($('#casual').prop('checked'))string+="&casual=true";
           if($('#elegant').prop('checked'))string+="&elegant=true";
+          
+          
 
-          window.location.replace(string);
+        }
+       
+      });
+ window.location.replace(string);
        });
 
        $('#descrescator').click(function(){
-          var string = "shop.php?pret=descrescator";
+        var string = "shop.php?pret=descrescator";
+          var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+   
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    if($_GET['search']) {
+                         string = "shop.php?pret=descrescator&search=";
+                         string+=$_GET['search'];}
+
+    else {
+          string = "shop.php?pret=descrescator";
           if($('#man').prop('checked')) string+="&man=true";
           if($('#woman').prop('checked'))string+="&woman=true";
           if($('#children').prop('checked'))string+="&children=true";
@@ -219,12 +250,29 @@
           if($('#sport').prop('checked'))string+="&sport=true";
           if($('#casual').prop('checked'))string+="&casual=true";
           if($('#elegant').prop('checked'))string+="&elegant=true";
-          window.location.replace(string);
+          
+          
+     }
+      
+      });
+  window.location.replace(string);
        });
 
        $('#relevanta').click(function(){
-         var string = "shop.php?";
-       if($('#man').prop('checked')) string+="&man=true";
+        var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+    if($_GET['search']) {var string = "shop.php?pret=relevanta&search=";
+                         string+=$_GET['search'];}
+
+    else {
+          var string = "shop.php?pret=relevanta";
+          if($('#man').prop('checked')) string+="&man=true";
           if($('#woman').prop('checked'))string+="&woman=true";
           if($('#children').prop('checked'))string+="&children=true";
           if($('#bumbac').prop('checked'))string+="&bumbac=true";
@@ -234,7 +282,12 @@
           if($('#sport').prop('checked'))string+="&sport=true";
           if($('#casual').prop('checked'))string+="&casual=true";
           if($('#elegant').prop('checked'))string+="&elegant=true";
-       window.location.replace(string);
+          
+          
+
+        }
+        window.location.replace(string);
+      });
        });
 
        var $_GET = {};
@@ -257,28 +310,27 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     if($_GET['elegant'] === 'true'){$('#elegant').prop('checked', true);}
 });
 </script>
-
 <footer class="container-fluid">
   <div class="row">
-   <div class="col-md-5" >
-   #poza
+   <div class="col-md-5 center-block text-center">
+   <img src="../images/logo.png" class="img-fluid " id="logo">
    </div>
     <div class="col-md-7">
       <div class="row">
       <div class="col-md-4">
         <ul class="lista-footer">
            El Maro
-         <li>Despre</li>
-         <li>Contact</li>
-         <li>Fii unul de al nostru!</li>
+         <li id="despre">Despre</li>
+         <li id="contactf">Contact</li>
+         <li id="fii">Fii unul de al nostru!</li>
          </ul>
       </div>
       
       <div class="col-md-4 col-sm-6 col-xs-12">
         <ul  class="lista-footer">Shop
-          <li>Cum comand?</li>
-        <li>Livrare </li>
-        <li>Termeni&Conditii</li>
+          <li id="cum_comand">Cum comand?</li>
+        <li id="livrare">Livrare </li>
+        <li id="termeni">Termeni&Conditii</li>
         </ul>
       </div>
         
@@ -293,7 +345,19 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
       </div>
     </div>
   </div>
+
 </footer>
+
+<script type="text/javascript">
+   
+   $('#despre').click(function(){window.location.replace('despre.php');});
+   $('#contactf').click(function(){window.location.replace('contact.php');});
+   $('#fii').click(function(){window.location.replace('fii.php');});
+   $('#cum_comand').click(function(){window.location.replace('cum_comand.php');});
+   $('#livrare').click(function(){window.location.replace('livrare.php');});
+   $('#termeni').click(function(){window.location.replace('termeni.php');});
+
+</script>
 
 </body>
   
@@ -335,7 +399,23 @@ $('#btn_cart').click(function(){
 
 </script>
    
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    $('html, body').animate({scrollTop : 0},800);
+}
+</script>
 
 
 <?php
@@ -466,10 +546,53 @@ $(window).resize(function() {
 <style type="text/css">
   
   .img-produs{
-      height:100px
+      height:140px
   }
 
+  .filtru{
+    border-top:black solid 1px;
+  }
+
+   #logo{
+    height:100px;
+  }
+  
+  #sortare_dupa{
+    font-size: 25px;
+  }
+
+  @media only screen and (max-width: 600px) {
+   #logo{
+    height:50px;
+  }
+
+  #sortare_dupa{
+    font-size: 15px;
+  }
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
+
+
   </body>
   </html>
 

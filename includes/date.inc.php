@@ -2,14 +2,22 @@
 
 require_once "dbconnection.inc.php";
 session_start();
-$oras = $_GET['oras'];
-$numar_telefon = $_GET['numar_telefon'];
-$judet = $_GET['judet'];
-$strada = $_GET['strada'];
-$numar = $_GET['numar'];
-$nume = $_GET['nume'];
-$prenume = $_GET['prenume'];
-$idc = $_SESSION['idc'];
+
+function make_safe($variable) 
+{
+   $variable = strip_tags(mysqli_real_escape_string($GLOBALS['conn'] ,trim($variable)));
+   return $variable; 
+}
+
+
+$oras = make_safe($_GET['oras']);
+$numar_telefon = make_safe($_GET['numar_telefon']);
+$judet = make_safe($_GET['judet']);
+$strada = make_safe($_GET['strada']);
+$numar = make_safe($_GET['numar']);
+$nume = make_safe($_GET['nume']);
+$prenume = make_safe($_GET['prenume']);
+$idc = make_safe($_SESSION['idc']);
 
 $sql = "INSERT INTO date(idc , oras , judet , strada , numar , numar_telefon , nume , prenume) VALUES('$idc' , '$oras' , '$judet' , '$strada' , '$numar' , '$numar_telefon' , '$nume' , '$prenume');";
 $result = $conn->query($sql);

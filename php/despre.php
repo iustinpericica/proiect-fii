@@ -82,28 +82,50 @@ echo $string;
 	  <div style="visibility: hidden">ceva</div>
 </div></div>
 </header>
-	
-<?php
-if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
-	echo '<div class="row container-fluid text-center">Se pare ca te-ai mai conectat la noi, vrei sa mergi la pagina de LogIn?<button id="mergi" class="btn btn-default">Mergi</button> saaaau <button class="btn btn-danger" id="uita">Uita de mine :(</button></div>
-	<script>
-    $("#mergi").click(function(){
-       window.location.replace("LogIn.php");
-    });
-    $("#uita").click(function(){
-       window.location.replace("../includes/uita.inc.php");
-    });
-    </script>
-	'
-       
-	  ;
-}
-?>
 
-<div class="container-fluid" style="font-size: 18px;">
-    Suntem o companie cu renume din Roman, un oras din judetul Neamt.<br>
-    Datam din anul 1975 si.... completez
+<div class="container-fluid" style="margin-bottom:50px;margin-top: 50px;">
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">Despre noi</span>
+  </div>
 </div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">- El Maro -</h3>
+  <p style="font-size: 18px;" class="text-center">
+  	 Suntem o companie cu renume din Roman, un oras din judetul Neamt.
+  </p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color:black">Datam din 1975</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p class="text-center" style="font-size: 20px;"> Datam din anul 1975 si.... initital am avut sediul intr-un sat din apropiere, mai apoi in apropierea Romanului, iar acum chiar in Roman.</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"><button id="shop2" class="btn btn-elegant">Mergi la produsele noastre si nu vei fi dezamagit</button></span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p class="text-center" style="font-size: 20px;">  Ne putem mandri cu produse de calitate fabricate de peste 30 de angajati si roboti.</p>
+  </div>
+</div>
+
+
+
+</div>
+
 <footer class="container-fluid">
   <div class="row">
 	 <div class="col-md-5 center-block text-center">
@@ -154,7 +176,7 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 </script>
 </body>
 	
-<style>
+<<style>
   #logo{
   	height:100px;
   }
@@ -164,6 +186,56 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
   	height:50px;
   }
 }
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../images/sock31.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("../images/background1.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("../images/sock31.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
 
 </style>
 
@@ -189,6 +261,10 @@ $('#to_be_replaced').click(function(){
 });
 
 $('#shop').click(function(){
+	window.location.replace("shop.php");
+});
+
+$('#shop2').click(function(){
 	window.location.replace("shop.php");
 });
 

@@ -116,7 +116,7 @@ Salut!
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
-				<h2>Log In</h2>
+				<h2>Trimite-ne un mail</h2>
 			</div>
 		<form method="POST" action="../includes/login.inc.php">
 			<label for="username">E-mailul tau</label>
@@ -248,7 +248,7 @@ $('#btn_cart').click(function(){
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');

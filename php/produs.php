@@ -15,47 +15,75 @@
 </head>
 <body class="container-fluid">
 <header> 
-	<div class="container-fluid row" id="banner">
-	  <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
-		  <button id="shop" class="btn btn-elegant">Shop</span>
-		</div>
-	  <div class="col-md-6 col-xs-0 col-sm-6">
-		
-		</div>
-	
-		<div class="col-md col-xs col-sm">
-		  <i class="fa fa-facebook-f" id="fb" style="font-size:20px;margin-right:10px;"></i>
-		  <i class="fa fa-instagram"  id="insta" style="font-size:20px;"></i>
-		</div>
-	</div>
+  <div class="container-fluid row" id="banner">
+    <div class="col-md-4 col-xs-6 col-sm-2 text-center" >
+      <button id="shop" class="btn btn-elegant">Shop</button>
+    </div>
+    <div class="col-md-6 col-xs-0 col-sm-6">
+    
+  </div>
+  
+    <div class="col-md col-xs col-sm">
+      <i class="fa fa-facebook-f" id="fb" style="font-size:20px;margin-right:10px;"></i>
+      <i class="fa fa-instagram"  id="insta" style="font-size:20px;"></i>
+    </div>
+  </div>
+
      <div class="row container-fluid">
-	     <div class="col-md-2 col-sm-4 col-xs-6" style="font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';font-size:25px;cursor:pointer;" id="home_page">
-		   El Maro
-		 </div>
-		 
-		 <div class="col-md-7 col-xs-0 col-sm-4">
-		   
-		 </div>
-		 
-		 <div class="col-md-3 col-xs-6 col-sm-4">
-		    <button class="btn btn-elegant animated shake" id="to_be_replaced">Log In</button>
-		 </div>
-	   </div>
+       <div class="col-md-2 col-sm-4 col-xs-6" style="font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';font-size:25px;cursor:pointer;" id="home_page">
+       El Maro
+     </div>
+     
+     <div class="col-md-7 col-xs-0 col-sm-4">
+       
+     </div>
+     
+     <div class="col-md-3 col-xs-6 col-sm-4">
+        <button class="btn btn-elegant animated shake" id="to_be_replaced">Log In</button>
+     </div>
+     </div>
+
+<?php 
+
+if(isset($_GET['news'])&&$_GET['news']==='succes'){
+$string = "<div class='alert alert-success' role='alert' id='alertnews'>
+  Felicitari! Te-ai abonat la newslatter-ul nostru !
+</div>";
+echo $string;
+}
+?>
+
+
+<script>
+  // ----    ADAUG PRETUL TOTALULUI DIN COS --
+   var total_req = new  XMLHttpRequest();
+   total_req.onload = function(){
+     if(this.responseText<=19&&this.responseText>0) $('#pret_cos').html(this.responseText + ' lei');
+     else  if(this.responseText>19)$('#pret_cos').html(this.responseText + ' de lei');
+   };
+   total_req.open('GET' , '../includes/total.inc.php?show=true' , true);
+   total_req.send();
+</script>
+
+
+
 
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
-	 
-	  <div class="col-md-1 col-sm-1" ><a href="../php/contact.php" style="font-size:20px;">Contact</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/shop.php" style="font-size:20px;"> Magazin</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/cont.php" id="cont_replaced" style="font-size:20px;">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1"><a href="../php/harta.php" style="font-size:20px;">Harta</a></div> 
-	  <div class="col-md-4 col-sm-4"></div>
-	  <div class="col-md-4 col-sm-4">
-		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
-		
-	   </div>
-	</div>
-	  <div style="visibility: hidden">ceva</div>
+   
+    <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="contact.php">Contact</a></div>
+    <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="shop.php">Magazin</a></div>
+    <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
+    <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="harta.php">Harta</a></div> 
+    <div class="col-md-4 col-sm-0 col-xs-12" style="font-size:20px;"></div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    
+    <button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
+    
+     </div>
+  </div>
+    <div style="visibility: hidden">ceva</div>
+    
 </header>
 	
 <script>
@@ -75,7 +103,7 @@
 	
 
 
-<div class="row">
+<div class="row" style="font-size:17px;">
  <div class="col-md-5 col-xs-12 col-col-sm-5 col-xl-5" id="poza" class="container-fluid ">	
  </div>
  <div class="col-md-7 col-xs-12 col-sm-7 col-xl-7">
@@ -175,12 +203,13 @@
 
     </div><br>
   </div>
-   	<div class="col-md-2 col-xs-6 col-sm-2 col-xl-2">Pret: <span id="pret"></span> lei</div>
-   	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3">Cantitate: <input type="number" id="cantitate_dorita" name="cantitate" style="width:100%;"></div>
+  <div class="container-fluid text-center center-block">
+   	<div class="col-md-2 col-xs-6 col-sm-2 col-xl-2">Pret: <b style="font-size: 18px;"><span id="pret"></span> lei</b></div>
+   	 <div class="col-md-1 col-xs-3 col-sm-1 col-xl-1" >Cantitate:</div>  <div class="col-md-2 col-xs-3 col-sm-2 col-xl-2" > <input type="number" style="width:100%;" id="cantitate_dorita" name="cantitate"></div>
    	 <div class="col-md-3 col-xs-6 col-sm-3 col-xl-3"><button class="btn btn-elegant" id="btn_cumpara" style="font-size:10px;">Adauga in cos!</button></div>
    	 <div class="col-md-4 col-xs-6 col-sm-4 col-xl-4">cantitate ramasa <span id="cantitate"></span></div>
  </div>
-
+</div>
 </div>
 
 </div>
@@ -211,7 +240,7 @@ $.get(string , function(data){
     $.get(string1 , function(data1){
         
         data1 = JSON.parse(data1);
-        console.log(data1);
+       
         if(data1['idp'] != $_GET['produs']){
         $('#acelasi').append('<div class="col-md-2 col-xs-4 col-sm-3 col-xl-2" style="border: 1px solid black;cursor: pointer;" onclick="schimba(' + id1 + ');"><div style="height:50px;width:50px;border-radius:5px;box-shadow: 3px 3px grey;background-color:' + data1['culoare'] + '"></div> <br>Model: <span class="modela">' + data1['model']  +   '</span></div>');}
 
@@ -227,7 +256,7 @@ $.get(string , function(data){
  var req = new XMLHttpRequest();
  req.onload= function(){
     var res = JSON.parse(this.responseText);
-    console.log(res);
+   
     $('#cantitate').replaceWith(res['stoc']);
     $('#pret').replaceWith(res['pret']);
     $('#textm').replaceWith(res['textm']);
@@ -240,7 +269,7 @@ $.get(string , function(data){
     if(res['marime']!='dres'){
       if(res['marime']!='universala'){
       var marime = JSON.parse(res['marime']);
-      var string = 'Marime: <select id="marime">'
+      var string = 'Marime: <select id="marime" class="form-control" style="width:30%;">'
       for( i in marime){
         string+= '<option value="';
         string+=marime[i];
@@ -252,11 +281,11 @@ $.get(string , function(data){
       $('#marimi').append(string);
       $('#marimi').append('<br><br>')
     }
-    else {var marime = "Marime: universala";$('#marimi').append(marime);$('#marimi').append('<br>');}
+    else {$('#marimi').append('Marime: <span id="marime">universala</span>');$('#marimi').append('<br>');}
   }
 
     else {
-      $('#marimi').append('Marime: <select id="marime">\
+      $('#marimi').append('Marime: <select id="marime" class="form-control" style="width:30%;">\
   <option value="2">2</option>\
   <option value="3">3</option>\
   <option value="4">4</option>\
@@ -266,7 +295,7 @@ $.get(string , function(data){
 \
 <br><br><br>\
 \
-Grosime: <select id="grosime">\
+Grosime: <select id="grosime" class="form-control" style="width:30%;">\
   <option value="20DEN">20DEN</option>\
   <option value="40DEN">40DEN</option>\
   <option value="70DEN">70DEN</option>\
@@ -287,9 +316,13 @@ Grosime: <select id="grosime">\
 
 
 	$('#btn_cumpara').click(function(){
-
+       
        var e = document.getElementById("marime");
+       if(e.innerHTML === 'universala') var marime_selectata = 'universala';
+       else {
+       
        var marime_selectata = e.options[e.selectedIndex].text;
+     }
        if(document.getElementById('grosime') !== null){
         var g = document.getElementById("grosime");
         var grosime_selectata = g.options[g.selectedIndex].text;
@@ -310,8 +343,10 @@ Grosime: <select id="grosime">\
           if(grosime_selectata != null) {string+='&grosime=';string+=grosime_selectata;}
        	  window.location.replace(string);
        }
+       
 	});
 </script>
+
 <footer class="container-fluid">
   <div class="row">
    <div class="col-md-5 center-block text-center">
@@ -409,7 +444,7 @@ $('#btn_cart').click(function(){
 
 <?php
  
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');

@@ -351,7 +351,7 @@ $('#schimba_livrare').click(function(){
    
 <?php
  
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');

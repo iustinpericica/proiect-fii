@@ -2,7 +2,13 @@
 
 require_once "dbconnection.inc.php";
 
-$idp = $_GET['id'];
+function make_safe($variable) 
+{
+   $variable = strip_tags(mysqli_real_escape_string($GLOBALS['conn'] ,trim($variable)));
+   return $variable; 
+}
+
+$idp = make_safe($_GET['id']);
 
 $sql = "SELECT * FROM produse WHERE id = '$idp';";
 

@@ -59,13 +59,14 @@ if(isset($_POST['submit'])){
 		die();
     }
     
+    $password = md5($password);
     $conn->query("INSERT INTO users(user_first,user_last,user_email,user_name,user_nrtelefon,user_password) VALUES('$firstname' , '$lastname' , '$email' , '$username' , '$nrtelefon' , '$password')");
 
 }
 
 session_start();
 $_SESSION['idc'] = $username;
-$_SESSION['password'] = $password;
+
 setcookie('user', $username, time() + (86400 * 30), "/");
-setcookie('password', $password, time() + (86400 * 30), "/");
+
 header('Location: ../php/LogIn.php');

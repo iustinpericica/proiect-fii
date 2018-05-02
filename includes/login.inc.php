@@ -28,13 +28,13 @@ if(isset($_POST['username'])){
    $result = $conn->query("SELECT * FROM users WHERE user_name = '$username' ");
    $vector = $result->fetch_assoc();
    
-   if($vector['user_password']==$password){
+   if($vector['user_password']== md5($password)){
       session_start();
       $_SESSION['user'] = $username;
-      $_SESSION['password'] = $password;
+      
       $_SESSION['idc'] = $vector['user_id'];
       setcookie('user', $username, time() + (86400 * 30), "/");
-      setcookie('password', $password, time() + (86400 * 30), "/");
+      
     
       header('Location: ../php/index.php?login=succes');
    }

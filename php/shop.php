@@ -82,9 +82,9 @@
 
 <!-- PRODUSE IN FRRONT-END -->
 <div class="container-fluid row" style="margin-top: 30px;">
-	   <div class="col-md-2 col-sm-3 col-xs-4 col-xl-2" id="meniu_filtrare"  >
+	   <div class="col-md-2 col-sm-3 col-xs-4 col-xl-2" id="meniu_filtrare" >
 		   
-		  
+		  <div id="filtru_id"  style='width:auto;height: auto;'>
 	     <ul style="width:100%;margin:0;">
 	       
 		  <li class="filtru">
@@ -125,6 +125,7 @@
 
 		   </ul>
 	<button id="arata" class="btn btn-info">Arata: </button>
+</div>
   </div>
 	
 	   <div class="col-md-10 col-sm-9 col-xs-8 col-xl-10">
@@ -310,7 +311,7 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     if($_GET['elegant'] === 'true'){$('#elegant').prop('checked', true);}
 });
 </script>
-<footer class="container-fluid">
+<footer class="container-fluid" id="footer" style="display: block;bottom:500px;">
   <div class="row">
    <div class="col-md-5 center-block text-center">
    <img src="../images/logo.png" class="img-fluid " id="logo">
@@ -357,7 +358,7 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
    $('#livrare').click(function(){window.location.replace('livrare.php');});
    $('#termeni').click(function(){window.location.replace('termeni.php');});
 
-</script>
+</script><
 
 </body>
   
@@ -404,24 +405,33 @@ $('#btn_cart').click(function(){
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  if($( document ).width() > 1400){
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
-    } else {
+        
+        
+      }
+    else {
         document.getElementById("myBtn").style.display = "none";
+
+        
     }
+}
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     $('html, body').animate({scrollTop : 0},800);
 }
+
+
 </script>
 
 
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
   echo "<script>
            $('#to_be_replaced').html('Contul meu');
@@ -536,11 +546,85 @@ $('#22').click(function(){
   window.location.replace("produs.php?produs=22");
 });
 
-$(window).resize(function() {
-  // This will execute whenever the window is resized
-  console.log($(window).width()); // New height
-  
+$('#23').click(function(){
+  window.location.replace("produs.php?produs=23");
 });
+
+$('#24').click(function(){
+  window.location.replace("produs.php?produs=24");
+});
+
+$('#25').click(function(){
+  window.location.replace("produs.php?produs=25");
+});
+
+$('#26').click(function(){
+  window.location.replace("produs.php?produs=26");
+});
+
+$('#27').click(function(){
+  window.location.replace("produs.php?produs=27");
+});
+
+$('#28').click(function(){
+  window.location.replace("produs.php?produs=28");
+});
+
+
+$('#29').click(function(){
+  window.location.replace("produs.php?produs=29");
+});
+
+
+$('#30').click(function(){
+  window.location.replace("produs.php?produs=30");
+});
+
+
+$('#31').click(function(){
+  window.location.replace("produs.php?produs=31");
+});
+
+
+$('#32').click(function(){
+  window.location.replace("produs.php?produs=32");
+});
+
+
+$('#33').click(function(){
+  window.location.replace("produs.php?produs=33");
+});
+
+
+$('#34').click(function(){
+  window.location.replace("produs.php?produs=34");
+});
+
+
+$('#35').click(function(){
+  window.location.replace("produs.php?produs=35");
+});
+
+
+$('#36').click(function(){
+  window.location.replace("produs.php?produs=36");
+});
+
+
+$('#37').click(function(){
+  window.location.replace("produs.php?produs=37");
+});
+
+
+$('#38').click(function(){
+  window.location.replace("produs.php?produs=38");
+});
+
+
+$('#39').click(function(){
+  window.location.replace("produs.php?produs=39");
+});
+
 </script>
 
 <style type="text/css">
@@ -564,11 +648,25 @@ $(window).resize(function() {
   @media only screen and (max-width: 600px) {
    #logo{
     height:50px;
+  } 
+
+  #filtru_id{
+    bottom:0px;
   }
 
   #sortare_dupa{
     font-size: 15px;
   }
+}
+
+ @media only screen and (max-width: 1000px) {
+   
+
+  #filtru_id{
+    bottom:0px;
+  }
+
+  
 }
 
 #myBtn {
@@ -590,6 +688,9 @@ $(window).resize(function() {
 #myBtn:hover {
   background-color: #555;
 }
+
+
+
 </style>
 
 

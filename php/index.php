@@ -72,11 +72,11 @@ echo $string;
 
  <div class='row container-fluid' style='margin-top:15px;' id='banner2'>
 	 
-	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="contact.php">Contact</a></div>
-	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="shop.php">Magazin</a></div>
-	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
-	  <div class="col-md-1 col-sm-1 col-xs-12" style="font-size:20px;"><a href="harta.php">Harta</a></div> 
-	  <div class="col-md-4 col-sm-4 col-xs-12" style="font-size:20px;"></div>
+	  <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="contact.php">Contact</a></div>
+	  <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="shop.php">Magazin</a></div>
+	  <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="cont.php" id="cont_replaced">Contul tau</a></div>
+	  <div class="col-md-1 col-sm-2 col-xs-12" style="font-size:20px;margin-bottom:15px;"><a href="harta.php">Harta</a></div> 
+	  <div class="col-md-4 col-sm-0 col-xs-12" style="font-size:20px;"></div>
 	  <div class="col-md-4 col-sm-4 col-xs-12">
 		
 		<button id="btn_cart"  class="btn btn-default"><i class="fa fa-shopping-cart" style="font-size:17px;"></i></button><span id="pret_cos"></span>
@@ -310,7 +310,7 @@ $('#btn_cart').click(function(){
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user'])){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');

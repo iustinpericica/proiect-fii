@@ -240,29 +240,28 @@ $("#btn_cart").click(function(){
    var data;
    var url = '../includes/comenzi.inc.php?id=';
    url+=id_comanda;
-   $.get(url , function(data , status){
+   $.get(url , function(data){
        data = JSON.parse(data);
        console.log(data);
-       var datac = data['produse']['date'];
-       var pret = data['livrare']['pret'];
-       datac = datac.toString();
+       var datac = data['data'];
+       var pret = data['pret'];
        var produse = data['produse'];
+
        var string='';
        for(i in produse){
-       	  if(i!= 'date' && i!=null && i!='idc' && i!='id' && i[0] == 'p'){
-       	  	  if(produse[i]!=null){
               var url = '../includes/produse_text.inc.php?idp=';
-              url+=produse[i].toString();
-       	  	  $.get(url , function(dataa , status){
+              url+=produse[i][1].toString();
+       	  	  $.get(url , function(dataa){
                   dataa = JSON.parse(dataa);
                   var photo = '../images/sock';
-                  photo+=produse[i];
+                  photo+=produse[i][1];
+                  photo+='1';
                   var cant = 'c';
-                  cant+=produse[i];
-                  string += '<div class="row container-fluid"><img class="img-responsive img-thumbnail imgdf" src="' + photo + '.jpg"><br>Produs:' + dataa['text']  + ',pret: <b>' + data['livrare']['pret'] + '</b> de lei, cantitate cumparata:<b>' + produse[cant] + '</b></div><br><br>'
+                  cant+=produse[i][5];
+                  string += '<div class="row container-fluid"><img class="img-responsive img-thumbnail imgdf col-md-2 col-xs-12 col-sm-6 col-xl-4" src="' + photo + '.jpg"><br>Produs:' + dataa['text']  + ', marime: ' + produse[i][2] + ' Grosime:' + produse[i][3] + 'pret: <b>' + data['livrare']['pret'] + '</b> de lei, cantitate cumparata:<b>' + cant + '</b></div><br><br>'
        	  	  });
-       	  }
-       	  }
+       	  
+       	  
 
        }
        var date_facturare = data['facturare'];
@@ -342,7 +341,7 @@ $("#btn_cart").click(function(){
       livrare+=date_livrare['numar_telefon'];
       livrare+='<br>';
 
-       $('#comenzi_date').append('<div class="row container-fluid"><b style="font-size:25px;">Plasata pe:' + datac + ' Pret total: ' + pret + 'de lei</b></div><br><div class="text-center">Id comanda: ' + id_comanda + '</div><br><br>' + string + '\
+       $('#comenzi_date').append('<div class="row container-fluid"><b style="font-size:25px;">Plasata pe: ' + datac + ' Pret total: ' + pret + 'de lei</b></div><br><div class="text-center">Id comanda: ' + id_comanda + '</div><br><br>' + string + '\
     <div class="row container-fluid"></div><br>\
     <div class="row container-fluid">Facturare:<br>' + facturare + '</div><br><br>\
     <div class="row container-fluid">Livrare:<br>' + livrare +  '</div><br><br>\
@@ -455,7 +454,7 @@ $('#btn_cart').click(function(){
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');
@@ -480,17 +479,8 @@ else {
 }
  ?>
 
-<style>
- .imgdf{
- 	height:200px;
- 	widht:auto;
- }
- @media only screen and (max-width:600px)  {
-.imgdf{
- 	height:120px;
- 	widht:auto;
- }
 
+ <style>
   #logo{
     height:100px;
   }
@@ -500,7 +490,9 @@ else {
     height:50px;
   }
 }
+
 </style>
+
 
 
 </html>

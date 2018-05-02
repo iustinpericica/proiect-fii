@@ -3,11 +3,17 @@
 require 'dbconnection.inc.php';
 
 
+$oke=false; //ramane fals daca nu este gasit niciun produs
 
+function make_safe($variable) 
+{
+   $variable = strip_tags(mysqli_real_escape_string($GLOBALS['conn'] ,trim($variable)));
+   return $variable; 
+}
 
 if(isset($_GET['search'])){
 	$ok=true;
-   $text = $_GET['search'];
+   $text = make_safe($_GET['search']);
    $sql = "SELECT * FROM produse WHERE text LIKE '%$text%'";
    if(isset($_GET['pret'])){
       $pret = $_GET['pret'];
@@ -17,6 +23,7 @@ if(isset($_GET['search'])){
 }
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){
+    $oke = true;
 		$var = $row[0];
 		$image = "../images/sock{$var}1.jpg";
 		echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
@@ -96,6 +103,8 @@ else{
 
    $result = $conn -> query($sql);
    while ($row=mysqli_fetch_row($result)){
+    $oke = true;
+
         $var = $row[0];
         $image = "../images/sock{$var}1.jpg";
         echo '<div class="col-md-4 col-xs-12 col-sm-6 col-xl-4 ">
@@ -111,5 +120,7 @@ else{
 </div>';
     }
 }
+
+if($oke == false) echo '<h2>Nu a fost gasit niciun produs..., incearca alta cautare sau alt filtru!</h2>';
 
 

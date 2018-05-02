@@ -1,7 +1,9 @@
 <?php
+session_start();
+
+setcookie("user", "", -1);
 unset($_COOKIE['user']);
-unset($_COOKIE['password']);
-setcookie('user', null, -1, '/');
-setcookie('password', null, -1, '/');
+setcookie( 'user', '', time() - 999999, '/', $_SERVER['SERVER_NAME'] );
+
 header('Location: ../php/index.php');
 ?>

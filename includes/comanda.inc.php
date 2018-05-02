@@ -1,53 +1,24 @@
 <?php
 require_once "dbconnection.inc.php";
 require_once "total.inc.php";
+require_once "total.inc.php";
+
 
 $idc = $_SESSION['idc'];
 $sql1 = "SELECT * FROM produsec WHERE idc = '$idc';";
 $result1 = $conn->query($sql1);
-$produse  =  array();
-$cantitate = array();
+
+$conn -> query("INSERT INTO comenzi(checkk , idc , pret) VALUES('da' , '$idc' , '$total')");
+$id_comanda = $conn->insert_id;
+echo $id_comanda;
 
 
 while($row = mysqli_fetch_row($result1)){
-      array_push($produse, $row[0]);
-      array_push($cantitate, $row[2]); 
+        $str = "INSERT INTO comenzi_produse(idp , marime , grosime , id_comanda,cantitate) VALUES ( '$row[0]' , '$row[3]' , '$row[4]' , '$id_comanda' , '$row[2]');";
+        $conn -> query($str);
 };
 
-$sql = "INSERT INTO comenzi(idc";
-foreach ($produse as $key => $val) {
-     $string = ',p';
-     $string.=$val;
-     $sql.=$string;
-}
 
-foreach ($produse as $key => $val) {
-     $string = ',c';
-     $string.=$val;
-     $sql.=$string;
-}
-
-$sql.=') VALUES(';
-
-
-$sql.=$idc;
-
-foreach ($produse as $key => $val) {
-     $string = ',';
-     $string.=$val;
-     $sql.=$string;
-}
-
-foreach ($cantitate as $key => $val) {
-     $string = ',';
-     $string.=$val;
-     $sql.=$string;
-}
-
-$sql.=');';
-
-$result = $conn -> query($sql);
-$id_comanda = $conn->insert_id;
 
 $sql = "SELECT * FROM date WHERE idc = '$idc';";
 $result = $conn -> query($sql);

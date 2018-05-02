@@ -81,23 +81,7 @@ echo $string;
 	</div>
 	  <div style="visibility: hidden">ceva</div>
 </header>
-	
-<?php
-if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
-	echo '<div class="row container-fluid text-center">Se pare ca te-ai mai conectat la noi, vrei sa mergi la pagina de LogIn?<button id="mergi" class="btn btn-default">Mergi</button> saaaau <button class="btn btn-danger" id="uita">Uita de mine :(</button></div>
-	<script>
-    $("#mergi").click(function(){
-       window.location.replace("LogIn.php");
-    });
-    $("#uita").click(function(){
-       window.location.replace("../includes/uita.inc.php");
-    });
-    </script>
-	'
-       
-	  ;
-}
-?>
+
 
 <div class="container-fluid" id="textc" style="font-size: 25px;">
   <p>Bun venit la ElMaro!</p>
@@ -217,7 +201,7 @@ $('#btn_cart').click(function(){
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user']) ){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');

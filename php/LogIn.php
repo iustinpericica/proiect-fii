@@ -226,7 +226,7 @@ $('#btn_cart').click(function(){
 <?php
  
 
- if(isset($_SESSION['user']) && isset($_SESSION['password'])){
+ if(isset($_SESSION['user'])){
 
  	echo "<script>
            $('#to_be_replaced').html('Contul meu');
@@ -256,5 +256,5 @@ else {
 
 <?php
 if(isset($_COOKIE['user'])){echo '<script>$("#username").val("' . $_COOKIE['user'] . '");</script>';};
-if(isset($_COOKIE['password'])){echo '<script>$("#password").val("' . $_COOKIE['password'] . '");</script>';};
+
 ?>

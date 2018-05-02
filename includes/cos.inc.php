@@ -9,7 +9,7 @@ function make_safe($variable)
    return $variable; 
 }
 
-$idp=  $_GET['id'];
+$idp=  make_safe($_GET['id']);
 
 
 if(!isset($_SESSION['idc'])){

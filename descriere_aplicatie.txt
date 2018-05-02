@@ -1,0 +1,31 @@
+Buna ziua!
+ Aplicatia incepe cu pagina de start( index.php), sus dreapta, apasand pe LogIn -ne facem un cont, de asemenea ne cream
+un cont.
+  
+  Avem un meniu in headerul paginii, prin care navigam in paginile importante ale aplicatiei.
+  In footer gasim pagini ajutatoare as putea spune pentru aplicatie.
+  In shop, avem un fliltru foarte bine scris, de asemenea ordonare in functie de pret crescator, descrescator sau dupa relevanta.
+  Apasand pe un produs, mergem pe pagina acestuia, aici putem selecta marimea(este in json in baza de date si decodata cu JSON.parse) / grosimea(daca e dres), astfel
+ il adaugam in cos si de aici pornesc paginile cosului. In prima pagina putem edita produsele, in a doua
+sunt detaliile de livrare, in a 3 a sunt detaliile de facturare. In toate paginile de completat avem butoane ce ne ajuta
+in a completa campurile(ultimele completari, datele de la livrare etc.) La ultima pagina facem un ultim check si
+putem schimba livrarea/ facturarea/produsele din cos.
+  La apasarea ,, trimite comanda" se introduc datele in baza de date si se trimite un mail.
+
+Produsele pot fi adaugate foarte usor : in images se adauga produsul cu dimensiuni :3024 px * 3024 px (forma patratica
+pentru o afisarea frumoasa), cu numele sock + id_produs + 1 apoi sock + id_produs + 2-pt a doua imagine.
+
+Aplicatia tine minte utilizatorii prin cookie si desigur sesiunile sunt intretinute de $_SESSION.
+
+Detalii de design si logistica:
+
+Aplicatia este full responsive pentru mobile-asa am conceput-o.
+Am folosit librarii precum jQuery, bootstrap, bootstrapmd , fontawesome.
+Aplicatiei nu i se poate face SQLi sau XSS.
+Aplicatie este fluenta si intuitiva.
+Limbajul pt baza de date este MySqli(improved)
+Parolele sunt criptate cu md5.
+Interogarile cu baza de date sunt transmise prin obiecte new XMLHttpRequest(AJAX), dar si cu jQuery -ajax.
+De asemenea am folosit si sintaxe de genul <?php echo -sintaxa- ?>
+
+Sper sa va placa aplicatia.

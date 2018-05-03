@@ -59,6 +59,17 @@ if(isset($_POST['submit'])){
 		die();
     }
     
+    $sql = "SELECT * FROM users WHERE user_name = '$username';";
+    echo $sql;
+   
+    $res = $conn -> query($sql);
+    if($row = mysqli_fetch_row($res)){
+    
+        header('Location: ../php/creare_cont.php?cont=existent');
+
+        die();
+    }
+
     $password = md5($password);
     $conn->query("INSERT INTO users(user_first,user_last,user_email,user_name,user_nrtelefon,user_password) VALUES('$firstname' , '$lastname' , '$email' , '$username' , '$nrtelefon' , '$password')");
 
